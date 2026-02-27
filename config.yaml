@@ -1,0 +1,242 @@
+# ==========================================
+# GLOBAL LICENSE SYSTEM (ขาย / ให้เช่าได้)
+# ==========================================
+license:
+  enabled: true
+  key: "TRIAL-LOCAL-001"
+  max_devices: 2
+  expire_date: null        # ใส่ "2026-12-31" ถ้าต้องการจำกัดวันหมดอายุ
+
+# ==========================================
+# STEP A : PRODUCT PIPELINE
+# ==========================================
+step_a:
+  enabled: false       #เปิด true / ปิด false
+
+  feed:
+    file: data/product_feed.csv
+
+  score:
+    enabled: true     #เปิด true / ปิด false
+
+    weights:
+      price: 1.0
+      discount: 1.2
+      sold: 1.5
+      rating: 1.0
+
+    normalize:
+      price_max: 250
+      sold_max: 500
+      discount_max: 50
+
+    min_score: 0.1
+
+    auto_relax:
+      enabled: true      #เปิด true / ปิด false
+      relax_factor: 0.5
+
+  affiliate:
+    enabled: true          #เปิด true / ปิด false
+    universal_link: https://shopee.co.th/universal-link
+
+  winners:
+    enabled: true     #เปิด true / ปิด false
+    max_seed: 150
+
+  images:
+    enabled: true     #เปิด true / ปิด false
+    per_product: 10
+    max_products: 30
+    timeout: 10
+
+
+# ==========================================
+# STEP B : VIDEO FACTORY V4 (CONFIG DRIVEN)
+# ==========================================
+step_b:
+  enabled: false      #เปิด true / ปิด false
+
+  factory:
+    max_videos_per_run: 2
+    shuffle_products: true      #เปิด true / ปิด false
+    shuffle_images: true        #เปิด true / ปิด false
+    skip_if_exists: true   # 🔥 ข้ามถ้าสร้างแล้ว
+
+  images:
+    min_images: 3
+    max_images: 6
+    clone_if_not_enough: true     #เปิด true / ปิด false
+
+  video:
+    width: 1080
+    height: 1920
+    fps: 24
+    min_duration: 10
+    max_duration: 20
+
+  cinematic:
+    enabled: true
+    zoom_min: 1.05
+    zoom_max: 1.25
+    pan_x_min: 10
+    pan_x_max: 40
+    pan_y_min: 5
+    pan_y_max: 25
+    blur_radius: 0.8
+    transition_duration: 0.4
+
+  export:
+    tiktok:
+      width: 1080
+      height: 1920
+    facebook:
+      width: 1080
+      height: 1350
+    shopee:
+      width: 1080
+      height: 1080
+
+  lower_third:
+    font: Sarabun-Bold.ttf
+    text_color: [255, 255, 255]
+    bg_opacity: 0.65
+    padding_x: 60
+    padding_y: 30
+    margin_bottom: 120
+
+  music:
+    enabled: true
+    volume: 0.6
+    avoid_repeat: true
+
+  qc:
+    anti_black:
+      enabled: true
+      min_brightness: 20
+
+  text:
+    hook:
+      enabled: true
+      duration: 3.0
+      font_size: 96
+      texts:
+        - "🔥 ลดแรงมาก!"
+        - "ของมันต้องมี!"
+        - "คนซื้อซ้ำเพียบ!"
+        - "ห้ามพลาด!"
+
+    promo:
+      enabled: true
+      font_size: 78
+      texts:
+        - "🚚 ส่งฟรี เก็บปลายทาง"
+        - "✨ รีวิวแน่น 5 ดาว"
+        - "💥 โปรวันนี้เท่านั้น"
+
+
+
+# ==========================================
+# STEP C : MULTI-PLATFORM POSTER V2
+# ==========================================
+step_c:
+  enabled: true   # เปิด true / ปิด false
+
+  # ------------------------------------------
+  # DEVICE CONTROL
+  # ------------------------------------------
+  devices:
+    - "192.168.1.103:5555"
+
+  device_mode: parallel      # single | parallel
+  max_parallel_devices: 3
+
+  mode: post_only            # auto | post_only | scheduler
+
+  # ------------------------------------------
+  # PLATFORM SWITCH
+  # ------------------------------------------
+  platforms:
+    tiktok:
+      enabled: true     #เปิด true / ปิด false
+      priority: 1
+      resolution: [1080, 1920]
+
+    facebook:
+      enabled: false      #เปิด true / ปิด false
+      priority: 2
+      resolution: [1080, 1350]
+
+    reels:
+      enabled: false      #เปิด true / ปิด false
+      priority: 3
+      resolution: [1080, 1920]
+
+    shopee:
+      enabled: false      #เปิด true / ปิด false
+      priority: 4
+      resolution: [1080, 1080]
+
+  post_mode: multi              # single | multi
+  delay_between_platforms: 15   # วินาที
+
+  # ------------------------------------------
+  # VIDEO PICK SYSTEM
+  # ------------------------------------------
+  video_pick_mode: random       # random | sequence
+  skip_if_posted: true
+  skip_if_failed: false
+
+  per_platform_history: true    # แยกประวัติแต่ละแพลตฟอร์ม
+
+  # ------------------------------------------
+  # DAILY LIMIT CONTROL
+  # ------------------------------------------
+  max_post_per_day: 5
+  min_wait: 3600
+  max_wait: 7200
+
+  active_hours:
+    enabled: false
+    start: "09:00"
+    end: "23:00"
+
+  # ------------------------------------------
+  # CAPTION SYSTEM
+  # ------------------------------------------
+  caption:
+    mode: random         # random | ai | static
+    add_hashtags: true
+    hashtag_limit: 8
+    default_hashtags:
+      - "#ของมันต้องมี"
+      - "#รีวิวแน่น"
+      - "#ของดีบอกต่อ"
+      - "#โปรแรง"
+
+  # ------------------------------------------
+  # SAFETY SYSTEM
+  # ------------------------------------------
+  human_delay:
+    enabled: true         #เปิด true / ปิด false
+    min_action_delay: 1.2
+    max_action_delay: 2.5
+
+# ==========================================
+# GLOBAL PATHS
+# ==========================================
+paths:
+  products: products
+  user_images: user_images
+  temp: temp
+  output: output
+  music: music
+  fonts: fonts
+  hashes: hashes
+  meta: meta
+
+# ==========================================
+# AI (Future Expansion)
+# ==========================================
+ai:
+  enabled: false   #เปิด true / ปิด false
