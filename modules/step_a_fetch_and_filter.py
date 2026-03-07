@@ -3,10 +3,10 @@ import json
 import requests
 import pandas as pd
 import urllib.parse
+import subprocess
 from datetime import datetime
-
 from modules._bootstrap import BASE_DIR, load_config
-
+from modules.bio_generator import generate_bio_page, update_products_json
 
 # =====================
 # LOAD CONFIG
@@ -114,7 +114,9 @@ def auto_relax_if_needed(df: pd.DataFrame) -> pd.DataFrame:
 # PREPARE PRODUCT
 # =====================
 def prepare_product(row) -> bool:
+
     itemid = str(row.get("itemid", "")).strip()
+
     if not itemid:
         return False
 
@@ -160,7 +162,25 @@ def prepare_product(row) -> bool:
     with open(os.path.join(product_dir, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
 
+    # =====================
+    # CREATE BIO PAGE
+    # =====================
+
+    title = row.get("title", f"สินค้า {itemid}")
+
+    generate_bio_page(
+        itemid,
+        title,
+        affiliate
+    )
+
+    update_products_json(
+        itemid,
+        title
+    )
+
     print(f"📦 READY {itemid} | score={row.get('score'):.3f}")
+
     return True
 
 
@@ -190,4 +210,27 @@ def run():
         if prepare_product(row):
             created += 1
 
+    def auto_git_push():
+        CFG = load_config()
+        git_cfg = CFG.get("git", {})
+
+        if not git_cfg.get("enabled", False):
+            return
+
+        if git_cfg.get("mode") != "step_a":
+            return
+
+        message = git_cfg.get("commit_message", "AUTO UPDATE")
+
+        try:
+            subprocess.run(["git", "add", "."], check=True)
+            subprocess.run(["git", "commit", "-m", message], check=True)
+            subprocess.run(["git", "push"], check=True)
+            print("🚀 AUTO GIT PUSH (STEP A MODE) SUCCESS")
+        except subprocess.CalledProcessError:
+            print("⚠️ AUTO GIT SKIPPED (Nothing to commit or error)")
+
     print(f"✅ STEP A DONE : {created}")
+
+    if created > 0:
+        auto_git_push()

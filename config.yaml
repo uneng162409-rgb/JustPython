@@ -11,7 +11,7 @@ license:
 # STEP A : PRODUCT PIPELINE
 # ==========================================
 step_a:
-  enabled: false       #เปิด true / ปิด false
+  enabled: true       #เปิด true / ปิด false
 
   feed:
     file: data/product_feed.csv
@@ -47,7 +47,7 @@ step_a:
   images:
     enabled: true     #เปิด true / ปิด false
     per_product: 10
-    max_products: 30
+    max_products: 10
     timeout: 10
 
 
@@ -55,10 +55,10 @@ step_a:
 # STEP B : VIDEO FACTORY V4 (CONFIG DRIVEN)
 # ==========================================
 step_b:
-  enabled: false      #เปิด true / ปิด false
+  enabled: true     #เปิด true / ปิด false
 
   factory:
-    max_videos_per_run: 2
+    max_videos_per_run: 3
     shuffle_products: true      #เปิด true / ปิด false
     shuffle_images: true        #เปิด true / ปิด false
     skip_if_exists: true   # 🔥 ข้ามถ้าสร้างแล้ว
@@ -140,7 +140,7 @@ step_b:
 # STEP C : MULTI-PLATFORM POSTER V2
 # ==========================================
 step_c:
-  enabled: true   # เปิด true / ปิด false
+  enabled: false  # เปิด true / ปิด false
 
   # ------------------------------------------
   # DEVICE CONTROL
@@ -158,7 +158,7 @@ step_c:
   # ------------------------------------------
   platforms:
     tiktok:
-      enabled: true     #เปิด true / ปิด false
+      enabled: false     #เปิด true / ปิด false
       priority: 1
       resolution: [1080, 1920]
 
@@ -240,3 +240,11 @@ paths:
 # ==========================================
 ai:
   enabled: false   #เปิด true / ปิด false
+
+# ==========================================
+# AUTO GIT CONTROL
+# ==========================================
+git:
+  enabled: true               # เปิด/ปิดระบบ git auto
+  mode: step_a                # none | step_a | farm_end
+  commit_message: "AUTO FARM UPDATE"
