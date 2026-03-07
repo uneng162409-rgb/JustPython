@@ -35,8 +35,12 @@ def update_products_json(product_id, title):
 
     if os.path.exists(PRODUCT_JSON):
 
-        with open(PRODUCT_JSON, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        try:
+            with open(PRODUCT_JSON, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+        except:
+            data = []
 
     else:
         data = []
