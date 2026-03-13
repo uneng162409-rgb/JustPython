@@ -20,7 +20,7 @@ class BioEngine:
         cls.create_product_page(product_data)
         cls.update_products_json(product_data)
         cls.create_redirect(product_data)
-        cls.auto_push()
+
         print("✅ BIO ENGINE BUILD COMPLETE")
 
     # ===============================

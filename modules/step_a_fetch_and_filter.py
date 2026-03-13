@@ -3,6 +3,7 @@ import json
 import requests
 import pandas as pd
 import urllib.parse
+import subprocess
 from datetime import datetime
 
 from modules._bootstrap import BASE_DIR, load_config
@@ -244,3 +245,26 @@ def run():
             created += 1
 
     print(f"✅ STEP A DONE : {created}")
+    import subprocess
+
+    def git_push_once():
+
+        try:
+
+            subprocess.run(["git", "add", "."], check=True)
+
+            subprocess.run(
+                ["git", "commit", "-m", f"Auto update {datetime.now()}"],
+                check=True
+            )
+
+            subprocess.run(["git", "push"], check=True)
+
+            print("🚀 PUSHED TO GITHUB (ONCE)")
+
+        except subprocess.CalledProcessError:
+
+            print("⚠️ NOTHING TO COMMIT")
+
+    if created > 0:
+        git_push_once()
