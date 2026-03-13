@@ -1,3 +1,4 @@
+import urllib.parse
 import os
 import yaml
 import hashlib
@@ -157,21 +158,25 @@ def generate_caption(cfg, product_meta, affiliate_link):
     caption_cfg = cfg["step_c"]["caption"]
 
     title = product_meta.get("title", "สินค้าขายดี")
+    price = product_meta.get("price", 0)
+    sold = product_meta.get("sold", 0)
+    rating = product_meta.get("rating", 0)
 
-    openers = [
-        f"🔥 {title} ลดแรงวันนี้!",
-        f"{title} ราคาพิเศษ!",
-        f"ของดีต้องบอกต่อ 🎯 {title}",
-        f"โปรแรงสุด ๆ สำหรับ {title}"
-    ]
-
-    base_text = random.choice(openers)
+    # 🔥 Dynamic Hook ตามข้อมูลจริง
+    if sold > 1000:
+        opener = f"🔥 ขายแล้ว {sold:,} ชิ้น! {title}"
+    elif rating >= 4.8:
+        opener = f"⭐ รีวิว {rating} ดาว! {title}"
+    elif price and price < 100:
+        opener = f"💸 ถูกมาก! {title} แค่ {price} บาท"
+    else:
+        opener = f"🎯 โปรแรง! {title}"
 
     cta_lines = [
-        "👉 กดสั่งซื้อที่ลิงก์ด้านล่าง",
-        "👉 รีบก่อนของหมด!",
+        "👉 รีบกดก่อนหมด!",
+        "👉 เช็คราคาล่าสุดที่ลิงก์",
         "👉 โปรจำกัดเวลา",
-        "👉 เช็คราคาล่าสุดที่ลิงก์"
+        "👉 กดดูรายละเอียดเลย"
     ]
 
     cta = random.choice(cta_lines)
@@ -185,11 +190,14 @@ def generate_caption(cfg, product_meta, affiliate_link):
             tags = random.sample(tags, min(len(tags), caption_cfg.get("hashtag_limit", 5)))
             hashtags = "\n\n" + " ".join(tags)
 
+    body = f"{opener}\n\n💰 ราคา: {price}\n⭐ คะแนน: {rating}\n📦 ขายแล้ว: {sold:,} ชิ้น\n\n{cta}"
+    # 🔥 Clean affiliate link (decode)
+    clean_link = urllib.parse.unquote(affiliate_link)
+
     if include_link_in_caption:
-        return f"{base_text}\n\n{cta}\n{affiliate_link}{hashtags}", None
+        return f"{body}\n{clean_link}{hashtags}", None
     else:
-        # ลิงก์ไปใส่ comment แทน
-        return f"{base_text}\n\n{cta}{hashtags}", affiliate_link
+        return f"{body}{hashtags}", clean_link
 
 
 # ==========================================
@@ -200,6 +208,8 @@ def run_step_c():
 
     cfg = load_config()
     step = cfg["step_c"]
+
+    license_cfg = cfg.get("license", {})
 
     if not step.get("enabled", False):
         print("❌ STEP C Disabled")
@@ -220,6 +230,13 @@ def run_step_c():
         print(f"\n📱 Device: {device}")
 
         for platform_name, platform_cfg in step["platforms"].items():
+            # 🔐 LICENSE PLATFORM CHECK
+            if license_cfg.get("enabled", False):
+                allowed = license_cfg.get("allowed_platforms", [])
+
+                if allowed and platform_name not in allowed:
+                    print(f"🔒 License block: {platform_name}")
+                    continue
 
             if not platform_cfg.get("enabled", False):
                 continue
@@ -268,5 +285,7 @@ def run_step_c():
                 print(f"❌ Failed posting {platform_name}")
 
             smart_delay(step)
+
+
 
     print("🎉 STEP C MONETIZATION COMPLETE")

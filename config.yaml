@@ -3,15 +3,18 @@
 # ==========================================
 license:
   enabled: true
-  key: "TRIAL-LOCAL-001"
-  max_devices: 2
-  expire_date: null        # ใส่ "2026-12-31" ถ้าต้องการจำกัดวันหมดอายุ
+  key: "USER-001"
+  plan: basic
+  max_devices: 1
+  expire_date: null  # ใส่ "2026-12-31" ถ้าต้องการจำกัดวันหมดอายุ
+  allowed_platforms:
+    - tiktok
 
 # ==========================================
 # STEP A : PRODUCT PIPELINE
 # ==========================================
 step_a:
-  enabled: true       #เปิด true / ปิด false
+  enabled: true     #เปิด true / ปิด false
 
   feed:
     file: data/product_feed.csv
@@ -47,7 +50,7 @@ step_a:
   images:
     enabled: true     #เปิด true / ปิด false
     per_product: 10
-    max_products: 10
+    max_products: 50
     timeout: 10
 
 
@@ -55,7 +58,7 @@ step_a:
 # STEP B : VIDEO FACTORY V4 (CONFIG DRIVEN)
 # ==========================================
 step_b:
-  enabled: true     #เปิด true / ปิด false
+  enabled: false    #เปิด true / ปิด false
 
   factory:
     max_videos_per_run: 3
@@ -158,7 +161,7 @@ step_c:
   # ------------------------------------------
   platforms:
     tiktok:
-      enabled: false     #เปิด true / ปิด false
+      enabled: true     #เปิด true / ปิด false
       priority: 1
       resolution: [1080, 1920]
 
@@ -248,3 +251,4 @@ git:
   enabled: true               # เปิด/ปิดระบบ git auto
   mode: step_a                # none | step_a | farm_end
   commit_message: "AUTO FARM UPDATE"
+

@@ -1,41 +1,13 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Bio Farm</title>
 </head>
+
 <body style="text-align:center; font-family:sans-serif;">
 <h1>🔥 สินค้าแนะนำ</h1>
 <div id="product-list"></div>
-
-<script>
-fetch("https://uneng162409-rgb.github.io/bio-farm/products.json")
-.then(response => response.json())
-.then(data => {
-    const container = document.getElementById("product-list");
-    data.forEach(product => {
-        const link = document.createElement("a");
-        link.href = "https://uneng162409-rgb.github.io/bio-farm/bio_pages/" + product.id + ".html";
-        link.innerText = product.name;
-        link.style.display = "block";
-        link.style.margin = "10px";
-        container.appendChild(link);
-    });
-});
-</script>
-
-</body>
-=======
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Bio Farm</title>
-</head>
-<body style="text-align:center; font-family:sans-serif;">
-    <h1>🔥 สินค้าแนะนำ</h1>
-    <div id="product-list"></div>
 
 <script>
 fetch("products.json")
@@ -54,5 +26,4 @@ fetch("products.json")
 </script>
 
 </body>
->>>>>>> 22851ff67161076579603b6f0866211b012d8c3c
 </html>

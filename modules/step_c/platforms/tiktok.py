@@ -2,20 +2,37 @@ import os
 import random
 import time
 import subprocess
+import base64
 
+# ==============================
+# CONFIG
+# ==============================
 TEXT_FILE = "texts.txt"
 LOG_FILE = "posted_log.txt"
 
 
+# ==============================
+# BASIC ADB
+# ==============================
+def adb(device, *args):
+    return subprocess.run(["adb", "-s", device, *args], check=False)
+
+
+def human_delay(a=0.8, b=1.8):
+    time.sleep(random.uniform(a, b))
+
+
+# ==============================
+# CAPTION SYSTEM
+# ==============================
 def load_captions():
     if not os.path.exists(TEXT_FILE):
-        print("❌ texts.txt not found")
-        return []
+        return ["🔥"]
 
     with open(TEXT_FILE, "r", encoding="utf-8") as f:
-        lines = [line.strip() for line in f if line.strip()]
+        lines = [l.strip() for l in f if l.strip()]
 
-    return lines
+    return lines if lines else ["🔥"]
 
 
 def load_posted():
@@ -23,140 +40,143 @@ def load_posted():
         return set()
 
     with open(LOG_FILE, "r", encoding="utf-8") as f:
-        return set(line.strip() for line in f if line.strip())
+        return set(l.strip() for l in f if l.strip())
 
 
-def save_posted(caption):
+def save_posted(text):
     with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(caption + "\n")
+        f.write(text + "\n")
 
 
 def get_random_caption():
     captions = load_captions()
-
-    if not captions:
-        print("⚠ texts.txt ว่าง ใช้ fallback")
-        return "🔥"
-
     posted = load_posted()
 
-    # กันซ้ำ
     available = [c for c in captions if c not in posted]
 
-    # ถ้าใช้ครบแล้ว รีเซ็ต log
     if not available:
-        print("♻ Caption ใช้ครบแล้ว รีเซ็ต log")
         open(LOG_FILE, "w", encoding="utf-8").close()
         available = captions
 
     caption = random.choice(available)
-
     save_posted(caption)
-
     return caption
 
 
-def human_delay(min_sec=0.3, max_sec=1.2):
-    time.sleep(random.uniform(min_sec, max_sec))
+# ==============================
+# THAI INPUT (ADB KEYBOARD)
+# ==============================
+def type_text_thai(device, text):
+    # เข้ารหัส base64 ป้องกัน shell แตกคำสั่ง
+    encoded = base64.b64encode(text.encode("utf-8")).decode()
 
-
-def adb(device, *args):
-    return subprocess.run(["adb", "-s", device, *args], check=False)
-
-
-def set_clipboard(device, text):
-    safe_text = text.replace("\n", " ").replace('"', "").replace("'", "")
-
-    adb(device,
+    subprocess.run([
+        "adb",
+        "-s",
+        device,
         "shell",
-        "cmd",
-        "clipboard",
-        "set",
-        "text",
-        safe_text
-    )
+        "am",
+        "broadcast",
+        "-a",
+        "ADB_INPUT_B64",
+        "--es",
+        "msg",
+        encoded
+    ])
+
     time.sleep(1)
 
 
-def paste_clipboard(device):
-    adb(device, "shell", "input", "keyevent", "279")  # KEYCODE_PASTE
-    time.sleep(1)
-
-
-def type_text(device, text):
-    """
-    พิมพ์ข้อความแบบปลอดภัย รองรับเว้นวรรค
-    """
-    safe = text.replace(" ", "%s").replace("\n", "%s")
-    adb(device, "shell", "input", "text", safe)
-    human_delay(1, 2)
-
-
-def post(device, video, caption, cfg=None, comment_link=None):
+# ==============================
+# MAIN POST FUNCTION
+# ==============================
+def post(device, video_path, caption=None, cfg=None, comment_link=None):
 
     try:
-        print(f"🎵 TikTok Posting: {video}")
+        print("🎵 TikTok Posting:", video_path)
 
-        # -----------------------------
+        # ------------------------
         # PUSH VIDEO
-        # -----------------------------
-        adb(device, "push", video, "/sdcard/Download/post.mp4")
-        time.sleep(2)
+        # ------------------------
+        adb(device, "push", video_path, "/sdcard/Download/post.mp4")
+        time.sleep(4)
 
-        # -----------------------------
+        # ------------------------
         # OPEN TIKTOK
-        # -----------------------------
-        adb(device, "shell", "monkey",
-            "-p", "com.ss.android.ugc.trill",
-            "-c", "android.intent.category.LAUNCHER",
-            "1")
-
+        # ------------------------
+        adb(
+            device,
+            "shell",
+            "am",
+            "start",
+            "-n",
+            "com.ss.android.ugc.trill/com.ss.android.ugc.aweme.splash.SplashActivity"
+        )
         time.sleep(6)
 
-        # -----------------------------
-        # UPLOAD FLOW
-        # -----------------------------
-        adb(device, "shell", "input", "tap", "540", "2200")  # +
+        # ------------------------
+        # TAP +
+        # ------------------------
+        print("STEP 1: Tap +")
+        adb(device, "shell", "input", "tap", "540", "2200")
         time.sleep(3)
 
-        adb(device, "shell", "input", "tap", "900", "1806")  # Upload
+        # ------------------------
+        # TAP Upload
+        # ------------------------
+        print("STEP 2: Tap Upload")
+        adb(device, "shell", "input", "tap", "900", "1806")
         time.sleep(3)
 
-        adb(device, "shell", "input", "tap", "340", "317")   # Video Tab
+        # ------------------------
+        # Video Tab
+        # ------------------------
+        adb(device, "shell", "input", "tap", "340", "317")
         time.sleep(2)
 
-        adb(device, "shell", "input", "tap", "304", "440")   # First Video
+        # First Video
+        adb(device, "shell", "input", "tap", "304", "440")
         time.sleep(3)
 
-        adb(device, "shell", "input", "tap", "821", "2197")  # Next
-        time.sleep(8)  # รอเข้า caption page จริง
+        # NEXT 1
+        adb(device, "shell", "input", "tap", "821", "2197")
+        time.sleep(5)
 
-        # -----------------------------
+
+
+        # ------------------------
         # INPUT CAPTION
-        # -----------------------------
-        caption = get_random_caption()
+        # ------------------------
+        if not caption:
+            caption = get_random_caption()
+
         print("📝 Caption:", caption)
 
         adb(device, "shell", "input", "tap", "540", "600")
         time.sleep(2)
 
-        set_clipboard(device, caption)
-        paste_clipboard(device)
-
+        type_text_thai(device, caption)
         human_delay(2, 3)
+
+        # กด ENTER เพื่อปิด hashtag suggestion
+        adb(device, "shell", "input", "keyevent", "66")
+        time.sleep(2)
 
         # ปิด keyboard
         adb(device, "shell", "input", "keyevent", "4")
         time.sleep(2)
 
-        print("🚀 Posting...")
+        # ------------------------
+        # TAP POST
+        # ------------------------
+        print("STEP 3: Tap Post")
 
-        # ใช้พิกัดเดิมล่างจอ
-        adb(device, "shell", "input", "tap", "540", "2197")
+        time.sleep(3)
+
+        adb(device, "shell", "input", "tap", "821", "2197")
         time.sleep(8)
 
         print("✅ Video Posted")
-
         return True
 
     except Exception as e:
