@@ -245,7 +245,6 @@ def run():
             created += 1
 
     print(f"✅ STEP A DONE : {created}")
-    import subprocess
 
     def git_push_once():
 

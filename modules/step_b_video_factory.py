@@ -18,7 +18,7 @@ if not hasattr(Image, "ANTIALIAS"):
     Image.ANTIALIAS = Image.Resampling.LANCZOS
 
 from modules._bootstrap import BASE_DIR, load_config
-
+from status_manager import update_status   # ⭐ เพิ่ม
 
 CFG = load_config()
 STEP = CFG["step_b"]
@@ -232,15 +232,35 @@ def run():
 
     products = load_products()
 
+    if not products:
+        update_status(step="STEP B", message="No products found")
+        print("⚠️ NO PRODUCTS FOUND")
+        return
+
     if STEP["factory"]["shuffle_products"]:
         random.shuffle(products)
 
+    max_run = STEP["factory"]["max_videos_per_run"]
+    products = products[:max_run]
+
+    total = len(products)
     made = 0
 
-    for product in products:
+    for index, product in enumerate(products, start=1):
 
-        if made >= STEP["factory"]["max_videos_per_run"]:
-            break
+        update_status(
+            step="STEP B",
+            product=product["id"],
+            progress=index,
+            total=total,
+            message=f"Generating video {index}/{total}"
+        )
+        update_status(
+            step="STEP B",
+            progress=current_index,
+            total=max_videos,
+            message=f"Generating video {current_index}/{max_videos}"
+        )
 
         if STEP["factory"]["skip_if_exists"] and already_exists(product["id"]):
             print(f"⏩ SKIP {product['id']} (exists)")
@@ -287,5 +307,12 @@ def run():
 
         made += 1
         print(f"✅ DONE {product['id']} ({made})")
+
+    update_status(
+        step="STEP B",
+        progress=total,
+        total=total,
+        message="STEP B COMPLETE"
+    )
 
     print("🎉 STEP B V4 COMPLETE")

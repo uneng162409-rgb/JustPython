@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Affiliate Farm Dashboard</title>
+</head>
+<body>
+
+<h1>🚜 Affiliate Farm Control Panel</h1>
+
+<h2>Status: {{ state.status }}</h2>
+
+<a href="/start">
+    <button style="background:green;color:white;padding:10px;">START FARM</button>
+</a>
+
+<a href="/stop">
+    <button style="background:red;color:white;padding:10px;">STOP FARM</button>
+</a>
+
+<hr>
+
+<form method="post" action="/update">
+
+<h3>Steps</h3>
+<label><input type="checkbox" name="step_a" {% if state.step_a %}checked{% endif %}> STEP A</label><br>
+<label><input type="checkbox" name="step_b" {% if state.step_b %}checked{% endif %}> STEP B</label><br>
+<label><input type="checkbox" name="step_c" {% if state.step_c %}checked{% endif %}> STEP C</label><br>
+
+<h3>Limits</h3>
+Products: <input type="number" name="products" value="{{ state.products }}"><br>
+Videos: <input type="number" name="videos" value="{{ state.videos }}"><br>
+Posts: <input type="number" name="posts" value="{{ state.posts }}"><br><br>
+
+<button type="submit">Save Settings</button>
+
+</form>
+
+<hr>
+
+<h3>Today Summary</h3>
+Products: {{ state.today_products }}<br>
+Videos: {{ state.today_videos }}<br>
+Posts: {{ state.today_posts }}<br>
+
+</body>
+</html>
