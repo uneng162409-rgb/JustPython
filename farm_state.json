@@ -3,7 +3,7 @@
     "step": "STEP A",
     "message": "Finding Products",
     "step_a": true,
-    "step_b": false,
+    "step_b": true,
     "step_c": false,
     "products": 15,
     "videos": 5,
