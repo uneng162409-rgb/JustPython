@@ -22,6 +22,44 @@ os.makedirs(PRODUCTS_DIR, exist_ok=True)
 
 
 # =====================
+# GIT SYSTEM
+# =====================
+def auto_git_push(mode_trigger: str):
+
+    CFG = load_config()
+    git_cfg = CFG.get("git", {})
+
+    if not git_cfg.get("enabled", False):
+        return
+
+    if git_cfg.get("mode") != mode_trigger:
+        return
+
+    message = git_cfg.get("commit_message", "AUTO FARM UPDATE")
+
+    try:
+        subprocess.run(["git", "add", "."], check=True)
+
+        status = subprocess.run(
+            ["git", "status", "--porcelain"],
+            capture_output=True,
+            text=True
+        )
+
+        if not status.stdout.strip():
+            print("⚠️ NO FILE CHANGES")
+            return
+
+        subprocess.run(["git", "commit", "-m", message], check=True)
+        subprocess.run(["git", "push"], check=True)
+
+        print(f"🚀 AUTO GIT PUSH ({mode_trigger}) SUCCESS")
+
+    except subprocess.CalledProcessError:
+        print("❌ AUTO GIT ERROR")
+
+
+# =====================
 # HELPERS
 # =====================
 def is_real_affiliate(url: str) -> bool:
@@ -29,28 +67,20 @@ def is_real_affiliate(url: str) -> bool:
 
 
 def make_affiliate(product_url: str) -> str:
-
     if not product_url:
         return ""
 
     encoded = urllib.parse.quote(product_url, safe="")
-
     return f"{STEP['affiliate']['universal_link']}?redir={encoded}"
 
 
 def download_image(url: str, path: str, timeout: int) -> bool:
-
     try:
-
         r = requests.get(url, timeout=timeout)
-
         if r.status_code == 200 and r.content:
-
             with open(path, "wb") as f:
                 f.write(r.content)
-
             return True
-
     except Exception as e:
         print(f"⚠️ IMAGE FAIL {url} ({e})")
 
@@ -72,10 +102,8 @@ def load_feed() -> pd.DataFrame:
     print(f"📦 FEED LOADED : {len(df)} rows")
 
     for col in ["price", "discount_percentage", "item_sold", "shop_rating"]:
-
         if col not in df.columns:
             df[col] = 0
-
         df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
 
     return df
@@ -135,7 +163,6 @@ def auto_relax_if_needed(df: pd.DataFrame) -> pd.DataFrame:
 def prepare_product(row) -> bool:
 
     itemid = str(row.get("itemid", "")).strip()
-
     if not itemid:
         return False
 
@@ -156,22 +183,19 @@ def prepare_product(row) -> bool:
         f.write(affiliate or "")
 
     downloaded = 0
+    first_image = ""
 
     urls = [
         v for k, v in row.items()
         if str(k).startswith("image_link") and isinstance(v, str)
     ][:STEP["images"]["per_product"]]
 
-    first_image = ""
-
     for i, url in enumerate(urls, 1):
 
         path = os.path.join(images_dir, f"{i}.jpg")
 
         if download_image(url, path, STEP["images"]["timeout"]):
-
             downloaded += 1
-
             if i == 1:
                 first_image = url
 
@@ -193,10 +217,6 @@ def prepare_product(row) -> bool:
 
     with open(os.path.join(product_dir, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
-
-    # =====================
-    # BIO ENGINE
-    # =====================
 
     product_data = {
         "id": itemid,
@@ -223,13 +243,10 @@ def run():
     print("🚀 STEP A : SCORE-BASED PRODUCT PIPELINE")
 
     df = load_feed()
-
     df = score_products(df)
-
     df = auto_relax_if_needed(df)
 
     df = df[df["score"] >= STEP["score"]["min_score"]]
-
     df = df.sort_values("score", ascending=False)
 
     if STEP["winners"]["enabled"]:
@@ -240,30 +257,10 @@ def run():
     created = 0
 
     for _, row in df.iterrows():
-
         if prepare_product(row):
             created += 1
 
     print(f"✅ STEP A DONE : {created}")
 
-    def git_push_once():
-
-        try:
-
-            subprocess.run(["git", "add", "."], check=True)
-
-            subprocess.run(
-                ["git", "commit", "-m", f"Auto update {datetime.now()}"],
-                check=True
-            )
-
-            subprocess.run(["git", "push"], check=True)
-
-            print("🚀 PUSHED TO GITHUB (ONCE)")
-
-        except subprocess.CalledProcessError:
-
-            print("⚠️ NOTHING TO COMMIT")
-
     if created > 0:
-        git_push_once()
+        auto_git_push("step_a")

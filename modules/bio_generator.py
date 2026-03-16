@@ -1,6 +1,7 @@
 import os
 import json
-
+import subprocess
+from config import AUTO_COMMIT, AUTO_PUSH, GIT_COMMIT_MESSAGE
 BIO_DIR = "bio_pages"
 PRODUCT_JSON = "products.json"
 
@@ -56,3 +57,20 @@ def update_products_json(product_id, title):
 
     with open(PRODUCT_JSON, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
+
+        def auto_git_push():
+            try:
+                if AUTO_COMMIT:
+                    subprocess.run(["git", "add", "."], check=True)
+                    subprocess.run(["git", "commit", "-m", GIT_COMMIT_MESSAGE], check=False)
+
+                if AUTO_PUSH:
+                    subprocess.run(["git", "push"], check=True)
+
+                print("✅ AUTO GIT PUSH SUCCESS")
+
+            except Exception as e:
+                print("❌ AUTO GIT FAILED:", e)
+                if __name__ == "__main__":
+                    # existing generate code
+                    auto_git_push()

@@ -50,7 +50,7 @@ step_a:
   images:
     enabled: true     #เปิด true / ปิด false
     per_product: 10
-    max_products: 50
+    max_products: 15
     timeout: 10
 
 
@@ -58,10 +58,10 @@ step_a:
 # STEP B : VIDEO FACTORY V4 (CONFIG DRIVEN)
 # ==========================================
 step_b:
-  enabled: true    #เปิด true / ปิด false
+  enabled: false    #เปิด true / ปิด false
 
   factory:
-    max_videos_per_run: 3
+    max_videos_per_run: 5
     shuffle_products: true      #เปิด true / ปิด false
     shuffle_images: true        #เปิด true / ปิด false
     skip_if_exists: true   # 🔥 ข้ามถ้าสร้างแล้ว

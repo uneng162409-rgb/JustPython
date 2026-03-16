@@ -1,6 +1,8 @@
 import os
 import json
 import subprocess
+import subprocess
+from config import AUTO_COMMIT, AUTO_PUSH, GIT_COMMIT_MESSAGE
 from datetime import datetime
 
 
@@ -163,3 +165,20 @@ class BioEngine:
     def _ensure_folders(cls):
         os.makedirs(cls.BIO_DIR, exist_ok=True)
         os.makedirs(cls.REDIRECT_DIR, exist_ok=True)
+
+        def auto_git_push():
+            try:
+                if AUTO_COMMIT:
+                    subprocess.run(["git", "add", "."], check=True)
+                    subprocess.run(["git", "commit", "-m", GIT_COMMIT_MESSAGE], check=False)
+
+                if AUTO_PUSH:
+                    subprocess.run(["git", "push"], check=True)
+
+                print("✅ AUTO GIT PUSH SUCCESS")
+
+            except Exception as e:
+                print("❌ AUTO GIT FAILED:", e)
+                if __name__ == "__main__":
+                    # existing generate code
+                    auto_git_push()

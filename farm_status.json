@@ -1,6 +1,9 @@
 {
     "state": "IDLE",
     "step": "STEP B",
-    "message": "No products found",
-    "updated_at": "2026-03-15 01:41:49.358534"
+    "message": "STEP B COMPLETE",
+    "updated_at": "2026-03-15 02:34:40",
+    "progress": 5,
+    "product": "44053430069",
+    "total": 5
 }

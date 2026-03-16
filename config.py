@@ -14,3 +14,11 @@ PLATFORM_LINKS = {
 
 # ===== GOOGLE ANALYTICS =====
 GA_TRACKING_ID = "G-G8Q9NCDTVL"
+# =========================
+# AUTO DEPLOY CONTROL
+# =========================
+
+AUTO_COMMIT = True
+AUTO_PUSH = True
+
+GIT_COMMIT_MESSAGE = "auto: update bio pages"

@@ -2,37 +2,46 @@ import json
 import os
 from datetime import datetime
 
-STATUS_FILE = "farm_status.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATUS_FILE = os.path.join(BASE_DIR, "farm_status.json")
 
 
-def default_status():
-    return {
-        "state": "IDLE",
-        "step": "-",
-        "message": "",
-        "updated_at": str(datetime.now())
-    }
+def update_status(step=None, progress=None, message=None,
+                  product=None, total=None, index=None):
 
+    status = {}
 
-def update_status(state=None, step=None, message=None):
-    status = get_status()
+    if os.path.exists(STATUS_FILE):
+        with open(STATUS_FILE, "r", encoding="utf-8") as f:
+            status = json.load(f)
 
-    if state:
-        status["state"] = state
-    if step:
+    if step is not None:
         status["step"] = step
-    if message:
+
+    if progress is not None:
+        status["progress"] = progress
+
+    if message is not None:
         status["message"] = message
 
-    status["updated_at"] = str(datetime.now())
+    if product is not None:
+        status["product"] = product
 
-    with open(STATUS_FILE, "w") as f:
-        json.dump(status, f, indent=4)
+    if total is not None:
+        status["total"] = total
+
+    if index is not None:
+        status["index"] = index
+
+    status["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    with open(STATUS_FILE, "w", encoding="utf-8") as f:
+        json.dump(status, f, indent=4, ensure_ascii=False)
 
 
 def get_status():
-    if not os.path.exists(STATUS_FILE):
-        return default_status()
+    if os.path.exists(STATUS_FILE):
+        with open(STATUS_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
 
-    with open(STATUS_FILE, "r") as f:
-        return json.load(f)
+    return {}

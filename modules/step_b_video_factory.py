@@ -18,7 +18,7 @@ if not hasattr(Image, "ANTIALIAS"):
     Image.ANTIALIAS = Image.Resampling.LANCZOS
 
 from modules._bootstrap import BASE_DIR, load_config
-from status_manager import update_status   # ⭐ เพิ่ม
+from status_manager import update_status
 
 CFG = load_config()
 STEP = CFG["step_b"]
@@ -100,7 +100,7 @@ def cinematic_clip(img_path, duration):
         half = duration / 2
         if t < half:
             return z1 + (z2 - z1) * (t / half)
-        return z2 + (z1 - z2) * ((t - half) / half)
+        return z2 + (z1 - z1) * ((t - half) / half)
 
     animated = clip.resize(zoom)
 
@@ -254,12 +254,6 @@ def run():
             progress=index,
             total=total,
             message=f"Generating video {index}/{total}"
-        )
-        update_status(
-            step="STEP B",
-            progress=current_index,
-            total=max_videos,
-            message=f"Generating video {current_index}/{max_videos}"
         )
 
         if STEP["factory"]["skip_if_exists"] and already_exists(product["id"]):

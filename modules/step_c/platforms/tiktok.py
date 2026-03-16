@@ -1,31 +1,36 @@
 import os
-import random
 import time
+import random
 import subprocess
 import base64
 
-# ==============================
+
+# =========================
 # CONFIG
-# ==============================
+# =========================
+
 TEXT_FILE = "texts.txt"
 LOG_FILE = "posted_log.txt"
 
 
-# ==============================
+# =========================
 # BASIC ADB
-# ==============================
+# =========================
+
 def adb(device, *args):
     return subprocess.run(["adb", "-s", device, *args], check=False)
 
 
-def human_delay(a=0.8, b=1.8):
+def wait(a=1, b=2):
     time.sleep(random.uniform(a, b))
 
 
-# ==============================
+# =========================
 # CAPTION SYSTEM
-# ==============================
+# =========================
+
 def load_captions():
+
     if not os.path.exists(TEXT_FILE):
         return ["🔥"]
 
@@ -36,6 +41,7 @@ def load_captions():
 
 
 def load_posted():
+
     if not os.path.exists(LOG_FILE):
         return set()
 
@@ -44,30 +50,35 @@ def load_posted():
 
 
 def save_posted(text):
+
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(text + "\n")
 
 
 def get_random_caption():
+
     captions = load_captions()
     posted = load_posted()
 
     available = [c for c in captions if c not in posted]
 
     if not available:
-        open(LOG_FILE, "w", encoding="utf-8").close()
+        open(LOG_FILE, "w").close()
         available = captions
 
     caption = random.choice(available)
+
     save_posted(caption)
+
     return caption
 
 
-# ==============================
-# THAI INPUT (ADB KEYBOARD)
-# ==============================
-def type_text_thai(device, text):
-    # เข้ารหัส base64 ป้องกัน shell แตกคำสั่ง
+# =========================
+# SEND TEXT (THAI SAFE)
+# =========================
+
+def type_text(device, text):
+
     encoded = base64.b64encode(text.encode("utf-8")).decode()
 
     subprocess.run([
@@ -84,101 +95,156 @@ def type_text_thai(device, text):
         encoded
     ])
 
-    time.sleep(1)
+    wait(1,2)
 
 
-# ==============================
-# MAIN POST FUNCTION
-# ==============================
-def post(device, video_path, caption=None, cfg=None, comment_link=None):
+# =========================
+# PREPARE TIKTOK
+# =========================
+
+def prepare_tiktok(device):
+
+    print("🔄 Preparing TikTok")
+
+    adb(device, "shell", "am", "force-stop", "com.ss.android.ugc.trill")
+    wait(2,3)
+
+    adb(
+        device,
+        "shell",
+        "am",
+        "start",
+        "-n",
+        "com.ss.android.ugc.trill/com.ss.android.ugc.aweme.splash.SplashActivity"
+    )
+
+    wait(5,7)
+
+
+# =========================
+# POST VIDEO
+# =========================
+
+def post_video(device, video_path, caption):
 
     try:
-        print("🎵 TikTok Posting:", video_path)
 
-        # ------------------------
-        # PUSH VIDEO
-        # ------------------------
+        print(f"\n📱 Device: {device}")
+
+        if not os.path.exists(video_path):
+            print("❌ Video not found:", video_path)
+            return False
+
+        adb(device, "shell", "rm", "/sdcard/Download/post.mp4")
+        wait(3,4)
+
+        print("📤 Uploading video to phone")
+
         adb(device, "push", video_path, "/sdcard/Download/post.mp4")
-        time.sleep(4)
 
-        # ------------------------
-        # OPEN TIKTOK
-        # ------------------------
-        adb(
-            device,
-            "shell",
-            "am",
-            "start",
-            "-n",
-            "com.ss.android.ugc.trill/com.ss.android.ugc.aweme.splash.SplashActivity"
-        )
-        time.sleep(6)
+        wait(5,6)
 
-        # ------------------------
-        # TAP +
-        # ------------------------
-        print("STEP 1: Tap +")
+        prepare_tiktok(device)
+
+        print("STEP 1 : Tap +")
+
         adb(device, "shell", "input", "tap", "540", "2200")
-        time.sleep(3)
+        wait(4,5)
 
-        # ------------------------
-        # TAP Upload
-        # ------------------------
-        print("STEP 2: Tap Upload")
+        print("STEP 2 : Upload")
+
         adb(device, "shell", "input", "tap", "900", "1806")
-        time.sleep(3)
+        wait(4,5)
 
-        # ------------------------
-        # Video Tab
-        # ------------------------
         adb(device, "shell", "input", "tap", "340", "317")
-        time.sleep(2)
+        wait(4,5)
 
-        # First Video
         adb(device, "shell", "input", "tap", "304", "440")
-        time.sleep(3)
+        wait(4,5)
 
-        # NEXT 1
         adb(device, "shell", "input", "tap", "821", "2197")
-        time.sleep(5)
+        wait(6,7)
 
-
-
-        # ------------------------
-        # INPUT CAPTION
-        # ------------------------
-        if not caption:
-            caption = get_random_caption()
+        # ----------------------
+        # CAPTION
+        # ----------------------
 
         print("📝 Caption:", caption)
 
         adb(device, "shell", "input", "tap", "540", "600")
-        time.sleep(2)
 
-        type_text_thai(device, caption)
-        human_delay(2, 3)
+        wait(4,5)
 
-        # กด ENTER เพื่อปิด hashtag suggestion
-        adb(device, "shell", "input", "keyevent", "66")
-        time.sleep(2)
+        type_text(device, caption)
 
-        # ปิด keyboard
         adb(device, "shell", "input", "keyevent", "4")
-        time.sleep(2)
 
-        # ------------------------
-        # TAP POST
-        # ------------------------
-        print("STEP 3: Tap Post")
+        wait(4,5)
 
-        time.sleep(3)
+        # ----------------------
+        # POST
+        # ----------------------
+
+        print("🚀 Posting")
 
         adb(device, "shell", "input", "tap", "821", "2197")
-        time.sleep(8)
 
-        print("✅ Video Posted")
+        wait(7,10)
+
+        print("✅ Posted")
+
         return True
 
     except Exception as e:
-        print("❌ TikTok Post Error:", e)
+
+        print("❌ Post Error:", e)
+
         return False
+
+
+# =========================
+# COMMENT SYSTEM
+# =========================
+
+def post_comment(device, text):
+
+    try:
+
+        print("💬 Posting comment")
+
+        wait(5,6)
+
+        adb(device, "shell", "input", "tap", "540", "2050")
+        wait(3,4)
+
+        adb(device, "shell", "input", "tap", "540", "2150")
+        wait(3,4)
+
+        type_text(device, text)
+
+        adb(device, "shell", "input", "tap", "1000", "2150")
+
+        wait(3,4)
+
+        print("✅ Comment posted")
+
+    except:
+
+        print("⚠️ Comment failed")
+
+
+# =========================
+# MAIN ENTRY (Dashboard Use)
+# =========================
+
+def post(device, video, caption=None, cfg=None, comment_link=None):
+
+    if not caption:
+        caption = get_random_caption()
+
+    success = post_video(device, video, caption)
+
+    if success and comment_link:
+        post_comment(device, comment_link)
+
+    return success
