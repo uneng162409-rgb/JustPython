@@ -14,7 +14,7 @@ license:
 # STEP A : PRODUCT PIPELINE
 # ==========================================
 step_a:
-  enabled: true     #เปิด true / ปิด false
+  enabled: true    #เปิด true / ปิด false
 
   feed:
     file: data/product_feed.csv
@@ -50,7 +50,7 @@ step_a:
   images:
     enabled: true     #เปิด true / ปิด false
     per_product: 10
-    max_products: 15
+    max_products: 20
     timeout: 10
 
 
@@ -58,7 +58,7 @@ step_a:
 # STEP B : VIDEO FACTORY V4 (CONFIG DRIVEN)
 # ==========================================
 step_b:
-  enabled: true    #เปิด true / ปิด false
+  enabled: true   #เปิด true / ปิด false
 
   factory:
     max_videos_per_run: 5
@@ -143,7 +143,7 @@ step_b:
 # STEP C : MULTI-PLATFORM POSTER V2
 # ==========================================
 step_c:
-  enabled: false  # เปิด true / ปิด false
+  enabled: true  # เปิด true / ปิด false
 
   # ------------------------------------------
   # DEVICE CONTROL

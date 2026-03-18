@@ -4,7 +4,7 @@
     "message": "Finding Products",
     "step_a": true,
     "step_b": true,
-    "step_c": false,
+    "step_c": true,
     "products": 15,
     "videos": 5,
     "posts": 1,

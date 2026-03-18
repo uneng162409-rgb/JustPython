@@ -4,19 +4,22 @@ import random
 import subprocess
 import base64
 
-
 # =========================
 # CONFIG
 # =========================
-
 TEXT_FILE = "texts.txt"
-LOG_FILE = "posted_log.txt"
+POSTED_VIDEO_LOG = "posted_videos.txt"
+MAX_RETRY = 3
+
+DEVICES = [
+    "192.168.1.103:5555",
+    # เพิ่มเครื่องตรงนี้ได้เลย
+]
 
 
 # =========================
-# BASIC ADB
+# BASIC
 # =========================
-
 def adb(device, *args):
     return subprocess.run(["adb", "-s", device, *args], check=False)
 
@@ -26,225 +29,179 @@ def wait(a=1, b=2):
 
 
 # =========================
-# CAPTION SYSTEM
+# POSTED VIDEO CHECK
 # =========================
+def load_posted_videos():
+    if not os.path.exists(POSTED_VIDEO_LOG):
+        return set()
+    with open(POSTED_VIDEO_LOG, "r", encoding="utf-8") as f:
+        return set(l.strip() for l in f if l.strip())
 
-def load_captions():
 
+def save_posted_video(name):
+    with open(POSTED_VIDEO_LOG, "a", encoding="utf-8") as f:
+        f.write(name + "\n")
+
+
+def already_posted(video_path):
+    posted = load_posted_videos()
+    return os.path.basename(video_path) in posted
+
+
+# =========================
+# CAPTION
+# =========================
+def get_random_caption():
     if not os.path.exists(TEXT_FILE):
-        return ["🔥"]
+        return "🔥"
 
     with open(TEXT_FILE, "r", encoding="utf-8") as f:
         lines = [l.strip() for l in f if l.strip()]
 
-    return lines if lines else ["🔥"]
+    if not lines:
+        return "🔥"
 
-
-def load_posted():
-
-    if not os.path.exists(LOG_FILE):
-        return set()
-
-    with open(LOG_FILE, "r", encoding="utf-8") as f:
-        return set(l.strip() for l in f if l.strip())
-
-
-def save_posted(text):
-
-    with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(text + "\n")
-
-
-def get_random_caption():
-
-    captions = load_captions()
-    posted = load_posted()
-
-    available = [c for c in captions if c not in posted]
-
-    if not available:
-        open(LOG_FILE, "w").close()
-        available = captions
-
-    caption = random.choice(available)
-
-    save_posted(caption)
-
-    return caption
+    return random.choice(lines)
 
 
 # =========================
-# SEND TEXT (THAI SAFE)
+# TYPE TEXT SAFE (THAI)
 # =========================
-
 def type_text(device, text):
-
     encoded = base64.b64encode(text.encode("utf-8")).decode()
 
     subprocess.run([
-        "adb",
-        "-s",
-        device,
-        "shell",
-        "am",
-        "broadcast",
-        "-a",
-        "ADB_INPUT_B64",
-        "--es",
-        "msg",
-        encoded
+        "adb", "-s", device,
+        "shell", "am", "broadcast",
+        "-a", "ADB_INPUT_B64",
+        "--es", "msg", encoded
     ])
 
-    wait(1,2)
+    wait(1, 2)
 
 
 # =========================
 # PREPARE TIKTOK
 # =========================
-
 def prepare_tiktok(device):
-
-    print("🔄 Preparing TikTok")
-
     adb(device, "shell", "am", "force-stop", "com.ss.android.ugc.trill")
-    wait(2,3)
+    wait(2, 3)
 
     adb(
         device,
-        "shell",
-        "am",
-        "start",
+        "shell", "am", "start",
         "-n",
         "com.ss.android.ugc.trill/com.ss.android.ugc.aweme.splash.SplashActivity"
     )
-
-    wait(5,7)
+    wait(5, 7)
 
 
 # =========================
-# POST VIDEO
+# CHECK SUCCESS (basic verify)
 # =========================
+def verify_post_success(device):
+    # เช็คว่ากลับมาหน้า feed หรือยัง
+    result = subprocess.run(
+        ["adb", "-s", device, "shell", "dumpsys", "window"],
+        capture_output=True,
+        text=True
+    )
 
-def post_video(device, video_path, caption):
+    return "SplashActivity" in result.stdout
 
-    try:
 
-        print(f"\n📱 Device: {device}")
+# =========================
+# POST CORE
+# =========================
+def post_video(device, video_path):
 
-        if not os.path.exists(video_path):
-            print("❌ Video not found:", video_path)
-            return False
-
-        adb(device, "shell", "rm", "/sdcard/Download/post.mp4")
-        wait(3,4)
-
-        print("📤 Uploading video to phone")
-
-        adb(device, "push", video_path, "/sdcard/Download/post.mp4")
-
-        wait(5,6)
-
-        prepare_tiktok(device)
-
-        print("STEP 1 : Tap +")
-
-        adb(device, "shell", "input", "tap", "540", "2200")
-        wait(4,5)
-
-        print("STEP 2 : Upload")
-
-        adb(device, "shell", "input", "tap", "900", "1806")
-        wait(4,5)
-
-        adb(device, "shell", "input", "tap", "340", "317")
-        wait(4,5)
-
-        adb(device, "shell", "input", "tap", "304", "440")
-        wait(4,5)
-
-        adb(device, "shell", "input", "tap", "821", "2197")
-        wait(6,7)
-
-        # ----------------------
-        # CAPTION
-        # ----------------------
-
-        print("📝 Caption:", caption)
-
-        adb(device, "shell", "input", "tap", "540", "600")
-
-        wait(4,5)
-
-        type_text(device, caption)
-
-        adb(device, "shell", "input", "keyevent", "4")
-
-        wait(4,5)
-
-        # ----------------------
-        # POST
-        # ----------------------
-
-        print("🚀 Posting")
-
-        adb(device, "shell", "input", "tap", "821", "2197")
-
-        wait(7,10)
-
-        print("✅ Posted")
-
+    if already_posted(video_path):
+        print("⚠️ Already posted:", video_path)
         return True
 
-    except Exception as e:
+    caption = get_random_caption()
 
-        print("❌ Post Error:", e)
+    for attempt in range(1, MAX_RETRY + 1):
 
-        return False
+        print(f"\n📱 Device: {device} | Attempt {attempt}")
+
+        try:
+            adb(device, "shell", "rm", "/sdcard/Download/post.mp4")
+            wait(2, 3)
+
+            adb(device, "push", video_path, "/sdcard/Download/post.mp4")
+            wait(4, 6)
+
+            prepare_tiktok(device)
+
+            # Tap +
+            adb(device, "shell", "input", "tap", "540", "2200")
+            wait(4, 5)
+
+            # Upload
+            adb(device, "shell", "input", "tap", "900", "1806")
+            wait(4, 5)
+
+            adb(device, "shell", "input", "tap", "340", "317")
+            wait(4, 5)
+
+            adb(device, "shell", "input", "tap", "304", "440")
+            wait(4, 5)
+
+            adb(device, "shell", "input", "tap", "821", "2197")
+            wait(6, 7)
+
+            # -------------------
+            # CAPTION FIX
+            # -------------------
+            adb(device, "shell", "input", "tap", "540", "600")
+            wait(3, 4)
+
+            type_text(device, caption)
+
+            # ปิดคีย์บอร์ด
+            adb(device, "shell", "input", "keyevent", "4")
+            wait(2, 3)
+
+            # แตะพื้นที่ว่าง 1 ครั้งกันบัค
+            adb(device, "shell", "input", "tap", "100", "100")
+            wait(2, 3)
+
+            # -------------------
+            # POST BUTTON
+            # -------------------
+            adb(device, "shell", "input", "tap", "821", "2197")
+            wait(8, 12)
+
+            if verify_post_success(device):
+                print("✅ POST SUCCESS")
+                save_posted_video(os.path.basename(video_path))
+                return True
+
+            print("⚠️ Verify failed → retrying")
+
+        except Exception as e:
+            print("❌ Error:", e)
+
+        wait(5, 8)
+
+    print("❌ FAILED AFTER RETRY")
+    return False
 
 
 # =========================
-# COMMENT SYSTEM
+# FARM LOOP
 # =========================
+def farm(video_path):
 
-def post_comment(device, text):
-
-    try:
-
-        print("💬 Posting comment")
-
-        wait(5,6)
-
-        adb(device, "shell", "input", "tap", "540", "2050")
-        wait(3,4)
-
-        adb(device, "shell", "input", "tap", "540", "2150")
-        wait(3,4)
-
-        type_text(device, text)
-
-        adb(device, "shell", "input", "tap", "1000", "2150")
-
-        wait(3,4)
-
-        print("✅ Comment posted")
-
-    except:
-
-        print("⚠️ Comment failed")
+    for device in DEVICES:
+        post_video(device, video_path)
+        wait(5, 10)
 
 
 # =========================
-# MAIN ENTRY (Dashboard Use)
+# RUN
 # =========================
-
-def post(device, video, caption=None, cfg=None, comment_link=None):
-
-    if not caption:
-        caption = get_random_caption()
-
-    success = post_video(device, video, caption)
-
-    if success and comment_link:
-        post_comment(device, comment_link)
-
-    return success
+if __name__ == "__main__":
+    VIDEO = "video.mp4"
+    farm(VIDEO)

@@ -162,7 +162,7 @@ def generate_caption(cfg, product_meta, affiliate_link):
     sold = product_meta.get("sold", 0)
     rating = product_meta.get("rating", 0)
 
-    # 🔥 Dynamic Hook ตามข้อมูลจริง
+    # 🔥 Dynamic Hook
     if sold > 1000:
         opener = f"🔥 ขายแล้ว {sold:,} ชิ้น! {title}"
     elif rating >= 4.8:
@@ -173,15 +173,13 @@ def generate_caption(cfg, product_meta, affiliate_link):
         opener = f"🎯 โปรแรง! {title}"
 
     cta_lines = [
-        "👉 รีบกดก่อนหมด!",
-        "👉 เช็คราคาล่าสุดที่ลิงก์",
         "👉 โปรจำกัดเวลา",
-        "👉 กดดูรายละเอียดเลย"
+        "👉 รีบกดก่อนหมด!",
+        "👉 เช็คราคาล่าสุดหน้าโปรไฟล์",
+        "👉 กดดูรายละเอียดที่ลิงก์หน้าโปรไฟล์"
     ]
 
     cta = random.choice(cta_lines)
-
-    include_link_in_caption = random.choice([True, False])
 
     hashtags = ""
     if caption_cfg.get("add_hashtags"):
@@ -190,14 +188,16 @@ def generate_caption(cfg, product_meta, affiliate_link):
             tags = random.sample(tags, min(len(tags), caption_cfg.get("hashtag_limit", 5)))
             hashtags = "\n\n" + " ".join(tags)
 
-    body = f"{opener}\n\n💰 ราคา: {price}\n⭐ คะแนน: {rating}\n📦 ขายแล้ว: {sold:,} ชิ้น\n\n{cta}"
-    # 🔥 Clean affiliate link (decode)
-    clean_link = urllib.parse.unquote(affiliate_link)
+    body = (
+        f"{opener}\n\n"
+        f"💰 ราคา: {price}\n"
+        f"⭐ คะแนน: {rating}\n"
+        f"📦 ขายแล้ว: {sold:,} ชิ้น\n\n"
+        f"{cta}\n\n"
+        f"🛒 สั่งซื้อกดลิงก์หน้าโปรไฟล์ 👆"
+    )
 
-    if include_link_in_caption:
-        return f"{body}\n{clean_link}{hashtags}", None
-    else:
-        return f"{body}{hashtags}", clean_link
+    return body + hashtags, None
 
 
 # ==========================================
