@@ -1,40 +1,52 @@
-import urllib.parse
 import os
 import yaml
-import hashlib
 import random
 import time
 import json
-from datetime import datetime
-from pathlib import Path
+import subprocess
+import hashlib
+from datetime import datetime, timedelta
 
 from modules.step_c.platforms import tiktok, shopee, reels
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+STATE_FILE = os.path.join(BASE_DIR, "farm_state.json")
 
-# ==========================================
-# LOAD CONFIG
-# ==========================================
+
+# =========================
+# STATE SYSTEM
+# =========================
+
+def load_state():
+    try:
+        with open(STATE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except:
+        return {}
+
+def save_state(state):
+    state["last_update"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=4)
+
+def update_state(**kwargs):
+    state = load_state()
+    state.update(kwargs)
+    save_state(state)
+
+
+# =========================
+# CONFIG
+# =========================
 
 def load_config():
     with open("config.yaml", "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
-# ==========================================
-# UTILS
-# ==========================================
-
-def ensure_dir(path):
-    os.makedirs(path, exist_ok=True)
-
-
-def file_hash(path):
-    h = hashlib.md5()
-    with open(path, "rb") as f:
-        while chunk := f.read(8192):
-            h.update(chunk)
-    return h.hexdigest()
-
+# =========================
+# VIDEO UTIL
+# =========================
 
 def get_all_videos(output_path):
     videos = []
@@ -44,248 +56,215 @@ def get_all_videos(output_path):
                 videos.append(os.path.join(root, f))
     return videos
 
-
-def extract_product_id(video_path):
-    path = Path(video_path)
-
-    # กรณีโครงสร้างแบบ output/<product_id>/video.mp4
-    parts = path.parts
-    if "output" in parts:
-        idx = parts.index("output")
-        if len(parts) > idx + 1:
-            candidate = parts[idx + 1]
-            if candidate.isdigit():
-                return candidate
-
-    # กรณีไฟล์อยู่ตรง ๆ เช่น output/14100938177.mp4
-    filename = path.stem
-    if filename.isdigit():
-        return filename
-
-    return None
+def file_hash(path):
+    h = hashlib.md5()
+    with open(path, "rb") as f:
+        while chunk := f.read(8192):
+            h.update(chunk)
+    return h.hexdigest()
 
 
-# ==========================================
-# AFFILIATE LINK RESOLVER (SAFE + MULTI SOURCE)
-# ==========================================
+# =========================
+# ADB UTILS
+# =========================
 
-def read_affiliate_link(products_path, product_id):
+def adb_push(device, local_path):
+    remote_path = "/sdcard/Download/" + os.path.basename(local_path)
 
-    product_dir = Path(products_path) / product_id
+    cmd = ["adb", "-s", device, "push", local_path, remote_path]
+    result = subprocess.run(cmd, capture_output=True)
 
-    # 1️⃣ meta.json (priority สูงสุด)
-    meta_path = product_dir / "meta.json"
-    if meta_path.exists():
-        try:
-            with open(meta_path, "r", encoding="utf-8") as f:
-                meta = json.load(f)
+    return result.returncode == 0, remote_path
 
-            # รองรับหลายรูปแบบ
-            if isinstance(meta, dict):
-                if "affiliate_link" in meta:
-                    return meta["affiliate_link"]
-
-                if product_id in meta and isinstance(meta[product_id], dict):
-                    if "affiliate_link" in meta[product_id]:
-                        return meta[product_id]["affiliate_link"]
-        except:
-            pass
-
-    # 2️⃣ affiliate_link.txt
-    txt_path = product_dir / "affiliate_link.txt"
-    if txt_path.exists():
-        link = txt_path.read_text(encoding="utf-8").strip()
-        if link.startswith("http"):
-            return link
-
-    # 3️⃣ global fallback
-    global_path = Path(products_path) / "affiliate_links.json"
-    if global_path.exists():
-        try:
-            with open(global_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                if product_id in data:
-                    return data[product_id]
-        except:
-            pass
-
-    return None
+def adb_delete(device, remote_path):
+    cmd = ["adb", "-s", device, "shell", "rm", remote_path]
+    subprocess.run(cmd)
 
 
-def read_product_meta(products_path, product_id):
-    meta_path = Path(products_path) / product_id / "meta.json"
-    if meta_path.exists():
-        with open(meta_path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {}
+# =========================
+# TIME WINDOW
+# =========================
+
+def get_next_window(step):
+    now = datetime.now()
+    future_windows = []
+
+    for window in step.get("time_windows", []):
+        start_time = datetime.strptime(window["start"], "%H:%M").time()
+        start_datetime = datetime.combine(now.date(), start_time)
+
+        if start_datetime > now:
+            future_windows.append(start_datetime)
+
+    if not future_windows:
+        first = step["time_windows"][0]
+        start_time = datetime.strptime(first["start"], "%H:%M").time()
+        return datetime.combine(now.date() + timedelta(days=1), start_time)
+
+    return min(future_windows)
 
 
-def already_posted(history_file, vhash):
-    if not os.path.exists(history_file):
-        return False
-    with open(history_file, "r", encoding="utf-8") as f:
-        return vhash in f.read()
-
-
-def save_history(history_file, vhash):
-    ensure_dir(os.path.dirname(history_file))
-    with open(history_file, "a", encoding="utf-8") as f:
-        f.write(vhash + "\n")
-
-
-# ==========================================
-# SAFE DELAY ENGINE (ANTI-BAN READY)
-# ==========================================
-
-def smart_delay(step_cfg):
-    if step_cfg.get("random_delay", False):
-        min_d = step_cfg.get("min_delay", 40)
-        max_d = step_cfg.get("max_delay", 120)
-        delay = random.randint(min_d, max_d)
-    else:
-        delay = step_cfg.get("delay_between_platforms", 10)
-
-    print(f"⏳ Delay {delay} sec")
-    time.sleep(delay)
-
-
-# ==========================================
-# CAPTION ENGINE (SMART VARIATION)
-# ==========================================
-
-def generate_caption(cfg, product_meta, affiliate_link):
-
-    caption_cfg = cfg["step_c"]["caption"]
-
-    title = product_meta.get("title", "สินค้าขายดี")
-    price = product_meta.get("price", 0)
-    sold = product_meta.get("sold", 0)
-    rating = product_meta.get("rating", 0)
-
-    # 🔥 Dynamic Hook
-    if sold > 1000:
-        opener = f"🔥 ขายแล้ว {sold:,} ชิ้น! {title}"
-    elif rating >= 4.8:
-        opener = f"⭐ รีวิว {rating} ดาว! {title}"
-    elif price and price < 100:
-        opener = f"💸 ถูกมาก! {title} แค่ {price} บาท"
-    else:
-        opener = f"🎯 โปรแรง! {title}"
-
-    cta_lines = [
-        "👉 โปรจำกัดเวลา",
-        "👉 รีบกดก่อนหมด!",
-        "👉 เช็คราคาล่าสุดหน้าโปรไฟล์",
-        "👉 กดดูรายละเอียดที่ลิงก์หน้าโปรไฟล์"
-    ]
-
-    cta = random.choice(cta_lines)
-
-    hashtags = ""
-    if caption_cfg.get("add_hashtags"):
-        tags = caption_cfg.get("default_hashtags", [])
-        if tags:
-            tags = random.sample(tags, min(len(tags), caption_cfg.get("hashtag_limit", 5)))
-            hashtags = "\n\n" + " ".join(tags)
-
-    body = (
-        f"{opener}\n\n"
-        f"💰 ราคา: {price}\n"
-        f"⭐ คะแนน: {rating}\n"
-        f"📦 ขายแล้ว: {sold:,} ชิ้น\n\n"
-        f"{cta}\n\n"
-        f"🛒 สั่งซื้อกดลิงก์หน้าโปรไฟล์ 👆"
-    )
-
-    return body + hashtags, None
-
-
-# ==========================================
-# MAIN ENGINE
-# ==========================================
+# =========================
+# MAIN LOOP v2.5
+# =========================
 
 def run_step_c():
 
-    cfg = load_config()
-    step = cfg["step_c"]
+    CHECK_INTERVAL = 5  # เช็คทุก 5 วินาที
+    TOLERANCE_MINUTES = 10  # เลทได้ 10 นาที
 
-    license_cfg = cfg.get("license", {})
+    while True:
 
-    if not step.get("enabled", False):
-        print("❌ STEP C Disabled")
-        return
+        cfg = load_config()
+        step = cfg["step_c"]
+        daily = step["daily_control"]
 
-    print("💰 STEP C MONETIZATION ENGINE V2")
+        if not step.get("enabled", False):
+            update_state(state="STOPPED", message="STEP C Disabled")
+            time.sleep(5)
+            continue
 
-    output_path = cfg["paths"]["output"]
-    products_path = cfg["paths"]["products"]
+        state = load_state()
+        today_str = datetime.now().strftime("%Y-%m-%d")
 
-    videos = get_all_videos(output_path)
+        # =============================
+        # RESET DAILY PLAN
+        # =============================
+        if state.get("current_date") != today_str:
 
-    if not videos:
-        print("❌ No videos found")
-        return
+            min_post = daily.get("min_post_per_day", 3)
+            max_post = daily.get("max_post_per_day", 7)
+            random_today_plan = random.randint(min_post, max_post)
 
-    for device in step["devices"]:
-        print(f"\n📱 Device: {device}")
+            state.update({
+                "current_date": today_str,
+                "today_plan": random_today_plan,
+                "today_posts": 0,
+                "success": 0,
+                "failed": 0
+            })
+            save_state(state)
 
-        for platform_name, platform_cfg in step["platforms"].items():
-            # 🔐 LICENSE PLATFORM CHECK
-            if license_cfg.get("enabled", False):
-                allowed = license_cfg.get("allowed_platforms", [])
+        # =============================
+        # QUOTA CHECK
+        # =============================
+        if state.get("today_posts", 0) >= state.get("today_plan", 0):
+            update_state(state="DONE", message="Daily quota reached")
+            time.sleep(10)
+            continue
 
-                if allowed and platform_name not in allowed:
-                    print(f"🔒 License block: {platform_name}")
+        # =============================
+        # CHECK TIME WINDOW
+        # =============================
+        now = datetime.now()
+        should_post = False
+        next_window_time = None
+
+        for window in step.get("time_windows", []):
+            start_time = datetime.strptime(window["start"], "%H:%M").time()
+            start_dt = datetime.combine(now.date(), start_time)
+            tolerance = timedelta(minutes=TOLERANCE_MINUTES)
+
+            if start_dt <= now <= start_dt + tolerance:
+                should_post = True
+                break
+
+            if now < start_dt:
+                next_window_time = start_dt
+                break
+
+        if not should_post:
+            if not next_window_time:
+                # หมด window วันนี้ → ไปพรุ่งนี้
+                first = step["time_windows"][0]
+                start_time = datetime.strptime(first["start"], "%H:%M").time()
+                next_window_time = datetime.combine(
+                    now.date() + timedelta(days=1),
+                    start_time
+                )
+
+            update_state(
+                state="WAITING",
+                message=f"Waiting until {next_window_time.strftime('%H:%M:%S')}",
+                next_post_time=next_window_time.strftime("%H:%M:%S"),
+                next_post_timestamp=next_window_time.timestamp()
+            )
+
+            time.sleep(CHECK_INTERVAL)
+            continue
+
+        # =============================
+        # POSTING BLOCK (FIXED)
+        # =============================
+        update_state(state="POSTING", message="Posting now...")
+
+        output_path = cfg["paths"]["output"]
+        videos = get_all_videos(output_path)
+
+        if not videos:
+            update_state(message="No videos found")
+            time.sleep(10)
+            continue
+
+        for device in step["devices"]:
+            for platform_name, platform_cfg in step["platforms"].items():
+
+                if not platform_cfg.get("enabled", False):
                     continue
 
-            if not platform_cfg.get("enabled", False):
-                continue
+                video = random.choice(videos)
+                caption = "🔥 โปรแรงวันนี้!"
 
-            video = random.choice(videos)
-            vhash = file_hash(video)
+                print(f"DEBUG: Posting {platform_name} → {video}")
 
-            history_file = f'post_history/{platform_name}.txt'
+                success = False
 
-            if step.get("skip_if_posted", True):
-                if already_posted(history_file, vhash):
-                    print(f"⏩ SKIP {platform_name} (duplicate)")
-                    continue
+                try:
+                    if platform_name == "tiktok":
+                        success = tiktok.post(device, video, caption, cfg, "")
+                    elif platform_name == "shopee":
+                        success = shopee.post(device, video, caption, cfg, "")
+                    elif platform_name == "reels":
+                        success = reels.post(device, video, caption, cfg, "")
+                except Exception as e:
+                    print("POST ERROR:", e)
+                    success = False
 
-            product_id = extract_product_id(video)
+                state = load_state()
 
-            if not product_id:
-                print("⚠️ Cannot detect product_id")
-                continue
+                if success:
+                    state["success"] = state.get("success", 0) + 1
+                    state["today_posts"] = state.get("today_posts", 0) + 1
+                else:
+                    state["failed"] = state.get("failed", 0) + 1
 
-            affiliate_link = read_affiliate_link(products_path, product_id)
+                save_state(state)
 
-            if not affiliate_link:
-                print(f"⚠️ No affiliate link for {product_id} → SKIP")
-                continue
+        # =============================
+        # CALCULATE NEXT ROUND
+        # =============================
+        min_wait = daily.get("min_wait", 3600)
+        max_wait = daily.get("max_wait", 7200)
 
-            product_meta = read_product_meta(products_path, product_id)
+        delay = random.randint(min_wait, max_wait)
+        next_time = datetime.now() + timedelta(seconds=delay)
 
-            caption, comment_link = generate_caption(cfg, product_meta, affiliate_link)
+        update_state(
+            state="WAITING",
+            message="Waiting next round",
+            next_post_time=next_time.strftime("%H:%M:%S"),
+            next_post_timestamp=next_time.timestamp()
+        )
 
-            print(f"📝 Caption Ready for {product_id}")
+        # แทน sleep ยาว → loop check
+        end_wait = datetime.now() + timedelta(seconds=delay)
 
-            if platform_name == "tiktok":
-                success = tiktok.post(device, video, caption, cfg, comment_link)
-            elif platform_name == "shopee":
-                success = shopee.post(device, video, caption, cfg, comment_link)
-            elif platform_name == "reels":
-                success = reels.post(device, video, caption, cfg, comment_link)
-            else:
-                continue
+        while datetime.now() < end_wait:
 
-            if success:
-                save_history(history_file, vhash)
-                print(f"✅ Posted to {platform_name}")
-            else:
-                print(f"❌ Failed posting {platform_name}")
+            # ถ้ากด STOP → ออกทันที
+            cfg = load_config()
+            if not cfg["step_c"].get("enabled", False):
+                update_state(state="STOPPED", message="Stopped manually")
+                break
 
-            smart_delay(step)
-
-
-
-    print("🎉 STEP C MONETIZATION COMPLETE")
+            time.sleep(CHECK_INTERVAL)

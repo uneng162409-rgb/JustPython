@@ -2,27 +2,347 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Bio Farm</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Bio Shop</title>
+
+<style>
+
+/* ================= ROOT VARIABLES ================= */
+:root{
+    --bg-main: linear-gradient(135deg,#14001f,#240033);
+    --card-bg: #1b0026;
+    --highlight: #8a2be2;
+    --text-main: #d9ff66;
+}
+
+/* ================= BODY ================= */
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+    text-align:center;
+    transition:0.3s;
+}
+
+/* ================= HERO ================= */
+.hero{
+    padding:30px 20px;
+}
+
+/* ================= PRODUCT CARD ================= */
+.product-card{
+    display:block;
+    background: var(--card-bg);
+    border-radius:18px;
+    padding:20px;
+    margin:18px auto;
+    max-width:520px;
+    text-decoration:none;
+    color: var(--text-main);
+    transition:0.3s;
+    border:1px solid var(--highlight);
+    box-shadow:0 8px 25px rgba(0,0,0,0.6);
+    position:relative;
+    overflow:hidden;
+}
+
+/* Glow Effect */
+.product-card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:20px;
+    background:linear-gradient(90deg,#ff00cc,#00ffcc,#ffcc00,#ff00cc);
+    background-size:300%;
+    animation:glowMove 6s linear infinite;
+    z-index:-1;
+    filter:blur(8px);
+}
+
+@keyframes glowMove{
+    0%{background-position:0%}
+    100%{background-position:300%}
+}
+
+.product-card:hover{
+    transform:translateY(-6px) scale(1.02);
+}
+
+.product-card span{
+    display:block;
+    font-size:13px;
+    margin-top:6px;
+    opacity:0.8;
+}
+
+.live-counter{
+    font-size:12px;
+    margin-top:5px;
+    color:#00ff88;
+}
+
+/* ================= CTA ================= */
+.cta{
+    padding:20px;
+    font-size:18px;
+    font-weight:bold;
+    position:sticky;
+    bottom:0;
+    color:var(--highlight);
+    background:none;
+    text-shadow:0 0 10px var(--highlight);
+                0 0 20px var(--highlight),
+                0 0 40px var(--highlight);
+    animation:glowText 2s infinite alternate;
+}
+
+@keyframes glowText{
+    from{opacity:0.7}
+    to{opacity:1}
+}
+
+/* ================= LOADER ================= */
+#loader{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+    0%{opacity:0.4}
+    50%{opacity:1}
+    100%{opacity:0.4}
+}
+
+/* ================= PARTICLE ================= */
+#particles{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+}
+
+button{
+    margin:5px;
+    padding:6px 12px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+}
+.premium-glow{
+    font-size:28px;
+    font-weight:800;
+    color:var(--text-main);
+    text-align:center;
+    padding:15px 25px;
+    border-radius:16px;
+    position:relative;
+    display:inline-block;
+    margin-bottom:10px;
+    background:var(--card-bg);
+    border:2px solid var(--highlight);
+    background:linear-gradient(90deg,#ff00cc,#00ffcc,#ffcc00,#ff00cc);
+    background-size:300%;
+    animation:glowMove 6s linear infinite;
+    z-index:-1;
+
+    box-shadow:
+        0 0 10px var(--highlight),
+        0 0 20px var(--highlight),
+        0 0 40px var(--highlight),
+        inset 0 0 10px var(--highlight);
+    animation:premiumPulse 2.5s infinite alternate;
+}
+
+@keyframes premiumPulse{
+    from{
+        box-shadow:
+            0 0 5px var(--highlight),
+            0 0 10px var(--highlight),
+            0 0 20px var(--highlight),
+            inset 0 0 5px var(--highlight);
+    }
+    to{
+        box-shadow:
+            0 0 15px var(--highlight),
+            0 0 30px var(--highlight),
+            0 0 60px var(--highlight),
+            inset 0 0 15px var(--highlight);
+    }
+}
+</style>
 </head>
 
-<body style="text-align:center; font-family:sans-serif;">
-<h1>🔥 สินค้าแนะนำ</h1>
+<body>
+
+<div id="loader">🔥 กำลังโหลดสินค้า...</div>
+<canvas id="particles"></canvas>
+
+<div class="hero">
+    <div>
+        <button onclick="setTheme('purple')">💜 Purple</button>
+        <button onclick="setTheme('red')">❤️ Red</button>
+        <button onclick="setTheme('dark')">🖤 Dark</button>
+        <button onclick="setTheme('green')">💚 Green</button>
+        <button onclick="setTheme('pink')">💗 Pink</button>
+        <button onclick="setTheme('yellow')">💛 Yellow</button>
+        <button onclick="setTheme('white')">⚪ White</button>
+
+    </div>
+    <h1 class="premium-glow">🔥 สินค้าแนะนำวันนี้</h1>
+<p class="premium-sub">คัดเฉพาะของขายดี อัปเดตทุกวัน</p>
+</div>
+
 <div id="product-list"></div>
 
+<div class="cta">🔥 เลือกดูสินค้าขายดีทั้งหมด</div>
+
 <script>
+
+/* ================= THEME SYSTEM ================= */
+function setTheme(theme){
+
+    if(theme === 'purple'){
+        document.documentElement.style.setProperty('--bg-main','linear-gradient(135deg,#14001f,#240033)');
+        document.documentElement.style.setProperty('--card-bg','#1b0026');
+        document.documentElement.style.setProperty('--highlight','#8a2be2');
+        document.documentElement.style.setProperty('--text-main','#d9ff66');
+    }
+
+    if(theme === 'red'){
+        document.documentElement.style.setProperty('--bg-main','linear-gradient(135deg,#1a0000,#330000)');
+        document.documentElement.style.setProperty('--card-bg','#1a0a0a');
+        document.documentElement.style.setProperty('--highlight','#ff4d4d');
+        document.documentElement.style.setProperty('--text-main','#ffff99');
+    }
+
+    if(theme === 'dark'){
+        document.documentElement.style.setProperty('--bg-main','linear-gradient(135deg,#111,#1e1e1e)');
+        document.documentElement.style.setProperty('--card-bg','#1a1a1a');
+        document.documentElement.style.setProperty('--highlight','#ff8800');
+        document.documentElement.style.setProperty('--text-main','#ffffff');
+    }
+
+    if(theme === 'green'){
+        document.documentElement.style.setProperty('--bg-main','linear-gradient(135deg,#001a00,#003300)');
+        document.documentElement.style.setProperty('--card-bg','#003300');
+        document.documentElement.style.setProperty('--highlight','#00ff88');
+        document.documentElement.style.setProperty('--text-main','#d9ff66');
+    }
+    if(theme === 'pink'){
+        document.documentElement.style.setProperty('--bg-main','linear-gradient(135deg,#2b0018,#4d0033)');
+        document.documentElement.style.setProperty('--card-bg','#33001f');
+        document.documentElement.style.setProperty('--highlight','#ff4da6');
+        document.documentElement.style.setProperty('--text-main','#ffff99');
+    }
+
+    if(theme === 'white'){
+        document.documentElement.style.setProperty('--bg-main','linear-gradient(135deg,#ffffff,#eeeeee)');
+        document.documentElement.style.setProperty('--card-bg','#ffffff');
+        document.documentElement.style.setProperty('--highlight','#ff8800');
+        document.documentElement.style.setProperty('--text-main','#111111');
+    }
+
+    if(theme === 'yellow'){
+        document.documentElement.style.setProperty('--bg-main','linear-gradient(135deg,#2b2400,#4d3d00)');
+        document.documentElement.style.setProperty('--card-bg','#332900');
+        document.documentElement.style.setProperty('--highlight','#ffd700');
+        document.documentElement.style.setProperty('--text-main','#fffacd');
+    }
+
+    localStorage.setItem("selectedTheme", theme);
+}
+
+/* Load Saved Theme */
+window.addEventListener("load", function(){
+
+    let savedTheme = localStorage.getItem("selectedTheme");
+
+    const themes = ["purple","red","dark","green","pink","white","yellow"];
+
+    if(!savedTheme){
+        savedTheme = themes[Math.floor(Math.random()*themes.length)];
+        localStorage.setItem("selectedTheme", savedTheme);
+    }
+
+    setTheme(savedTheme);
+});
+
+/* ================= CLICK COUNTER ================= */
+function increaseClick(id){
+    let clicks = JSON.parse(localStorage.getItem("clicks")) || {};
+    clicks[id] = (clicks[id] || 0) + 1;
+    localStorage.setItem("clicks", JSON.stringify(clicks));
+}
+
+/* ================= LOAD PRODUCTS ================= */
 fetch("products.json")
-.then(response => response.json())
-.then(data => {
-    const container = document.getElementById("product-list");
-    data.forEach(product => {
-        const link = document.createElement("a");
-        link.href = "bio_pages/" + product.id + ".html";
-        link.innerText = product.name;
-        link.style.display = "block";
-        link.style.margin = "10px";
+.then(res=>res.json())
+.then(data=>{
+
+    let clicks = JSON.parse(localStorage.getItem("clicks")) || {};
+
+    data.sort((a,b)=>(clicks[b.id]||0)-(clicks[a.id]||0));
+
+    const container=document.getElementById("product-list");
+
+    data.forEach(product=>{
+        const link=document.createElement("a");
+        link.href="bio_pages/"+product.id+".html";
+        link.className="product-card";
+        link.onclick=()=>increaseClick(product.id);
+
+        const randomView = Math.floor(Math.random()*50)+10;
+
+        link.innerHTML=`
+            🔥 ${product.name}
+            <span>กดดูรายละเอียดและโปรโมชั่น</span>
+            <div class="live-counter">👀 กำลังดูอยู่ ${randomView} คน</div>
+        `;
+
         container.appendChild(link);
     });
+
+    document.getElementById("loader").style.display="none";
 });
+
+/* ================= PARTICLE BACKGROUND ================= */
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+for(let i=0;i<60;i++){
+    particles.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        size:Math.random()*3,
+        speed:Math.random()*1+0.5
+    });
+}
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle = getComputedStyle(document.documentElement)
+.getPropertyValue('--highlight');
+    particles.forEach(p=>{
+        p.y-=p.speed;
+        if(p.y<0) p.y=canvas.height;
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+        ctx.fill();
+    });
+    requestAnimationFrame(animate);
+}
+animate();
+
 </script>
 
 </body>

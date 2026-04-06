@@ -1,87 +1,100 @@
 # ==========================================
-# GLOBAL LICENSE SYSTEM (ขาย / ให้เช่าได้)
+# GLOBAL LICENSE SYSTEM (ระบบลิขสิทธิ์ ขาย / ให้เช่าได้)
 # ==========================================
 license:
-  enabled: true
-  key: "USER-001"
-  plan: basic
-  max_devices: 1
-  expire_date: null  # ใส่ "2026-12-31" ถ้าต้องการจำกัดวันหมดอายุ
-  allowed_platforms:
+  enabled: true        # เปิดระบบลิขสิทธิ์ true=เปิด / false=ปิด
+  key: "USER-001"      # รหัสลูกค้า
+  plan: basic          # ประเภทแพ็กเกจ (basic / pro / vip)
+  max_devices: 1       # ใช้งานได้กี่เครื่องพร้อมกัน
+  expire_date: null    # ใส่วันหมดอายุ เช่น "2026-12-31" ถ้าไม่จำกัดให้ใช้ null
+  allowed_platforms:   # อนุญาตให้โพสต์แพลตฟอร์มไหนบ้าง
     - tiktok
 
+
+
+limits:
+  basic:
+    max_posts: 3
+  pro:
+    max_posts: 6
+  vip:
+    max_posts: 12
+
+windows:
+  - ["09:00", "12:00"]
+  - ["13:00", "17:00"]
+  - ["18:00", "22:00"]
 # ==========================================
-# STEP A : PRODUCT PIPELINE
+# STEP A : ระบบคัดเลือกสินค้า
 # ==========================================
 step_a:
-  enabled: true    #เปิด true / ปิด false
+  enabled: true   # เปิด/ปิด STEP A   true / false
 
   feed:
-    file: data/product_feed.csv
+    file: data/product_feed.csv   # ไฟล์ข้อมูลสินค้าที่ใช้วิเคราะห์
 
   score:
-    enabled: true     #เปิด true / ปิด false
+    enabled: false   # เปิดระบบคำนวณคะแนนสินค้า
 
-    weights:
+    weights:        # น้ำหนักคะแนน (ยิ่งมากยิ่งสำคัญ)
       price: 1.0
       discount: 1.2
       sold: 1.5
       rating: 1.0
 
-    normalize:
+    normalize:      # ค่าสูงสุดใช้ปรับสเกลคะแนน
       price_max: 250
       sold_max: 500
       discount_max: 50
 
-    min_score: 0.1
-
+    min_score: 0.0  # คะแนนขั้นต่ำที่ถือว่า "ผ่าน"
     auto_relax:
-      enabled: true      #เปิด true / ปิด false
-      relax_factor: 0.5
+      enabled: true     # ถ้าไม่มีสินค้าผ่าน จะลดเกณฑ์ลงอัตโนมัติ
+      relax_factor: 0.5 # ลดเกณฑ์ลงกี่ %
 
   affiliate:
-    enabled: true          #เปิด true / ปิด false
-    universal_link: https://shopee.co.th/universal-link
+    enabled: true
+    universal_link: https://shopee.co.th/universal-link  # ลิงก์กลาง affiliate
 
   winners:
-    enabled: true     #เปิด true / ปิด false
-    max_seed: 150
+    enabled: false
+    max_seed: 150     # เก็บสินค้าตัวท็อปไว้กี่ตัว
 
   images:
-    enabled: true     #เปิด true / ปิด false
-    per_product: 10
-    max_products: 20
-    timeout: 10
+    enabled: true
+    per_product: 10     # โหลดภาพสินค้าสูงสุดกี่ภาพต่อสินค้า
+    max_products: 20    # โหลดภาพสูงสุดกี่สินค้า
+    timeout: 10         # เวลารอโหลดภาพ (วินาที)
 
 
 # ==========================================
-# STEP B : VIDEO FACTORY V4 (CONFIG DRIVEN)
+# STEP B : ระบบสร้างวิดีโอ
 # ==========================================
 step_b:
-  enabled: true   #เปิด true / ปิด false
+  enabled: true   # เปิด/ปิดการสร้างวิดีโอ  true / false
 
   factory:
-    max_videos_per_run: 5
-    shuffle_products: true      #เปิด true / ปิด false
-    shuffle_images: true        #เปิด true / ปิด false
-    skip_if_exists: true   # 🔥 ข้ามถ้าสร้างแล้ว
+    max_videos_per_run: 15     # สร้างวิดีโอสูงสุดต่อรอบ
+    shuffle_products: true    # สุ่มลำดับสินค้า
+    shuffle_images: true      # สุ่มลำดับภาพ
+    skip_if_exists: true      # ถ้ามีวิดีโอแล้วจะไม่สร้างซ้ำ
 
   images:
     min_images: 3
     max_images: 6
-    clone_if_not_enough: true     #เปิด true / ปิด false
+    clone_if_not_enough: true   # ถ้าภาพไม่พอจะคัดลอกซ้ำให้ครบ
 
   video:
     width: 1080
     height: 1920
     fps: 24
-    min_duration: 10
-    max_duration: 20
+    min_duration: 10   # ความยาววิดีโอขั้นต่ำ (วินาที)
+    max_duration: 20   # ความยาววิดีโอสูงสุด (วินาที)
 
   cinematic:
     enabled: true
-    zoom_min: 1.05
-    zoom_max: 1.25
+    zoom_min: 1.1
+    zoom_max: 1.3
     pan_x_min: 10
     pan_x_max: 40
     pan_y_min: 5
@@ -111,12 +124,12 @@ step_b:
   music:
     enabled: true
     volume: 0.6
-    avoid_repeat: true
+    avoid_repeat: true   # หลีกเลี่ยงใช้เพลงซ้ำ
 
   qc:
     anti_black:
       enabled: true
-      min_brightness: 20
+      min_brightness: 20   # ป้องกันวิดีโอมืดเกินไป
 
   text:
     hook:
@@ -138,77 +151,66 @@ step_b:
         - "💥 โปรวันนี้เท่านั้น"
 
 
-
 # ==========================================
-# STEP C : MULTI-PLATFORM POSTER V2
+# STEP C : ระบบโพสต์อัตโนมัติ
 # ==========================================
 step_c:
-  enabled: true  # เปิด true / ปิด false
+  enabled: true
 
-  # ------------------------------------------
-  # DEVICE CONTROL
-  # ------------------------------------------
+  # โหมดฟาร์ม
+  farm_mode: "loop_forever"     # daily_stop / loop_forever
+  mode: "auto_daily"            # stop_when_done / auto_daily
+
+  # อุปกรณ์
+  device_mode: sequential
   devices:
     - "192.168.1.103:5555"
 
-  device_mode: parallel      # single | parallel
-  max_parallel_devices: 3
+  max_parallel_devices: 1
 
-  mode: post_only            # auto | post_only | scheduler
+  # ==============================
+  # DAILY CONTROL
+  # ==============================
+  daily_control:
+    min_post_per_day: 3
+    max_post_per_day: 7
+    min_wait: 5400
+    max_wait: 10800
+    reset_hour: 0
 
-  # ------------------------------------------
-  # PLATFORM SWITCH
-  # ------------------------------------------
+  # ==============================
+  # RETRY
+  # ==============================
+  retry:
+    enabled: true
+    max_retry: 2
+    backoff_seconds: 30
+
+  # ==============================
+  # PLATFORM
+  # ==============================
   platforms:
     tiktok:
-      enabled: true     #เปิด true / ปิด false
+      enabled: true
       priority: 1
-      resolution: [1080, 1920]
 
     facebook:
-      enabled: false      #เปิด true / ปิด false
+      enabled: false
       priority: 2
-      resolution: [1080, 1350]
 
     reels:
-      enabled: false      #เปิด true / ปิด false
+      enabled: false
       priority: 3
-      resolution: [1080, 1920]
 
     shopee:
-      enabled: false      #เปิด true / ปิด false
+      enabled: false
       priority: 4
-      resolution: [1080, 1080]
 
-  post_mode: multi              # single | multi
-  delay_between_platforms: 15   # วินาที
-
-  # ------------------------------------------
-  # VIDEO PICK SYSTEM
-  # ------------------------------------------
-  video_pick_mode: random       # random | sequence
-  skip_if_posted: true
-  skip_if_failed: false
-
-  per_platform_history: true    # แยกประวัติแต่ละแพลตฟอร์ม
-
-  # ------------------------------------------
-  # DAILY LIMIT CONTROL
-  # ------------------------------------------
-  max_post_per_day: 5
-  min_wait: 3600
-  max_wait: 7200
-
-  active_hours:
-    enabled: false
-    start: "09:00"
-    end: "23:00"
-
-  # ------------------------------------------
-  # CAPTION SYSTEM
-  # ------------------------------------------
+  # ==============================
+  # CAPTION
+  # ==============================
   caption:
-    mode: random         # random | ai | static
+    mode: random
     add_hashtags: true
     hashtag_limit: 8
     default_hashtags:
@@ -217,16 +219,39 @@ step_c:
       - "#ของดีบอกต่อ"
       - "#โปรแรง"
 
-  # ------------------------------------------
-  # SAFETY SYSTEM
-  # ------------------------------------------
+  # ==============================
+  # HUMAN DELAY
+  # ==============================
   human_delay:
-    enabled: true         #เปิด true / ปิด false
+    enabled: true
     min_action_delay: 1.2
     max_action_delay: 2.5
 
+  # ==============================
+  # TIME WINDOWS (3 ช่วง = 3 โพสต์)
+  # ==============================
+  time_windows:
+    - start: "00:10"
+      end: "04:00"
+
+    - start: "06:24"
+      end: "08:15"
+
+    - start: "11:32"
+      end: "13:26"
+
+    - start: "15:00"
+      end: "17:48"
+
+    - start: "18:40"
+      end: "20:00"
+
+    - start: "21:30"
+      end: "23:30"
+
+
 # ==========================================
-# GLOBAL PATHS
+# PATH
 # ==========================================
 paths:
   products: products
@@ -238,17 +263,18 @@ paths:
   hashes: hashes
   meta: meta
 
+
 # ==========================================
-# AI (Future Expansion)
+# AI
 # ==========================================
 ai:
-  enabled: false   #เปิด true / ปิด false
+  enabled: false
+
 
 # ==========================================
-# AUTO GIT CONTROL
+# AUTO GIT
 # ==========================================
 git:
-  enabled: true               # เปิด/ปิดระบบ git auto
-  mode: step_a                # none | step_a | farm_end
+  enabled: true
+  mode: step_a
   commit_message: "AUTO FARM UPDATE"
-

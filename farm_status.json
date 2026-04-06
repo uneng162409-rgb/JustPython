@@ -1,9 +1,8 @@
 {
-    "state": "IDLE",
     "step": "STEP B",
+    "progress": 6,
     "message": "STEP B COMPLETE",
-    "updated_at": "2026-03-16 23:00:54",
-    "progress": 5,
-    "product": "44256396999",
-    "total": 5
+    "product": "25739783197",
+    "total": 6,
+    "updated_at": "2026-04-05 23:31:03"
 }

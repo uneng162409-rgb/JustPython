@@ -2,45 +2,123 @@
 <html>
 <head>
     <title>Affiliate Farm Dashboard</title>
+
+    <script>
+        function formatTime(seconds) {
+            if (!seconds || seconds <= 0) return "00:00:00";
+
+            const hrs = Math.floor(seconds / 3600);
+            const mins = Math.floor((seconds % 3600) / 60);
+            const secs = Math.floor(seconds % 60);
+
+            return String(hrs).padStart(2, '0') + ":" +
+                   String(mins).padStart(2, '0') + ":" +
+                   String(secs).padStart(2, '0');
+        }
+
+        async function loadState() {
+            try {
+                const res = await fetch("/api/state");
+                const data = await res.json();
+
+                // ===== STATUS =====
+                document.getElementById("status").innerText = data.state || "-";
+                document.getElementById("step").innerText = data.step || "-";
+                document.getElementById("message").innerText = data.message || "-";
+
+                // ===== NEXT POST TIME =====
+                document.getElementById("nextPostTime").innerText =
+                    data.next_post_time || "-";
+
+                // ===== COUNTDOWN =====
+                if (data.next_post_timestamp && data.next_post_timestamp > 0) {
+                    const now = Date.now() / 1000;
+                    const diff = Math.floor(data.next_post_timestamp - now);
+                    document.getElementById("countdown").innerText =
+                        formatTime(diff);
+                } else {
+                    document.getElementById("countdown").innerText = "00:00:00";
+                }
+
+                // ===== TODAY SUMMARY =====
+                const todayPlan = data.today_plan ?? 0;
+                const todayPosts = data.today_posts ?? 0;
+                const success = data.success ?? 0;
+                const failed = data.failed ?? 0;
+
+                document.getElementById("todayPlan").innerText = todayPlan;
+                document.getElementById("progress").innerText =
+                    todayPosts + "/" + todayPlan;
+
+                document.getElementById("successCount").innerText = success;
+                document.getElementById("failedCount").innerText = failed;
+
+            } catch (err) {
+                console.error("Dashboard error:", err);
+            }
+        }
+
+        setInterval(loadState, 1000);
+        window.onload = loadState;
+    </script>
 </head>
-<body>
 
-<h1>🚜 Affiliate Farm Control Panel</h1>
+<body style="font-family:Arial;background:#111;color:#eee;padding:20px;">
 
-<h2>Status: {{ state.status }}</h2>
+<h1>🚜 Affiliate Farm Control Center</h1>
 
-<a href="/start">
-    <button style="background:green;color:white;padding:10px;">START FARM</button>
-</a>
-
-<a href="/stop">
-    <button style="background:red;color:white;padding:10px;">STOP FARM</button>
-</a>
+<h2>Status: <span id="status" style="color:lime;">-</span></h2>
+<h3>Current Step: <span id="step">-</span></h3>
+<h4>Message: <span id="message">-</span></h4>
 
 <hr>
 
-<form method="post" action="/update">
+<h3>⏳ Next Post Time:</h3>
+<h2><span id="nextPostTime">-</span></h2>
 
-<h3>Steps</h3>
+<h3>⏳ Countdown:</h3>
+<h2><span id="countdown">00:00:00</span></h2>
+
+<hr>
+
+<h3>🧠 Steps Control</h3>
+<form method="post" action="/update">
 <label><input type="checkbox" name="step_a" {% if state.step_a %}checked{% endif %}> STEP A</label><br>
 <label><input type="checkbox" name="step_b" {% if state.step_b %}checked{% endif %}> STEP B</label><br>
-<label><input type="checkbox" name="step_c" {% if state.step_c %}checked{% endif %}> STEP C</label><br>
-
-<h3>Limits</h3>
-Products: <input type="number" name="products" value="{{ state.products }}"><br>
-Videos: <input type="number" name="videos" value="{{ state.videos }}"><br>
-Posts: <input type="number" name="posts" value="{{ state.posts }}"><br><br>
-
+<label><input type="checkbox" name="step_c" {% if state.step_c %}checked{% endif %}> STEP C</label><br><br>
 <button type="submit">Save Settings</button>
-
 </form>
 
 <hr>
 
-<h3>Today Summary</h3>
-Products: {{ state.today_products }}<br>
-Videos: {{ state.today_videos }}<br>
-Posts: {{ state.today_posts }}<br>
+<a href="/start">
+<button style="background:green;color:white;padding:10px 20px;">START FARM</button>
+</a>
+
+<a href="/stop">
+<button style="background:red;color:white;padding:10px 20px;">STOP FARM</button>
+</a>
+
+<hr>
+
+<h3>📊 Today Summary</h3>
+<hr>
+
+<div>
+    📅 Today Plan: <span id="todayPlan">0</span>
+</div>
+
+<div>
+    📊 Progress: <span id="progress">0/0</span>
+</div>
+
+<div>
+    ✅ Success: <span id="successCount">0</span>
+</div>
+
+<div>
+    ❌ Failed: <span id="failedCount">0</span>
+</div>
 
 </body>
 </html>

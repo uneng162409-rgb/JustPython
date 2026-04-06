@@ -2,46 +2,48 @@ import json
 import os
 from datetime import datetime
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATUS_FILE = os.path.join(BASE_DIR, "farm_status.json")
+STATE_FILE = "farm_state.json"
 
 
-def update_status(step=None, progress=None, message=None,
-                  product=None, total=None, index=None):
+def load_state():
+    if not os.path.exists(STATE_FILE):
+        return {}
 
-    status = {}
-
-    if os.path.exists(STATUS_FILE):
-        with open(STATUS_FILE, "r", encoding="utf-8") as f:
-            status = json.load(f)
-
-    if step is not None:
-        status["step"] = step
-
-    if progress is not None:
-        status["progress"] = progress
-
-    if message is not None:
-        status["message"] = message
-
-    if product is not None:
-        status["product"] = product
-
-    if total is not None:
-        status["total"] = total
-
-    if index is not None:
-        status["index"] = index
-
-    status["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    with open(STATUS_FILE, "w", encoding="utf-8") as f:
-        json.dump(status, f, indent=4, ensure_ascii=False)
+    with open(STATE_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 
-def get_status():
-    if os.path.exists(STATUS_FILE):
-        with open(STATUS_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+def save_state(state):
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=2)
 
-    return {}
+
+def update_status(account="tiktok", **kwargs):
+    """
+    รองรับทุก parameter:
+    message=
+    step=
+    progress=
+    product=
+    error=
+    ฯลฯ
+    """
+
+    state = load_state()
+
+    if "accounts" not in state:
+        state["accounts"] = {}
+
+    if account not in state["accounts"]:
+        state["accounts"][account] = {}
+
+    account_state = state["accounts"][account]
+
+    # บันทึก timestamp ทุกครั้ง
+    account_state["last_update"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # เก็บทุก field ที่ส่งเข้ามา
+    for key, value in kwargs.items():
+        account_state[key] = value
+
+    save_state(state)

@@ -1,14 +1,17 @@
 {
     "state": "RUNNING",
-    "step": "STEP A",
-    "message": "Finding Products",
+    "step": "STEP A - PRODUCT PIPELINE",
+    "message": "\u0e01\u0e33\u0e25\u0e31\u0e07\u0e17\u0e33\u0e07\u0e32\u0e19 STEP A - PRODUCT PIPELINE",
     "step_a": true,
     "step_b": true,
     "step_c": true,
-    "products": 15,
-    "videos": 5,
-    "posts": 1,
     "today_products": 0,
     "today_videos": 0,
-    "today_posts": 0
+    "today_posts": 0,
+    "success": 0,
+    "failed": 0,
+    "today_plan": 0,
+    "next_post_time": "-",
+    "next_post_timestamp": 0,
+    "last_update": "2026-04-07 00:43:49"
 }
