@@ -1,0 +1,4727 @@
+{
+  "data": {
+    "storefrontProductList": {
+      "itemList": [
+        {
+          "linkId": "25316607",
+          "link": "https://s.shopee.co.th/6puNV5XXtT",
+          "linkName": "(ส่งจากไทย) ตาข่ายตีฟอง ถุงตาข่ายฟอง ถุงตีฟอง ซองตีฟอง ถุงสบู่ ถุงขัดตัว 2 ชั้น เพิ่มฟอง เนียน นุ่ม ",
+          "image": "sg-11134201-7rfh6-m3psy0m8u1cw39",
+          "linkType": "ITEM",
+          "itemId": "28518623775",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "sg-11134201-7rfh6-m3psy0m8u1cw39",
+                "sg-11134201-7rfgc-m30eh286rqap97",
+                "sg-11134201-7rff4-m30eh2fefrie27",
+                "sg-11134201-7rffi-m30efawjeb5n60",
+                "sg-11134201-7rfga-m30eh2po0s8se3",
+                "sg-11134201-7rfgy-m30eh2yjnr1jdb",
+                "sg-11134201-7rfh4-m30eh37padkp68",
+                "sg-11134201-7rfhu-m30eh3gkxcyp74"
+              ],
+              "highlightVideos": [
+                {
+                  "videoId": "sg-11110113-6v8gu-mfm262sa093f6a",
+                  "duration": 5000,
+                  "version": 2,
+                  "vid": "sg-11110113-6v8gu-mfm262sa093f6a"
+                },
+                {
+                  "videoId": "sg-11110113-6v8gu-mfm262sa093f6a",
+                  "duration": 5000,
+                  "version": 2,
+                  "vid": "sg-11110113-6v8gu-mfm262sa093f6a"
+                },
+                {
+                  "videoId": "sg-11110113-6v8gu-mfm262sa093f6a",
+                  "duration": 5000,
+                  "version": 2,
+                  "vid": "sg-11110113-6v8gu-mfm262sa093f6a"
+                }
+              ],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED",
+                  "icon": {
+                    "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                    "width": 46,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "(ส่งจากไทย) ตาข่ายตีฟอง ถุงตาข่ายฟอง ถุงตีฟอง ซองตีฟอง ถุงสบู่ ถุงขัดตัว 2 ชั้น เพิ่มฟอง เนียน นุ่ม ",
+              "image": "sg-11134201-7rfh6-m3psy0m8u1cw39",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                  "width": 46,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-67%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 2000พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "100000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "28518623775",
+              "shopid": "442281858",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "28518623775",
+                "modelId": "147569658933",
+                "promotionType": 202,
+                "promotionId": "481828918477460",
+                "price": "100000",
+                "strikethroughPrice": "300000",
+                "discount": 67,
+                "originalPrice": "300000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "100000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "2058793",
+                "monthlySoldCount": "117596",
+                "historicalSoldCountText": "ขายแล้ว 2000พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 100พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1000028",
+                "1000110",
+                "1001365",
+                "1908622",
+                "700640027",
+                "1718087960",
+                "1428713",
+                "844931064601283",
+                "844931086908638",
+                "822059879271430",
+                "822120593886220",
+                "822120593887756",
+                "2073655",
+                "2058593",
+                "2218676",
+                "2298802",
+                "2143613",
+                "843623424279161",
+                "2058592",
+                "298893326",
+                "2063604",
+                "2288632",
+                "998286006",
+                "2058612",
+                "2063592",
+                "2288631",
+                "2063618"
+              ],
+              "catid": 100636,
+              "shopeeVerified": true,
+              "likedCount": 1483,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "Shirley’s Home889",
+                "shopLocation": "จังหวัดกรุงเทพมหานคร"
+              },
+              "status": 1,
+              "ctime": 1732520339,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100636,
+                  100709,
+                  101138
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.885407691705177,
+                "ratingCount": [
+                  13424,
+                  51,
+                  29,
+                  232,
+                  712,
+                  12400
+                ]
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "api/v4/11110106/mms/sg-11110106-6khxl-m30ehb6vnju65e.16000101732520352.mp4",
+                  "thumbUrl": "sg-11110106-7rfg2-m30ehdthtdx663",
+                  "duration": 29,
+                  "version": 2,
+                  "vid": "sg-11110106-6khxl-m30ehb6vnju65e",
+                  "formats": [
+                    {
+                      "format": 1600323,
+                      "defn": "V540P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110106/mms/sg-11110106-6khxl-m30ehb6vnju65e.default.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110106/mms/sg-11110106-6khxl-m30ehb6vnju65e.default.mp4",
+                      "width": 540,
+                      "height": 540
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110106/mms/sg-11110106-6khxl-m30ehb6vnju65e.default.mp4",
+                    "width": 540,
+                    "height": 540
+                  },
+                  "mmsData": "{\"vid\":\"sg-11110106-6khxl-m30ehb6vnju65e\",\"biz\":107,\"duration\":28565,\"create_time\":1732520350,\"update_time\":1732520353,\"serviceID\":2,\"cover\":\"https://down-tx-th.img.susercontent.com/sg-11110106-7rfg2-m30ehdthtdx663\",\"cover_list\":[],\"formats\":[{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110106/mms/sg-11110106-6khxl-m30ehb6vnju65e.default.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110106/mms/sg-11110106-6khxl-m30ehb6vnju65e.default.mp4\",\"width\":540,\"height\":540,\"bitrate\":323731,\"abitrate\":13010,\"size\":1225898,\"fps\":25,\"duration\":28582,\"update_time\":1732520510,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110106/mms/sg-11110106-6khxl-m30ehb6vnju65e.default.mp4\",\"width\":540,\"height\":540,\"bitrate\":323731,\"abitrate\":13010,\"size\":1225898,\"fps\":25,\"duration\":28582,\"update_time\":1732520510,\"codec\":\"H264\"},\"extend_formats\":{},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "name": "NO.",
+                  "options": [
+                    "(9.5 x 11cm) PB78",
+                    "(9.5 x 15cm) PB82"
+                  ],
+                  "images": [
+                    "sg-11134201-7rfh4-m3pt0iyonxvy3c",
+                    "sg-11134201-7rfey-m3pt1zzmzlu605"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25316204",
+          "link": "https://s.shopee.co.th/8V2bTtl4MZ",
+          "linkName": "🧡MW001 พร้อมส่งด่วน ผ้าไมโครไฟเบอร์ 3D เกรดพรีเมี่ยม หนานุ่ม ซับน้ำไว(สีเหลืองเทา) 30x30 ผ้าเช็ดรถ",
+          "image": "44a212060c37bf0e25200411472f68ec",
+          "linkType": "ITEM",
+          "itemId": "5163129026",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "44a212060c37bf0e25200411472f68ec",
+                "0158d8dd982117db5e5f3525a2fdcd29",
+                "420cc3bd0ff60f1723f89c637dee46aa",
+                "0d05a2278a572fa2db4df5a2fe4e7d05",
+                "73d26812833887e19dd147ee8c0f34ac",
+                "b7c1fb420b6f4fc979d9d80229918fdc",
+                "4250cee77098433825fd11e7596a4c7b"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED",
+                  "icon": {
+                    "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                    "width": 46,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "🧡MW001 พร้อมส่งด่วน ผ้าไมโครไฟเบอร์ 3D เกรดพรีเมี่ยม หนานุ่ม ซับน้ำไว(สีเหลืองเทา) 30x30 ผ้าเช็ดรถ",
+              "image": "44a212060c37bf0e25200411472f68ec",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                  "width": 46,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-99%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 4000พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "100000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "5163129026",
+              "shopid": "261559321",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "5163129026",
+                "modelId": "165724260958",
+                "promotionType": 502,
+                "promotionId": "488436742435344",
+                "price": "100000",
+                "strikethroughPrice": "9900000",
+                "discount": 99,
+                "originalPrice": "9900000",
+                "modelSelectionLogic": 2,
+                "appliedProductPromoPrice": "100000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "4679730",
+                "monthlySoldCount": "72800",
+                "historicalSoldCountText": "ขายแล้ว 4000พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 70พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1009116",
+                "822120593887756",
+                "822059879271430",
+                "825249635454464",
+                "844931086908638",
+                "1718087960",
+                "1428713",
+                "700640027",
+                "1908622",
+                "822120593886220",
+                "1000110",
+                "1000028",
+                "1001365",
+                "298643630",
+                "837903335771681",
+                "2073655",
+                "2058593",
+                "843623424279161",
+                "2103651",
+                "2143613",
+                "700960097",
+                "2218676",
+                "298923318",
+                "701025034",
+                "1978602",
+                "298803386",
+                "298623321",
+                "1015641",
+                "2063618",
+                "2058592",
+                "2288632",
+                "298893326",
+                "998286006",
+                "2288631",
+                "2058612",
+                "2063592",
+                "2063604"
+              ],
+              "catid": 102187,
+              "shopeeVerified": true,
+              "likedCount": 28136,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "Youth-shop",
+                "shopLocation": "จังหวัดกรุงเทพมหานคร"
+              },
+              "status": 1,
+              "ctime": 1605524598,
+              "flag": 65536,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  102187,
+                  102272,
+                  102575
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.847818120122158,
+                "ratingCount": [
+                  371790,
+                  2166,
+                  1888,
+                  8119,
+                  25699,
+                  333918
+                ]
+              },
+              "tierVariations": [
+                {
+                  "name": "ขนาด",
+                  "options": [
+                    "สีเหลือง 30*30CM",
+                    "สีฟ้า-blue 30*30CM",
+                    "สีเหลือง 30*30CM.",
+                    "สีเหลือง 30*60CM",
+                    "สีม่วงPurple 30*30CM",
+                    "สีแดง-red 30*30CM",
+                    "สีเขียวgreen 30*30CM",
+                    "สีชมพู-pink 30*30CM",
+                    "สีฟ้า-blue 40*40CM",
+                    "สีเหลือง 40*40CM",
+                    "สีม่วงPurple 40*40CM",
+                    "สีแดง-red 40*40CM",
+                    "สีเขียวgreen 40*40CM",
+                    "สีชมพู-pink 40*40CM"
+                  ],
+                  "images": [
+                    "th-11134207-7rase-m31ws4dizbheee",
+                    "th-11134207-7rasm-m31xbb1y98te36",
+                    "th-11134207-7rase-m44nyccv7tl66a",
+                    "th-11134207-23030-hre660tt5qovbd",
+                    "th-11134207-7rasa-m31xblel3xsy7c",
+                    "th-11134207-7rase-m44nygo8xv4a51",
+                    "th-11134207-7rase-m44nyjlemjyi6c",
+                    "th-11134207-7ras9-m44nym94qhmyeb",
+                    "th-11134207-7ra0p-mda4o07lzlqd26",
+                    "th-11134207-7ra0q-mda4o54ws5adf6",
+                    "th-11134207-7ra0k-mda4o78dppi6b6",
+                    "th-11134207-7ra0j-mda4o9bun9lq8c",
+                    "th-11134207-7ra0j-mda4ob9htcnyc7",
+                    "th-11134207-7ra0j-mda4oej516thca"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "th-50009109-1e27251a6f007303b0437741a145492f",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25316266",
+          "link": "https://s.shopee.co.th/8zys4rLkVk",
+          "linkName": "100 ชิ้นพร้อมสต็อก ทําเอง บิดบาร์หนาหนาหนา8มิลลิเมตรสีงานฝีมือที่ทําด้วยมือด้ายกํามะหยี่ด้ายกํามะหยี",
+          "image": "cn-11134207-820l4-mgamatdk153ccd",
+          "linkType": "ITEM",
+          "itemId": "41722791235",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "cn-11134207-820l4-mjl6mbmejl6v04",
+                "cn-11134207-820l4-mr8cajowcf7paa",
+                "cn-11134207-820l4-mjl6mblkun0jca",
+                "cn-11134207-820l4-mjl6m604djif45",
+                "cn-11134207-820l4-mjl6m606d6gye5",
+                "cn-11134207-820l4-mjl6m6063chsff",
+                "cn-11134207-820l4-mjl6m606brwif8",
+                "cn-11134207-820l4-mjl6m606adc63e",
+                "cn-11134207-820l4-mjl6m604ey2v15"
+              ],
+              "highlightVideos": [
+                {
+                  "videoId": "sg-11110113-6vaun-mrmn342sv211c3",
+                  "duration": 5000,
+                  "version": 2,
+                  "vid": "sg-11110113-6vaun-mrmn342sv211c3"
+                },
+                {
+                  "videoId": "sg-11110113-6vaun-mrmn342sv211c3",
+                  "duration": 5000,
+                  "version": 2,
+                  "vid": "sg-11110113-6vaun-mrmn342sv211c3"
+                },
+                {
+                  "videoId": "sg-11110113-6vaun-mrmn342sv211c3",
+                  "duration": 5000,
+                  "version": 2,
+                  "vid": "sg-11110113-6vaun-mrmn342sv211c3"
+                }
+              ],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED",
+                  "icon": {
+                    "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                    "width": 46,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "100 ชิ้นพร้อมสต็อก ทําเอง บิดบาร์หนาหนาหนา8มิลลิเมตรสีงานฝีมือที่ทําด้วยมือด้ายกํามะหยี่ด้ายกํามะหยี",
+              "image": "cn-11134207-820l4-mgamatdk153ccd",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                  "width": 46,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-10%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 200พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "1800000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "41722791235",
+              "shopid": "1637670796",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "41722791235",
+                "modelId": "296850882446",
+                "promotionType": 201,
+                "promotionId": "483626265817375",
+                "price": "1800000",
+                "strikethroughPrice": "2000000",
+                "discount": 10,
+                "originalPrice": "2000000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "1800000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "235803",
+                "monthlySoldCount": "30439",
+                "historicalSoldCountText": "ขายแล้ว 200พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 30พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1000028",
+                "1000110",
+                "1001365",
+                "2058593",
+                "844931064601283",
+                "844931086908638",
+                "822059879271430",
+                "822120593886220",
+                "298623321",
+                "2143613",
+                "700960097",
+                "843623424279161",
+                "298923318",
+                "2103651",
+                "1978602",
+                "298803386",
+                "2288631",
+                "2063618",
+                "2063604",
+                "998286006",
+                "2063592",
+                "2058612",
+                "2288632",
+                "2058592",
+                "298893326"
+              ],
+              "catid": 100639,
+              "shopeeVerified": true,
+              "likedCount": 2999,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "ลวดกำมะหยี่ Paipai"
+              },
+              "status": 1,
+              "ctime": 1759503324,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100639,
+                  100745
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.883805937084626,
+                "ratingCount": [
+                  9263,
+                  41,
+                  28,
+                  152,
+                  511,
+                  8531
+                ]
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "api/v4/11110105/mms/sg-11110105-6v8id-mfe4p33iodfv3f.16000081759502279.mp4",
+                  "thumbUrl": "sg-11110105-6v8id-mfe4p33iodfv3f_cover",
+                  "duration": 23,
+                  "version": 2,
+                  "vid": "sg-11110105-6v8id-mfe4p33iodfv3f",
+                  "formats": [
+                    {
+                      "format": 1600008,
+                      "defn": "V720P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/sg-11110105-6v8id-mfe4p33iodfv3f.16000081759502279.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/sg-11110105-6v8id-mfe4p33iodfv3f.16000081759502279.mp4",
+                      "width": 720,
+                      "height": 1280
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110105/mms/sg-11110105-6v8id-mfe4p33iodfv3f.default.mp4",
+                    "width": 540,
+                    "height": 960
+                  },
+                  "mmsData": "{\"vid\":\"sg-11110105-6v8id-mfe4p33iodfv3f\",\"biz\":107,\"duration\":22779,\"create_time\":1759502273,\"update_time\":1759502284,\"serviceID\":2,\"cover\":\"https://down-tx-th.img.susercontent.com/sg-11110105-6v8id-mfe4p33iodfv3f_cover\",\"cover_list\":[],\"formats\":[{\"format\":1600008,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/sg-11110105-6v8id-mfe4p33iodfv3f.16000081759502279.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/sg-11110105-6v8id-mfe4p33iodfv3f.16000081759502279.mp4\",\"width\":720,\"height\":1280,\"bitrate\":1188140,\"abitrate\":128480,\"size\":3772521,\"fps\":25,\"duration\":22799,\"update_time\":1759502303,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110105/mms/sg-11110105-6v8id-mfe4p33iodfv3f.default.mp4\",\"width\":540,\"height\":960,\"bitrate\":493611,\"abitrate\":32568,\"size\":1520047,\"fps\":25,\"duration\":22799,\"update_time\":1759502313,\"codec\":\"H264\"},\"extend_formats\":{\"H265\":[{\"format\":1600309,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/sg-11110105-6v8id-mfe4p33iodfv3f.16003091759502303.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/sg-11110105-6v8id-mfe4p33iodfv3f.16003091759502303.mp4\",\"width\":720,\"height\":1280,\"bitrate\":614748,\"abitrate\":128480,\"size\":2141247,\"fps\":25,\"duration\":22799,\"update_time\":1759502343,\"codec\":\"H265\"}]},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "name": "สี",
+                  "options": [
+                    "1#-สีชมพูอ่อน",
+                    "2#-สีชมพูบัว",
+                    "3#-สีชมพูเข้ม",
+                    "4#-สีชมพูบานเย็น",
+                    "5#-สีแดงอมส้ม",
+                    "6#-สีแดงเข้ม",
+                    "7#-สีแดงเข้มจัด",
+                    "8#-ไวน์แดง",
+                    "9#-สีแดงไวน์อมม่วง",
+                    "10#-สีขาวข้าว",
+                    "11#-สีขาว",
+                    "12#-สีเนื้อ",
+                    "13#-สีน้ำตาลอ่อน",
+                    "14#-สีเหลืองอ่อน",
+                    "15#-สีเหลืองตรง",
+                    "16#-สีเหลืองเรืองแสง",
+                    "17#-สีส้ม เหลือง",
+                    "19#-สีส้มเข้ม",
+                    "20#-สีฟ้าอ่อน",
+                    "21#-สีน้ำเงินเข้ม",
+                    "22#-สีน้ำเงินเพชร",
+                    "23#-สีฟ้าน้ำทะเล",
+                    "24#-สีฟ้าเงื่อน",
+                    "25#-อัลตรามารีนสีฟ้า",
+                    "26#-สีเขียวอ่อน",
+                    "27#-สีเขียวถั่ว",
+                    "28#-สีเขียวเรืองแสง",
+                    "29#-สีเขียวผลไม้",
+                    "30#-สีเขียวทหารอ่อน",
+                    "31#-สีเขียวทหาร",
+                    "32#-สีเขียวเข้ม",
+                    "33#-สีเขียวมอส",
+                    "34#-สีม่วงอ่อน",
+                    "35#-สีม่วง",
+                    "37#-สีฟ้าน้ำแข็ง",
+                    "38#-สีม่วงแดง",
+                    "39#-สีม่วงเข้ม",
+                    "42#-สีน้ำตาลเข้ม",
+                    "44#-สีดํา",
+                    "45#-สีน้ําตาล",
+                    "46#-สีเหลืองครีม",
+                    "47#-สีเหลืองเข้ม",
+                    "30 ซม.-30 ชิ้น"
+                  ],
+                  "images": [
+                    "cn-11134207-820l4-mplqvdibz57159",
+                    "cn-11134207-820l4-mfe7n1l1o0zy60",
+                    "cn-11134207-820l4-mfe7n1kxlxxof8",
+                    "cn-11134207-820l4-mfe7n1l1jtal13",
+                    "cn-11134207-820l4-mfe7n1mlp4i0c5",
+                    "cn-11134207-820l4-mfe7n1hf88i156",
+                    "cn-11134207-820l4-mfe7n1l1jtan65",
+                    "cn-11134207-820l4-mfe7n1mpzmyy4e",
+                    "cn-11134207-820l4-mfe7n1kvyy2zfb",
+                    "cn-11134207-820l4-mfe7n1mpmzv24f",
+                    "cn-11134207-820l4-mfe7n214xo27e2",
+                    "cn-11134207-820l4-mfe7n4p18xe04a",
+                    "cn-11134207-820l4-mfe7n7ezb020f6",
+                    "cn-11134207-820l4-mfe7n9zdl72g06",
+                    "cn-11134207-820l4-mfe7ncrnqbkafc",
+                    "cn-11134207-820l4-mfe7nf86677ub6",
+                    "cn-11134207-820l4-mfe7nia19yj351",
+                    "cn-11134207-820l4-mfe7nkzp9modc1",
+                    "cn-11134207-820l4-mplqvpa4ay9uc2",
+                    "cn-11134207-820l4-mfe7nqb1i6tof3",
+                    "cn-11134207-820l4-mfe7ntbda4um3e",
+                    "cn-11134207-820l4-mfe7nvwhe7t8d1",
+                    "cn-11134207-820l4-mfe7nyjnkcng55",
+                    "cn-11134207-820l4-mfe7o1gn8qof42",
+                    "cn-11134207-820l4-mfe7o4ywkumi66",
+                    "cn-11134207-820l4-mfe7o906ez9o48",
+                    "cn-11134207-820l4-mfe7oc9jomq0af",
+                    "cn-11134207-820l4-mfe7ofh38tu299",
+                    "cn-11134207-820l4-mfe7oiq0frbfc9",
+                    "cn-11134207-820l4-mfe7oxtzfxu135",
+                    "cn-11134207-820l4-mfe7p1al4bguca",
+                    "cn-11134207-820l4-mfe7p4iagemm73",
+                    "cn-11134207-820l4-mfe7p7s7p8um93",
+                    "cn-11134207-820l4-mfe7pb7og4r3fe",
+                    "cn-11134207-820l4-mfe7peqhbz7z52",
+                    "cn-11134207-820l4-mr76gyvfkiyp4d",
+                    "cn-11134207-820l4-mfe7pmim5mo88d",
+                    "cn-11134207-820l4-mfe7ppbpyarza9",
+                    "cn-11134207-820l4-mfe7psvw5n2hac",
+                    "cn-11134207-820l4-mfe7pwgnfi192b",
+                    "cn-11134207-820l4-mfe7pzf7kft6a4",
+                    "cn-11134207-820l4-mklzaiic4oao8a",
+                    "cn-11134207-820l4-mp33myp7z20yf8"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": true,
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25316535",
+          "link": "https://s.shopee.co.th/8APl5Upt1q",
+          "linkName": "5 แพ็ค4ply กระดาษทิชชู่หนานุ่ม Sipiao (1389-5) ห่อละ 1000 ชิ้น TH ขนาด 170 * 130 มม. กระดาษชําระ",
+          "image": "cn-11134207-7ras8-mbnjzfrslnbhf3",
+          "linkType": "ITEM",
+          "itemId": "26820536186",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "cn-11134207-7ras8-mbnjzfrslnbhf3",
+                "cn-11134207-7ras8-mbnjjzhinq5s08",
+                "cn-11134207-7ras8-mbnjjzimm3oba6",
+                "cn-11134207-7ras8-mbnjjziwlp2321",
+                "cn-11134207-7ras8-mbnjjzj6lafv3b",
+                "cn-11134207-7ras8-mbnjjzhsnbiz8b"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED",
+                  "icon": {
+                    "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                    "width": 46,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "5 แพ็ค4ply กระดาษทิชชู่หนานุ่ม Sipiao (1389-5) ห่อละ 1000 ชิ้น TH ขนาด 170 * 130 มม. กระดาษชําระ",
+              "image": "cn-11134207-7ras8-mbnjzfrslnbhf3",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                  "width": 46,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-90%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 400พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "2900000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "26820536186",
+              "shopid": "1294996630",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "26820536186",
+                "modelId": "233581152848",
+                "promotionType": 502,
+                "promotionId": "481406573035850",
+                "price": "2900000",
+                "strikethroughPrice": "29900000",
+                "discount": 90,
+                "originalPrice": "29900000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "2900000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "409812",
+                "monthlySoldCount": "22287",
+                "historicalSoldCountText": "ขายแล้ว 400พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 20พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1908622",
+                "844931064601283",
+                "844931086908638",
+                "822059879271430",
+                "822120593886220",
+                "822120593887756",
+                "2073655",
+                "2058593",
+                "1000028",
+                "1001365",
+                "1000110",
+                "2048651",
+                "2098592",
+                "2108635",
+                "2103586",
+                "298938367",
+                "700810080",
+                "700960097",
+                "1015641",
+                "843623424279161",
+                "298923318",
+                "2063604",
+                "2063592",
+                "2288631",
+                "2058612",
+                "2288632",
+                "2058592",
+                "2063618",
+                "298893326",
+                "998286006"
+              ],
+              "catid": 100636,
+              "shopeeVerified": true,
+              "likedCount": 48206,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "Sipiao facial tissue"
+              },
+              "status": 1,
+              "ctime": 1734067052,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100636,
+                  100716,
+                  101212
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.914410848641331,
+                "ratingCount": [
+                  135172,
+                  121,
+                  95,
+                  1612,
+                  7576,
+                  125768
+                ]
+              },
+              "globalBrand": {
+                "brandId": 4395960
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16000081743311870.mp4",
+                  "thumbUrl": "th-11110105-6kgcm-m7yo6w50r3t573_cover",
+                  "duration": 22,
+                  "version": 2,
+                  "vid": "th-11110105-6kgcm-m7yo6w50r3t573",
+                  "formats": [
+                    {
+                      "format": 1600408,
+                      "defn": "V360P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004081777741202.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004081777741202.mp4",
+                      "width": 360,
+                      "height": 640
+                    },
+                    {
+                      "format": 1600409,
+                      "defn": "V540P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004091777741201.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004091777741201.mp4",
+                      "width": 540,
+                      "height": 960
+                    },
+                    {
+                      "format": 1600325,
+                      "defn": "V720P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16003251745702773.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16003251745702773.mp4",
+                      "width": 720,
+                      "height": 1280
+                    },
+                    {
+                      "format": 1600410,
+                      "defn": "V720P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004101777741202.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004101777741202.mp4",
+                      "width": 720,
+                      "height": 1280
+                    },
+                    {
+                      "format": 1600411,
+                      "defn": "V720P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004111777741201.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004111777741201.mp4",
+                      "width": 720,
+                      "height": 1280
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.default.mp4",
+                    "width": 540,
+                    "height": 960
+                  },
+                  "mmsData": "{\"vid\":\"th-11110105-6kgcm-m7yo6w50r3t573\",\"biz\":107,\"duration\":22220,\"create_time\":1743311862,\"update_time\":1743311873,\"serviceID\":2,\"cover\":\"https://down-tx-th.img.susercontent.com/th-11110105-6kgcm-m7yo6w50r3t573_cover\",\"cover_list\":[],\"formats\":[{\"format\":1600408,\"defn\":\"V360P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004081777741202.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004081777741202.mp4\",\"width\":360,\"height\":640,\"bitrate\":267360,\"abitrate\":32295,\"size\":841006,\"fps\":25,\"duration\":22040,\"update_time\":1777741207,\"codec\":\"H264\"},{\"format\":1600409,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004091777741201.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004091777741201.mp4\",\"width\":540,\"height\":960,\"bitrate\":560654,\"abitrate\":32295,\"size\":1648998,\"fps\":25,\"duration\":22040,\"update_time\":1777741209,\"codec\":\"H264\"},{\"format\":1600325,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16003251745702773.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16003251745702773.mp4\",\"width\":720,\"height\":1280,\"bitrate\":1492751,\"abitrate\":48405,\"size\":4267476,\"fps\":30.00045,\"duration\":22033,\"update_time\":1745702795,\"codec\":\"H264\"},{\"format\":1600410,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004101777741202.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004101777741202.mp4\",\"width\":720,\"height\":1280,\"bitrate\":837866,\"abitrate\":48405,\"size\":2457035,\"fps\":25,\"duration\":22040,\"update_time\":1777741220,\"codec\":\"H264\"},{\"format\":1600411,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004111777741201.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004111777741201.mp4\",\"width\":720,\"height\":1280,\"bitrate\":1653340,\"abitrate\":48405,\"size\":4709760,\"fps\":30.00045,\"duration\":22033,\"update_time\":1777741220,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.default.mp4\",\"width\":540,\"height\":960,\"bitrate\":516545,\"abitrate\":32414,\"size\":1532132,\"fps\":25,\"duration\":22040,\"update_time\":1743312035,\"codec\":\"H264\"},\"extend_formats\":{\"H265\":[{\"format\":1600412,\"defn\":\"V360P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004121777741189.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004121777741189.mp4\",\"width\":360,\"height\":640,\"bitrate\":206052,\"abitrate\":32295,\"size\":674965,\"fps\":25,\"duration\":22040,\"update_time\":1777741201,\"codec\":\"H265\"},{\"format\":1600413,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004131777741201.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004131777741201.mp4\",\"width\":540,\"height\":960,\"bitrate\":332562,\"abitrate\":32295,\"size\":1023500,\"fps\":25,\"duration\":22040,\"update_time\":1777741220,\"codec\":\"H265\"},{\"format\":1600318,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16003181745702773.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16003181745702773.mp4\",\"width\":720,\"height\":1280,\"bitrate\":762471,\"abitrate\":48405,\"size\":2259208,\"fps\":30.00045,\"duration\":22033,\"update_time\":1745702806,\"codec\":\"H265\"},{\"format\":1600414,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004141777741201.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004141777741201.mp4\",\"width\":720,\"height\":1280,\"bitrate\":614023,\"abitrate\":48405,\"size\":1850366,\"fps\":30.00045,\"duration\":22033,\"update_time\":1777741235,\"codec\":\"H265\"},{\"format\":1600415,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004151777741202.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcm-m7yo6w50r3t573.16004151777741202.mp4\",\"width\":720,\"height\":1280,\"bitrate\":732400,\"abitrate\":48405,\"size\":2176394,\"fps\":30.00045,\"duration\":22033,\"update_time\":1777741240,\"codec\":\"H265\"}]},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "name": "จํานวนแพ็ค",
+                  "options": [
+                    "5 bags"
+                  ],
+                  "images": [
+                    "cn-11134207-7ras8-mbnjzfrslnbhf3"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "sg-11134252-7reqa-m8p0usouj0r59a",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "24597319",
+          "link": "https://s.shopee.co.th/9zr6JDG1tN",
+          "linkName": "ฟิล์มกระจก เต็มจอ สำหรับ iPhone กันมองกันเสือก PVT รุ่น 17 Air/16E/15/14 Pro Max 13 12 SE 2020 6 6S ",
+          "image": "th-11134207-7ra0k-mdgx40yagrf7fb",
+          "linkType": "ITEM",
+          "itemId": "7716568770",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-7ra0k-mdgx40yagrf7fb",
+                "4ae4aa71b51120ea63a857eecc8833d8",
+                "f1456c24b2033df5cbaf484054295a02",
+                "ba3d196fab705deae2ba35bb290e089d",
+                "b486d18497ef638ed98f8a8e67b7e226",
+                "dafd785ab00b48b56db05a2ae60d18a3"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [],
+              "name": "ฟิล์มกระจก เต็มจอ สำหรับ iPhone กันมองกันเสือก PVT รุ่น 17 Air/16E/15/14 Pro Max 13 12 SE 2020 6 6S ",
+              "image": "th-11134207-7ra0k-mdgx40yagrf7fb",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "adsText": "Ad"
+              },
+              "discountTag": {
+                "discountText": "-99%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 1000พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "100000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "7716568770",
+              "shopid": "120958585",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "7716568770",
+                "modelId": "13455021406",
+                "promotionType": 502,
+                "promotionId": "481419361469450",
+                "price": "100000",
+                "strikethroughPrice": "15000000",
+                "discount": 99,
+                "originalPrice": "15000000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "100000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "1257262",
+                "monthlySoldCount": "23467",
+                "historicalSoldCountText": "ขายแล้ว 1000พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 20พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1009116",
+                "1073695",
+                "1400175097",
+                "1428610",
+                "700066449",
+                "700066450",
+                "700066451",
+                "1400085213",
+                "700066453",
+                "822059879271430",
+                "822120593886220",
+                "825249635454464",
+                "844931086908638",
+                "1718087960",
+                "1428713",
+                "700640027",
+                "1908622",
+                "1049107",
+                "298888364",
+                "2058593",
+                "1000110",
+                "1000028",
+                "1001365",
+                "299103340",
+                "2103651",
+                "2143613",
+                "1400840019",
+                "700960097",
+                "1978602",
+                "298803386",
+                "2218676",
+                "298923351",
+                "998236066",
+                "299098373",
+                "298623321",
+                "843623424279161",
+                "298923318",
+                "1015641",
+                "998286006",
+                "2063604",
+                "2058612",
+                "2063592",
+                "2058592",
+                "2063618",
+                "2288632",
+                "298893326",
+                "2288631"
+              ],
+              "catid": 100013,
+              "shopeeVerified": false,
+              "likedCount": 55190,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "JT-shop ฟิล์มกระจก ราคาส่ง",
+                "shopLocation": "จังหวัดกรุงเทพมหานคร"
+              },
+              "status": 1,
+              "ctime": 1581013069,
+              "flag": 65536,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100013,
+                  100075,
+                  100289
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.837299993753291,
+                "ratingCount": [
+                  224147,
+                  1556,
+                  987,
+                  4879,
+                  17617,
+                  199108
+                ]
+              },
+              "tierVariations": [
+                {
+                  "name": "กันมองกันเสือก",
+                  "options": [
+                    "12mini",
+                    "6 / 6s",
+                    "7 / 8",
+                    "6Plus / 6SPlus",
+                    "7 Plus / 8 Plus",
+                    "X / XS",
+                    "XR",
+                    "XS Max",
+                    "11",
+                    "11 Pro",
+                    "11 Pro Max",
+                    "SE 2020 / SE3",
+                    "12 / 12 Pro",
+                    "12 Pro Max",
+                    "13mini",
+                    "13 / 13 Pro",
+                    "13 Pro Max",
+                    "14",
+                    "14 Plus",
+                    "14 Pro",
+                    "14 Pro Max",
+                    "15",
+                    "15Plus",
+                    "15Pro",
+                    "15 ProMax",
+                    "( 16 )",
+                    "( 16 Pro )",
+                    "( 16Plus )",
+                    "( 16 Pro Max )",
+                    "( 16E )",
+                    "17 Pro Max",
+                    "17 Pro",
+                    "17",
+                    "17Air"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "138fb4742c0cc299723b309ae67fc17e",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25317616",
+          "link": "https://s.shopee.co.th/4VWSjzmyI7",
+          "linkName": "[โปรเด็ด!! ไม้แขวนเสื้อ] ไม้แขวนเสื้อ ไม้แขวนสแตนเลส เคลือบซีลีโคนกันลื่น 2ขนาด ผู้ใหญ่40cm*20cm เด็",
+          "image": "th-11134207-81ztf-mj6ouvz6r8xw38",
+          "linkType": "ITEM",
+          "itemId": "7121010096",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-81ztl-mrvabcuocy684b",
+                "th-11134207-7rask-m63nd5lvkcrh98",
+                "sg-11134201-825al-mqk0tyre6ebva0",
+                "th-11134207-81ztf-ms3x2ib2gydc9f",
+                "th-11134207-81zto-ms3x2ib7mdc72b",
+                "th-11134207-81zth-ms3x2ib9arr577",
+                "th-11134207-81ztl-ms3x2ic3xfk89e",
+                "th-11134207-81ztj-ms3x2ic3w0zs96",
+                "th-11134207-81ztf-ms3x2ib99d6p0a"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED",
+                  "icon": {
+                    "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                    "width": 46,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "[โปรเด็ด!! ไม้แขวนเสื้อ] ไม้แขวนเสื้อ ไม้แขวนสแตนเลส เคลือบซีลีโคนกันลื่น 2ขนาด ผู้ใหญ่40cm*20cm เด็",
+              "image": "th-11134207-81ztf-mj6ouvz6r8xw38",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                  "width": 46,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-99%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 1000พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "400000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "7121010096",
+              "shopid": "105281190",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "7121010096",
+                "modelId": "240245301560",
+                "promotionType": 502,
+                "promotionId": "481420540064100",
+                "price": "400000",
+                "strikethroughPrice": "29900000",
+                "discount": 99,
+                "originalPrice": "29900000",
+                "modelSelectionLogic": 2,
+                "appliedProductPromoPrice": "400000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "1901573",
+                "monthlySoldCount": "22324",
+                "historicalSoldCountText": "ขายแล้ว 1000พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 20พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1014045",
+                "1073695",
+                "1400095024",
+                "1400175097",
+                "1428610",
+                "822059879271430",
+                "822120593886220",
+                "822120593887756",
+                "844931064601283",
+                "825249635454464",
+                "844931086908638",
+                "700640027",
+                "298643630",
+                "298888364",
+                "1908622",
+                "2058593",
+                "298643324",
+                "700765086",
+                "2098592",
+                "2108635",
+                "2103586",
+                "298938367",
+                "298923318",
+                "843623424279161",
+                "1000110",
+                "1000028",
+                "1001365",
+                "299103340",
+                "2218676",
+                "299048420",
+                "998236066",
+                "700810080",
+                "298623321",
+                "1015641",
+                "1978602",
+                "298803386",
+                "2063592",
+                "2058592",
+                "998286006",
+                "2058612",
+                "298893326",
+                "2063618",
+                "2288632",
+                "2063604",
+                "2288631"
+              ],
+              "catid": 100636,
+              "shopeeVerified": true,
+              "likedCount": 92675,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "M-Experience",
+                "shopLocation": "จังหวัดปทุมธานี"
+              },
+              "status": 1,
+              "ctime": 1585128644,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100636,
+                  100721,
+                  101253
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.848033304875151,
+                "ratingCount": [
+                  227558,
+                  838,
+                  836,
+                  4726,
+                  19358,
+                  201800
+                ]
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "api/v4/11110105/mms/th-11110105-6v8gx-mnfmkde1diiq5b.16000081777026774.mp4",
+                  "thumbUrl": "th-11110105-6v8gx-mnfmkde1diiq5b_cover",
+                  "duration": 23,
+                  "version": 2,
+                  "vid": "th-11110105-6v8gx-mnfmkde1diiq5b",
+                  "formats": [
+                    {
+                      "format": 1600008,
+                      "defn": "V720P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6v8gx-mnfmkde1diiq5b.16000081777026774.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gx-mnfmkde1diiq5b.16000081777026774.mp4",
+                      "width": 720,
+                      "height": 1280
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gx-mnfmkde1diiq5b.default.mp4",
+                    "width": 540,
+                    "height": 960
+                  },
+                  "mmsData": "{\"vid\":\"th-11110105-6v8gx-mnfmkde1diiq5b\",\"biz\":107,\"duration\":23033,\"create_time\":1777026767,\"update_time\":1777026782,\"serviceID\":2,\"cover\":\"https://down-tx-th.img.susercontent.com/th-11110105-6v8gx-mnfmkde1diiq5b_cover\",\"cover_list\":[],\"formats\":[{\"format\":1600008,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gx-mnfmkde1diiq5b.16000081777026774.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gx-mnfmkde1diiq5b.16000081777026774.mp4\",\"width\":720,\"height\":1280,\"bitrate\":899884,\"abitrate\":128258,\"size\":2981254,\"fps\":25,\"duration\":23040,\"update_time\":1777026794,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gx-mnfmkde1diiq5b.default.mp4\",\"width\":540,\"height\":960,\"bitrate\":461536,\"abitrate\":32163,\"size\":1442391,\"fps\":25,\"duration\":23040,\"update_time\":1777026803,\"codec\":\"H264\"},\"extend_formats\":{\"H265\":[{\"format\":1600309,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gx-mnfmkde1diiq5b.16003091777026794.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gx-mnfmkde1diiq5b.16003091777026794.mp4\",\"width\":720,\"height\":1280,\"bitrate\":471550,\"abitrate\":128258,\"size\":1750592,\"fps\":25,\"duration\":23040,\"update_time\":1777026821,\"codec\":\"H265\"}]},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "name": "สี",
+                  "options": [
+                    "เทา",
+                    "ขาว",
+                    "ม่วงอ่อน",
+                    "ชมพูอ่อน",
+                    "ฟ้าคราม",
+                    "เขียวมิ้นต์",
+                    "น้ำเงิน",
+                    "เขียวเข้ม",
+                    "ครีม",
+                    "1ชุด"
+                  ],
+                  "images": [
+                    "7f8d78015f8cc049b49a582af49475ac",
+                    "5e06b7dbca58619d5def1e5433d16f3c",
+                    "bdb8e1497da109639cd1da9875d77251",
+                    "1e572825778bdc3b32dda7bbb07acf93",
+                    "c3cf3182610835345ec79ee4c4b3e7fa",
+                    "e885b96aa00f1f722b037ba1b3168113",
+                    "5b914575d8dc3e8c2f86dd04afba95d2",
+                    "bc6e39428182df422255175d57e87f6c",
+                    "5066c62186fa9b2b05d17d4f1613dde5",
+                    "th-11134207-81ztp-mohyg29ttczx38"
+                  ],
+                  "type": 0
+                },
+                {
+                  "name": "ขนาด",
+                  "options": [
+                    "ใหญ่ 40cm",
+                    "เด็ก 30cm"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": true,
+              "transparentBackgroundImage": "sg-50009109-34e3721e3b8834369cc04e92e9dfa3ba",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25316133",
+          "link": "https://s.shopee.co.th/5q1qIvk3BH",
+          "linkName": "เมล็ดผัก เจียไต๋ ซื้อ 10 แถม 2 มีโค๊ดส่วนลด (เมล็ดพันธุ์ผัก เจียไต๋ OP)",
+          "image": "th-11134207-7rase-ma2a6n7ohjkf13",
+          "linkType": "ITEM",
+          "itemId": "41851384126",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-81zte-mp1osg086z9c12",
+                "th-11134207-81ztg-mp1osgbbjpqn08",
+                "th-11134207-81ztl-mp1osgdvtqtc62",
+                "th-11134207-81ztn-mp0lkkytowlnc0",
+                "th-11134207-81zth-mp1osg06v7ykae",
+                "th-11134207-81ztn-mp1osfzwu80c27"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED",
+                  "icon": {
+                    "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                    "width": 46,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "เมล็ดผัก เจียไต๋ ซื้อ 10 แถม 2 มีโค๊ดส่วนลด (เมล็ดพันธุ์ผัก เจียไต๋ OP)",
+              "image": "th-11134207-7rase-ma2a6n7ohjkf13",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                  "width": 46,
+                  "height": 12
+                }
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 400พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "800000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "41851384126",
+              "shopid": "46060500",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "41851384126",
+                "modelId": "188523818699",
+                "promotionType": 0,
+                "promotionId": "0",
+                "price": "800000",
+                "discount": 0,
+                "originalPrice": "800000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "800000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "443081",
+                "monthlySoldCount": "20342",
+                "historicalSoldCountText": "ขายแล้ว 400พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 20พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "700640027",
+                "844931064601283",
+                "844931086908638",
+                "822059879271430",
+                "822120593886220",
+                "2073655",
+                "1908622",
+                "2058593",
+                "1718087960",
+                "1428713",
+                "1000110",
+                "1000028",
+                "1001365",
+                "843623424279161",
+                "700960097",
+                "1049107",
+                "2218676",
+                "2103652",
+                "2143613",
+                "1978602",
+                "298803386",
+                "2063592",
+                "998286006",
+                "2058612",
+                "2288632",
+                "2063604",
+                "298893326",
+                "2288631",
+                "2058592",
+                "2063618"
+              ],
+              "catid": 100636,
+              "shopeeVerified": true,
+              "likedCount": 5941,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "tonymuakfang",
+                "shopLocation": "จังหวัดนนทบุรี"
+              },
+              "status": 1,
+              "ctime": 1747630656,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100636,
+                  100714,
+                  101180
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.920411041708644,
+                "ratingCount": [
+                  19875,
+                  46,
+                  22,
+                  213,
+                  909,
+                  18685
+                ]
+              },
+              "globalBrand": {
+                "brandId": 1118631
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "api/v4/11110105/mms/th-11110105-6v8gu-mp7tzr1a9czyf3.16000081780913468.mp4",
+                  "thumbUrl": "th-11110105-6v8gu-mp7tzr1a9czyf3_cover",
+                  "duration": 33,
+                  "version": 2,
+                  "vid": "th-11110105-6v8gu-mp7tzr1a9czyf3",
+                  "formats": [
+                    {
+                      "format": 1600008,
+                      "defn": "V720P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6v8gu-mp7tzr1a9czyf3.16000081780913468.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gu-mp7tzr1a9czyf3.16000081780913468.mp4",
+                      "width": 720,
+                      "height": 1280
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gu-mp7tzr1a9czyf3.default.mp4",
+                    "width": 540,
+                    "height": 960
+                  },
+                  "mmsData": "{\"vid\":\"th-11110105-6v8gu-mp7tzr1a9czyf3\",\"biz\":107,\"duration\":33119,\"create_time\":1780913462,\"update_time\":1780913470,\"serviceID\":2,\"cover\":\"https://down-tx-th.img.susercontent.com/th-11110105-6v8gu-mp7tzr1a9czyf3_cover\",\"cover_list\":[],\"formats\":[{\"format\":1600008,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gu-mp7tzr1a9czyf3.16000081780913468.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gu-mp7tzr1a9czyf3.16000081780913468.mp4\",\"width\":720,\"height\":1280,\"bitrate\":857216,\"abitrate\":128278,\"size\":4098592,\"fps\":25,\"duration\":33040,\"update_time\":1780913488,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gu-mp7tzr1a9czyf3.default.mp4\",\"width\":540,\"height\":960,\"bitrate\":429998,\"abitrate\":32258,\"size\":1938064,\"fps\":25,\"duration\":33040,\"update_time\":1780913494,\"codec\":\"H264\"},\"extend_formats\":{\"H265\":[{\"format\":1600309,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gu-mp7tzr1a9czyf3.16003091780913488.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gu-mp7tzr1a9czyf3.16003091780913488.mp4\",\"width\":720,\"height\":1280,\"bitrate\":810308,\"abitrate\":128278,\"size\":3907967,\"fps\":25,\"duration\":33040,\"update_time\":1780913528,\"codec\":\"H265\"}]},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "name": "ชนิด",
+                  "options": [
+                    "กระเจี๊ยบเขียว",
+                    "กวางตุ้งดอกต้นขาว",
+                    "กวางตุ้งดอกต้นเขียว",
+                    "กวางตุ้งดอกฮ่องกง",
+                    "ผักโขม",
+                    "กวางตุ้งฮ่องเต้",
+                    "กวางตุ้งฮ่องเต้ไทนี่",
+                    "กะหล่ำดอก",
+                    "กะเพรา",
+                    "กะเพราป่า",
+                    "ข้าวโพดฝักอ่อน",
+                    "ข้าวโพดพันธ์ุสำลี",
+                    "กะหล่ำปลีรูปหัวใจ",
+                    "คะน้ายอด",
+                    "คะน้าฮ่องกง",
+                    "คะน้าเห็ดหอม",
+                    "คะน้าใบ",
+                    "คื่นฉ่าย",
+                    "คื่นฉ่ายฝรั่ง",
+                    "ตั้งโอ๋",
+                    "ถัวฝักยาวพันธุ์เนื้อ",
+                    "ถั่วฝักยาวถั่วเส้น",
+                    "ถั่วฝักยาวนิโกร",
+                    "ถั่วฝักยาวพุ่มม่วง",
+                    "ถั่วฝักยาวเมล็ดขาว",
+                    "ถั่วพุ่ม",
+                    "ถั่วพู",
+                    "ถั่วพูสีม่วง",
+                    "ถั่วลันเตา",
+                    "ถั่วแขก",
+                    "ทานตะวันงอก",
+                    "น้ำเต้าพันธุ์ลูกยาว",
+                    "น้ำเต้าลูกกลม",
+                    "บวบงู",
+                    "กะหล่ำปลี",
+                    "บวบหอม",
+                    "บวบหอมพันธุ์ลูกยาว",
+                    "ปวยเล้ง",
+                    "มะเขือซุปเปอร์ตอแหล",
+                    "ขาวปลีพันธุ์เบา",
+                    "ขาวใหญ่",
+                    "ผักกาดหอม",
+                    "พริกเดือยไก่",
+                    "ผักกาดหอมเพอเพิล",
+                    "ผักขี้หูด",
+                    "ผักชี",
+                    "ผักชีฝรั่ง",
+                    "ผักชีลาว",
+                    "ผักบุ้งจีน",
+                    "ผักบุ้งจีนเรียวไผ่",
+                    "ผักบุ้งแก้วเย็นตาโฟ",
+                    "ผักโขมแดง",
+                    "พริกกะเหรี่ยงยาว",
+                    "พริกกะเหรี่ยงสั้น",
+                    "พริกขี้หนู",
+                    "พริกขี้หนูขาว",
+                    "พริกขี้หนูสวน",
+                    "พริกจินดาแดง",
+                    "พริกชี้ฟ้า",
+                    "พริกหนุ่มขาว",
+                    "พริกหยวก",
+                    "พริกเหลือง",
+                    "ฟักทอง",
+                    "ฟักทอง ลายข้าวตอก",
+                    "ฟักทองทอดยอด",
+                    "มะระขี้นก",
+                    "มะระขี้นกลูกใหญ่",
+                    "มะระจีน",
+                    "มะระจีนคอนแวกซ์",
+                    "มะละกอฮอลแลนด์ สตาร์",
+                    "มะละกอแขกดำ",
+                    "มะเขือคางกบรักบี้",
+                    "มะเขือจานขาว",
+                    "มะเขือพวงไร้หนาม",
+                    "มะเขือยาว",
+                    "มะเขือยาวม่วง",
+                    "มะเขือเจ้าพระยา",
+                    "มะเขือเทศลูกท้อ",
+                    "มะเขือเทศสีดา",
+                    "มะเขือเปราะคางกบ",
+                    "มะเขือเปราะจานม่วง",
+                    "มะเขือเปราะจาว",
+                    "มะเขือเปราะม่วง",
+                    "มะเขือไข่เต่าขาว",
+                    "มะเขือไข่เต่าเขียว",
+                    "หอมแบ่ง",
+                    "เขียวกวางตุ้ง",
+                    "เขียวน้อย",
+                    "เขียวปลี",
+                    "แตงกวา",
+                    "แตงกวาขาว",
+                    "แตงท่อน",
+                    "แตงร้าน",
+                    "แตงโมดำ",
+                    "แตงโมอ่อน",
+                    "แตงไทย",
+                    "แตงไทยลูกกลม",
+                    "แฟง",
+                    "แมงลัก",
+                    "โหระพา"
+                  ],
+                  "images": [
+                    "th-11134207-81ztk-mjtjnjkqtedhbc",
+                    "th-11134207-81ztl-mh1qgygkibrjc5",
+                    "th-11134207-7rasa-m9y4cj8h2tip4b",
+                    "th-11134207-81ztl-ms556namru9x32",
+                    "th-11134207-81ztp-mory3ul2j8jy29",
+                    "th-11134207-7rasb-m9y4j8nrs7hqef",
+                    "th-11134207-7rasc-m9y58t4itxwxfd",
+                    "th-11134207-81ztk-mjtjgnjqfjt059",
+                    "th-11134207-7rasg-m9y4m4vda53jc5",
+                    "th-11134207-7rask-m9y56jy9kw9bc7",
+                    "th-11134207-81zte-ms55806i169y0a",
+                    "th-11134207-81zth-mp7hwuy3da8b32",
+                    "th-11134207-81ztd-morxxva278csdc",
+                    "th-11134207-7ras8-m9y4ap43u6vj64",
+                    "th-11134207-7rasm-m9y6ambsu7zib4",
+                    "th-11134207-7ra0o-mcqadkd4x8x2e8",
+                    "th-11134207-7rasi-m9y6esrcp5qn1a",
+                    "th-11134207-7rasb-m9y3pu98mlan93",
+                    "th-11134207-7rase-m9y5uhl4ojxtb9",
+                    "th-11134207-7rasf-m9y47kgep9b47f",
+                    "th-11134207-7ra0l-mcqacnwqdnqe99",
+                    "th-11134207-81zte-me19hm3j7rwm95",
+                    "th-11134207-7rasj-m9y4i4w1zakv38",
+                    "th-11134207-7rasb-mahxferx7hz3dc",
+                    "th-11134207-81ztm-migv0skijvgg85",
+                    "th-11134207-7rasa-m9y5c9zg2sm862",
+                    "th-11134207-7rasi-matvsb3px9j500",
+                    "th-11134207-7ras8-m9y5w9q6tikv78",
+                    "th-11134207-7ra0j-md0f3lq8y4bi89",
+                    "th-11134207-7rasj-m9y3tff9lvtsc1",
+                    "th-11134207-7rasi-m9y68cvu0stq66",
+                    "th-11134207-81ztj-miguf59hkdtv8e",
+                    "th-11134207-7rash-m9y48u9xnbyn9d",
+                    "th-11134207-81ztk-mf2bahzfrjtb6f",
+                    "th-11134207-81ztf-moryefb9f8y510",
+                    "th-11134207-7rask-m9y66j1qd55s70",
+                    "th-11134207-7rasa-m9y4fvzsd36ob9",
+                    "th-11134207-81zth-ms555ve3tfrac8",
+                    "th-11134207-81zte-moryibeqbz0ic1",
+                    "th-11134207-7rash-m9y46in61a7i58",
+                    "th-11134207-7rasl-m9y3qhypxmup17",
+                    "th-11134207-7ras8-m9y462clvn5ab1",
+                    "th-11134207-81ztg-mory0zl37or24d",
+                    "th-11134207-81zti-migujjr2n8cgec",
+                    "th-11134207-81zth-mh1qic14opouf7",
+                    "th-11134207-7rasm-m9y4le4afhov33",
+                    "th-11134207-7ra0g-mcqaa9g4zexqbf",
+                    "th-11134207-7rasi-m9y4b7l6sxkh35",
+                    "th-11134207-7rash-majm1eiok1bzac",
+                    "th-11134207-7rasm-m9y4a88qj03zfa",
+                    "th-11134207-7rasf-m9y60zls854e6c",
+                    "th-11134207-7rasa-m9y6edssla7ld6",
+                    "th-11134207-7rasb-m9y57eqqisj57d",
+                    "th-11134207-7ra0h-md07hrn12fut07",
+                    "th-11134207-7rask-m9y3of8fak1d45",
+                    "th-11134207-7rasl-m9y6a0lwmfhq2c",
+                    "th-11134207-7rasi-m9y4js6v7asg38",
+                    "th-11134207-7rasj-m9y5bv6pqeb280",
+                    "th-11134207-7rase-m9y0fylup27432",
+                    "th-11134207-7rasf-m9y48518mk8e34",
+                    "th-11134207-7ras9-m9y6d51u2q5tf6",
+                    "th-11134207-7rase-m9y3rs3cfi3345",
+                    "th-11134207-7rasb-m9y6cj9fymhsd3",
+                    "th-11134207-81ztc-mp7hxjd67o5r00",
+                    "th-11134207-7rasm-m9y4pqa9wea7d4",
+                    "th-11134207-7rasj-m9y49s1icpo1a8",
+                    "th-11134207-7ra0k-mcqabmnqw12e38",
+                    "th-11134207-81zti-ms557b1oi0oxf2",
+                    "th-11134207-81ztg-miguxon51xc7f2",
+                    "th-11134207-7rasa-m9y5yv83zwmp0d",
+                    "th-11134207-7rasj-m9y5u2radrld35",
+                    "th-11134207-7rase-m9y5vntcvvin64",
+                    "th-11134207-7rasf-m9y58b1l9367df",
+                    "th-11134207-7rasb-m9y67q3ddg4ub9",
+                    "th-11134207-81zti-mjtjlbphps7440",
+                    "th-11134207-7ra0m-md0fc9x8378m29",
+                    "th-11134207-7ras9-m9y55vlr7kkx3f",
+                    "th-11134207-7ras9-m9y4hnygrcr315",
+                    "th-11134207-81ztd-migut9tq4kqo64",
+                    "th-11134207-7rash-matvp7vcp7jo9c",
+                    "th-11134207-7rasl-m9y5aftow7vy17",
+                    "th-11134207-7rasg-m9y4nkul7ugha0",
+                    "th-11134207-7rasd-m9y4n4w8kc8h91",
+                    "th-11134207-7rask-m9y4kvrna9fz7a",
+                    "th-11134207-7rasd-m9y5beik4nhqba",
+                    "th-11134207-81ztl-me5gvqstyccl47",
+                    "th-11134207-7rasc-m9y473njafhq79",
+                    "th-11134207-7rasl-m9y3k08bz2ltdb",
+                    "th-11134207-7rash-m9y4irvgcjfk34",
+                    "th-11134207-81zti-me5gdjk9wflv44",
+                    "th-11134207-81ztn-ms5546224dms8b",
+                    "th-11134207-7rasd-m9y52ztz2fox6f",
+                    "th-11134207-7rasa-matvxmt3dxttb7",
+                    "th-11134207-7rash-m9y4gcfmb10u3c",
+                    "th-11134207-81zti-me5ic509pd6td1",
+                    "th-11134207-81zth-mh1qdtcs0wekcc",
+                    "th-11134207-81zth-miguovpklq81c3",
+                    "th-11134207-81ztl-me5i285l3ojmf2",
+                    "th-11134207-7rasi-m9y3s730hrsh55",
+                    "th-11134207-7rasf-m9y6bicdzjseeb"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25317649",
+          "link": "https://s.shopee.co.th/9zrPI6S28i",
+          "linkName": "ถุงเท้าข้อกลาง นักเรียน สไตล์ไทย ถุงเท้าข้อยาว ข้อกลาง ส่งจากไทย reeyasocks",
+          "image": "3769676a51f7b94b0b0afa5b225cb9e7",
+          "linkType": "ITEM",
+          "itemId": "9533640458",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "3769676a51f7b94b0b0afa5b225cb9e7",
+                "eab4676c834436d8da8dfd0591b6c73a",
+                "bb312a4088793d6d8b583dedf4ac8932",
+                "81db2f4abf123fe63250e2424b42c4e8",
+                "947e60a6af9d61127345b632760c0e06",
+                "512da932321bf4eb0af1929d65a56aec",
+                "9d84d70d80372acc0185330128e1334d",
+                "6a5896464d02f47676a04ee5263006cc"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED",
+                  "icon": {
+                    "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                    "width": 46,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "ถุงเท้าข้อกลาง นักเรียน สไตล์ไทย ถุงเท้าข้อยาว ข้อกลาง ส่งจากไทย reeyasocks",
+              "image": "3769676a51f7b94b0b0afa5b225cb9e7",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                  "width": 46,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-86%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 400พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "100000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "9533640458",
+              "shopid": "387840397",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "9533640458",
+                "modelId": "74483691670",
+                "promotionType": 502,
+                "promotionId": "481404517826566",
+                "price": "100000",
+                "strikethroughPrice": "700000",
+                "discount": 86,
+                "originalPrice": "700000",
+                "modelSelectionLogic": 2,
+                "appliedProductPromoPrice": "100000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "402325",
+                "monthlySoldCount": "15624",
+                "historicalSoldCountText": "ขายแล้ว 400พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "844931064601283",
+                "822059879271430",
+                "844931086908638",
+                "1718087960",
+                "1428713",
+                "700640027",
+                "822120593886220",
+                "298888364",
+                "1908622",
+                "2058593",
+                "843623424279161",
+                "1000110",
+                "1001365",
+                "1000028",
+                "2103651",
+                "2143613",
+                "1978602",
+                "298803386",
+                "298623321",
+                "298923318",
+                "2218676",
+                "1718388151",
+                "1015641",
+                "998286006",
+                "2063618",
+                "298893326",
+                "2058612",
+                "2063592",
+                "2288631",
+                "2058592",
+                "2063604",
+                "2288632"
+              ],
+              "catid": 100011,
+              "shopeeVerified": true,
+              "likedCount": 2487,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "reeyasocks",
+                "shopLocation": "จังหวัดสมุทรสาคร"
+              },
+              "status": 1,
+              "ctime": 1616998225,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100011,
+                  100062
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.876058302867039,
+                "ratingCount": [
+                  42133,
+                  160,
+                  168,
+                  776,
+                  2459,
+                  38570
+                ]
+              },
+              "tierVariations": [
+                {
+                  "name": "สี",
+                  "options": [
+                    "ดำ(ข้อกลาง)",
+                    "ขาว(ข้อกลาง)",
+                    "เทา(ข้อกลาง)",
+                    "ดำ(ข้อสั้น)",
+                    "ขาว(ข้อสั้น)",
+                    "เทา(ข้อสั้น)"
+                  ],
+                  "images": [
+                    "512da932321bf4eb0af1929d65a56aec",
+                    "9d84d70d80372acc0185330128e1334d",
+                    "6a5896464d02f47676a04ee5263006cc",
+                    "29a06a604f0391fe33fe7022bed9a14a",
+                    "e8f582d5ae768bd4900fbaefd1714976",
+                    "875a8be5b3b3ec3c3e4ed25ca1e25d3c"
+                  ],
+                  "type": 0
+                },
+                {
+                  "name": "ขนาด",
+                  "options": [
+                    "FreeSize"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "sg-50009109-6ddf3ce455818baf4e405de9e55cb7ab",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "24597386",
+          "link": "https://s.shopee.co.th/4q909rhxJt",
+          "linkName": "98-พร้อมส่งจากไทย กางเกงช้างขาปล่อย ผ้าดีผ้าเบาใส่สบายใส่แล้วขาไม่เต่อ​",
+          "image": "sg-11134201-22120-yt9w1jfbuclvb4",
+          "linkType": "ITEM",
+          "itemId": "21166766708",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "sg-11134201-22120-yt9w1jfbuclvb4",
+                "sg-11134201-22120-vd3rkbtbuclv72",
+                "sg-11134201-22120-1f31f3gcuclv2e",
+                "sg-11134201-22120-fs76qupcuclvc8",
+                "sg-11134201-22120-yc6g3orcuclv71",
+                "sg-11134201-22120-h9zn5jccuclvd4",
+                "sg-11134201-22120-c9s95n7buclv6f",
+                "sg-11134201-22120-g8ukclhduclv51"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [],
+              "name": "98-พร้อมส่งจากไทย กางเกงช้างขาปล่อย ผ้าดีผ้าเบาใส่สบายใส่แล้วขาไม่เต่อ​",
+              "image": "sg-11134201-22120-yt9w1jfbuclvb4",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "adsText": "Ad"
+              },
+              "discountTag": {
+                "discountText": "-64%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 600พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "3600000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "21166766708",
+              "shopid": "26237854",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "21166766708",
+                "modelId": "203437127563",
+                "promotionType": 301,
+                "promotionId": "903930813808640",
+                "price": "3600000",
+                "strikethroughPrice": "10000000",
+                "discount": 64,
+                "originalPrice": "10000000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "3600000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "634997",
+                "monthlySoldCount": "16108",
+                "historicalSoldCountText": "ขายแล้ว 600พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1009116",
+                "844931064601283",
+                "844931086908638",
+                "1718087960",
+                "1428713",
+                "700640027",
+                "1908622",
+                "1000110",
+                "1000028",
+                "1001365",
+                "2073655",
+                "2058593",
+                "298643324",
+                "700765086",
+                "2108635",
+                "2098592",
+                "2103586",
+                "298938367",
+                "2108629",
+                "822059879271430",
+                "822120593886220",
+                "2103651",
+                "2143613",
+                "2218676",
+                "1978602",
+                "298803386",
+                "1049107",
+                "298893326",
+                "2063604",
+                "2063618",
+                "2063592",
+                "2058612",
+                "2288631",
+                "2288632",
+                "998286006",
+                "2058592"
+              ],
+              "catid": 100017,
+              "shopeeVerified": false,
+              "likedCount": 52223,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "comfashionstore",
+                "shopLocation": "จังหวัดสมุทรปราการ"
+              },
+              "status": 1,
+              "ctime": 1670180045,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100017,
+                  100100,
+                  100358
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.6472456025401945,
+                "ratingCount": [
+                  79593,
+                  1298,
+                  1397,
+                  4505,
+                  9624,
+                  62769
+                ]
+              },
+              "tierVariations": [
+                {
+                  "name": "สี",
+                  "options": [
+                    "ช้าง-ดำ",
+                    "ช้าง-เทา",
+                    "ช้าง-ฟ้า/ขาว",
+                    "ช้าง-แดง",
+                    "ช้าง-ฟ้า",
+                    "ช้าง-น้ำตาล",
+                    "ช้าง-น้ำตาล/ขาว"
+                  ],
+                  "images": [
+                    "th-11134207-7r98t-llhdzafic88ub8",
+                    "th-11134207-7r98v-ll4ivcotgppo0d",
+                    "th-11134207-7r98x-lld7httt4eda62",
+                    "sg-11134201-22120-9t2qdno3tclv16",
+                    "th-11134207-7r98y-llhdzafidmta60",
+                    "th-11134207-7r98v-llam0ggse9by2a",
+                    "sg-11134201-22120-pqr2v3r4tclv66"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "th-11134004-7r992-luuvxda3x7px5b",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "24597293",
+          "link": "https://s.shopee.co.th/5fi79FWWg7",
+          "linkName": "ฟิล์มกระจก เต็มจอ สำหรับ iPhone กันมองกันเสือก PVT รุ่น 17 16 15 14 Pro Max 13 Pro Max 12 ProMax 7 8",
+          "image": "sg-11134201-7rbk5-ll8zfhv9vul92f",
+          "linkType": "ITEM",
+          "itemId": "15899423877",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "sg-11134201-7rbk5-ll8zfhv9vul92f",
+                "sg-11134201-7rbn2-ll8zfi2rmat1da",
+                "sg-11134201-7rbn6-ll8zfiksuhx0c0",
+                "sg-11134201-7r9c2-ll8zfjd3p35h5b",
+                "sg-11134201-7rbl5-ll8zfiaj9iu33b",
+                "sg-11134201-7rbnj-ll8zfiz89dua8c",
+                "th-11134207-7r98z-loca276eu38wa4"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED",
+                  "icon": {
+                    "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                    "width": 46,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "ฟิล์มกระจก เต็มจอ สำหรับ iPhone กันมองกันเสือก PVT รุ่น 17 16 15 14 Pro Max 13 Pro Max 12 ProMax 7 8",
+              "image": "sg-11134201-7rbk5-ll8zfhv9vul92f",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                  "width": 46,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-99%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 800พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "100000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "15899423877",
+              "shopid": "230773795",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "15899423877",
+                "modelId": "222333494162",
+                "promotionType": 502,
+                "promotionId": "481406245880207",
+                "price": "100000",
+                "strikethroughPrice": "9900000",
+                "discount": 99,
+                "originalPrice": "9900000",
+                "modelSelectionLogic": 2,
+                "appliedProductPromoPrice": "100000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "892638",
+                "monthlySoldCount": "14587",
+                "historicalSoldCountText": "ขายแล้ว 800พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1009116",
+                "1400175098",
+                "844931064601283",
+                "844931086908638",
+                "822059879271430",
+                "1718087960",
+                "1428713",
+                "700640027",
+                "1908622",
+                "822120593886220",
+                "298888364",
+                "1400066568",
+                "2058593",
+                "1015641",
+                "1000028",
+                "1000110",
+                "1001365",
+                "1798588",
+                "700960097",
+                "2218676",
+                "700810080",
+                "1718388151",
+                "298623321",
+                "1049107",
+                "822120593887756",
+                "831435736676373",
+                "1718067928",
+                "700960099",
+                "4199820314396172",
+                "814381247166470",
+                "2288632",
+                "2058592",
+                "2063604",
+                "2063592",
+                "998286006",
+                "298893326",
+                "2288631",
+                "2063618",
+                "2058612"
+              ],
+              "catid": 100013,
+              "shopeeVerified": true,
+              "likedCount": 33934,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "good_999_shop",
+                "shopLocation": "จังหวัดกรุงเทพมหานคร"
+              },
+              "status": 1,
+              "ctime": 1693813530,
+              "flag": 268632064,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100013,
+                  100075,
+                  100289
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.682091370073475,
+                "ratingCount": [
+                  125623,
+                  3478,
+                  1702,
+                  4938,
+                  11042,
+                  104463
+                ]
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "api/v4/11110105/mms/th-11110105-6kgcl-m8vj5wjb55cf93.16000081745300995.mp4",
+                  "thumbUrl": "th-11110105-6kgcl-m8vj5wjb55cf93_cover",
+                  "duration": 27,
+                  "version": 2,
+                  "vid": "th-11110105-6kgcl-m8vj5wjb55cf93",
+                  "formats": [
+                    {
+                      "format": 1600325,
+                      "defn": "V720P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6kgcl-m8vj5wjb55cf93.16003251745420108.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcl-m8vj5wjb55cf93.16003251745420108.mp4",
+                      "width": 808,
+                      "height": 720
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcl-m8vj5wjb55cf93.default.mp4",
+                    "width": 606,
+                    "height": 540
+                  },
+                  "mmsData": "{\"vid\":\"th-11110105-6kgcl-m8vj5wjb55cf93\",\"biz\":107,\"duration\":26841,\"create_time\":1745300993,\"update_time\":1745300996,\"serviceID\":2,\"cover\":\"https://down-tx-th.img.susercontent.com/th-11110105-6kgcl-m8vj5wjb55cf93_cover\",\"cover_list\":[],\"formats\":[{\"format\":1600325,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcl-m8vj5wjb55cf93.16003251745420108.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcl-m8vj5wjb55cf93.16003251745420108.mp4\",\"width\":808,\"height\":720,\"bitrate\":434568,\"abitrate\":48332,\"size\":1638759,\"fps\":25.00093,\"duration\":26841,\"update_time\":1745420117,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcl-m8vj5wjb55cf93.default.mp4\",\"width\":606,\"height\":540,\"bitrate\":279188,\"abitrate\":32356,\"size\":1069165,\"fps\":25,\"duration\":26841,\"update_time\":1745301160,\"codec\":\"H264\"},\"extend_formats\":{\"H265\":[{\"format\":1600318,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcl-m8vj5wjb55cf93.16003181745420108.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcl-m8vj5wjb55cf93.16003181745420108.mp4\",\"width\":808,\"height\":720,\"bitrate\":302175,\"abitrate\":48332,\"size\":1197539,\"fps\":25.00093,\"duration\":26841,\"update_time\":1745420124,\"codec\":\"H265\"}]},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "name": "ตัวเลือก",
+                  "options": [
+                    "7PLUS",
+                    "XS MAX",
+                    "X/XS",
+                    "11/XR",
+                    "11 pro",
+                    "11 pro max",
+                    "12",
+                    "12 pro",
+                    "12 pro max",
+                    "13",
+                    "13Pro",
+                    "13Promax",
+                    "14",
+                    "14pro",
+                    "14plus",
+                    "14promax",
+                    "15",
+                    "15pro",
+                    "15plus",
+                    "15promax",
+                    "16",
+                    "16pro",
+                    "16plus",
+                    "16promax",
+                    "17",
+                    "17air",
+                    "17pro",
+                    "17promax"
+                  ],
+                  "images": [
+                    "th-11134207-7r990-lodcnzc0n0f3fd",
+                    "th-11134207-7r991-lodcnzc0isprce",
+                    "th-11134207-7r98s-lodcnzc0llunb8",
+                    "th-11134207-7r98x-lodcnzc0k7a7c9",
+                    "th-11134207-7r98x-lodcnzc0he5b49",
+                    "th-11134207-7r98t-lodcnzc0fzkv78",
+                    "th-11134207-7r98s-lodcnzc0el0fa3",
+                    "th-11134207-7rash-m9y4cicuei4v04",
+                    "th-11134207-7r98t-lodcnzc0d6fz7a",
+                    "th-11134207-7r98o-lodcnzc0oezj67",
+                    "th-11134207-7r98z-lodcnzc0ptjz71",
+                    "th-11134207-7r991-lodcnzc0r84f20",
+                    "th-11134207-7r98o-lodcookzf0dg0e",
+                    "th-11134207-7r98w-lodcookzgexwea",
+                    "th-11134207-7r98p-lodcookzhticba",
+                    "th-11134207-7r98u-lodcookzj82sdd",
+                    "th-11134207-7r98v-lounxjip0g8tc2",
+                    "th-11134207-7r98v-lounxjip1ut9b5",
+                    "th-11134207-7r98v-lounxjip39dpce",
+                    "th-11134207-7r98u-lounxjip4ny50e",
+                    "th-11134207-7r98w-lzsr42mp4ayp66",
+                    "th-11134207-7r98q-lzsr44jsqnjde4",
+                    "th-11134207-7r98t-lzsr47tzi8ap6b",
+                    "th-11134207-7r98x-lzsr49s6ni5l76",
+                    "th-11134207-81ztj-menz1bsmd1qd61",
+                    "th-11134207-81ztj-menz1bsmd1qd61",
+                    "th-11134207-81ztj-menz1bsmd1qd61",
+                    "th-11134207-81ztj-menz1bsmd1qd61"
+                  ],
+                  "type": 0
+                },
+                {
+                  "name": "model",
+                  "options": [
+                    "D1-กันมอง",
+                    "HD-D5",
+                    "D9-ฟิล์มกระจกด้าน"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "sg-50009109-7b3f5a44ce2d3708c8d5202d5e55041a",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25316912",
+          "link": "https://s.shopee.co.th/W0JxjFSin",
+          "linkName": "Eden จัดส่งรวดเร็ว ไม้แขวนเสื้อ(1 เเพ็ค10 ชิ้นและ 2 เเพ็ค20 ชิ้น)ไม้แขวนเสื้อ กันลื่น เคลือบซิลิโคน",
+          "image": "th-11134207-7rasm-m4srbya4wnca4d",
+          "linkType": "ITEM",
+          "itemId": "26807989520",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-7rasm-m4srbya4wnca4d",
+                "th-11134207-7ras8-m4sp5n5ed2pjed",
+                "th-11134207-7rasb-m4sp5n5ed2n181",
+                "th-11134207-7rasm-m4sp6od9wbrx45",
+                "th-11134207-7rasl-m4spai1wewon57",
+                "th-11134207-7rasc-m4spb1mxr63hc9",
+                "th-11134207-7rasi-m4spb1mxr65zcd",
+                "th-11134207-7rasc-m4spb1mxskqfbd",
+                "th-11134207-7r98x-lyz156tv38o9cd"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED_PLUS",
+                  "icon": {
+                    "hash": "th-11134258-7ra0u-mbhqckcw8cjo4a",
+                    "width": 64,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "Eden จัดส่งรวดเร็ว ไม้แขวนเสื้อ(1 เเพ็ค10 ชิ้นและ 2 เเพ็ค20 ชิ้น)ไม้แขวนเสื้อ กันลื่น เคลือบซิลิโคน",
+              "image": "th-11134207-7rasm-m4srbya4wnca4d",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED_PLUS",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0u-mbhqckcw8cjo4a",
+                  "width": 64,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-100%"
+              },
+              "voucherAppliedIcon": {
+                "canDisplay": true
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 200พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "0",
+                "displayPriceType": 0
+              },
+              "finalPriceIcon": {
+                "iconType": 1,
+                "icon": {
+                  "hash": "id-11134005-81ztm-mq5zs2sy7swe8e",
+                  "width": 48,
+                  "height": 48
+                }
+              }
+            },
+            "itemData": {
+              "itemid": "26807989520",
+              "shopid": "1326040519",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "26807989520",
+                "modelId": "217725385829",
+                "promotionType": 502,
+                "promotionId": "481405587374138",
+                "price": "0",
+                "strikethroughPrice": "5000000",
+                "discount": 100,
+                "recommendedShopVoucherPromotionId": "1492762075754496",
+                "recommendedShopVoucherInfo": {
+                  "promotionId": "1492762075754496",
+                  "voucherCode": "EDENSDGHT",
+                  "voucherDiscount": "100000",
+                  "timeInfo": {
+                    "startTime": "1787410260",
+                    "endTime": "1795449540"
+                  },
+                  "minSpend": "0",
+                  "signature": "613c4579b4ee152511ee4586db8d0c19fcee65b1a9c786cc34c85cfaea691814",
+                  "signatureSource": 16,
+                  "percentageWithDecimal": "0"
+                },
+                "originalPrice": "5000000",
+                "modelSelectionLogic": 2,
+                "appliedProductPromoPrice": "100000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "211916",
+                "monthlySoldCount": "14225",
+                "historicalSoldCountText": "ขายแล้ว 200พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "844931086908638",
+                "844931064601283",
+                "822059879271430",
+                "822120593886220",
+                "1718087960",
+                "1428713",
+                "1908622",
+                "2058593",
+                "837903335771681",
+                "843623424279161",
+                "298923318",
+                "1000110",
+                "1000028",
+                "1001365",
+                "2103651",
+                "2143613",
+                "1978602",
+                "298803386",
+                "700960097",
+                "299103340",
+                "1400845102",
+                "298923351",
+                "701025034",
+                "1049107",
+                "1015641",
+                "2288631",
+                "998286006",
+                "2058592",
+                "2288632",
+                "298893326",
+                "2063604",
+                "2063618",
+                "2058612",
+                "2063592"
+              ],
+              "catid": 100636,
+              "shopeeVerified": true,
+              "likedCount": 7121,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "Eden Shop TH",
+                "shopLocation": "จังหวัดสมุทรปราการ"
+              },
+              "status": 1,
+              "ctime": 1723720899,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100636,
+                  100721,
+                  101253
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.915544622820645,
+                "ratingCount": [
+                  23307,
+                  54,
+                  26,
+                  263,
+                  1137,
+                  21827
+                ]
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "api/v4/11110105/mms/th-11110105-6kgcj-lyz1dslzrg6h4a.16000081723720833.mp4",
+                  "thumbUrl": "th-11110105-7r98q-lyz1dvb3v3ncf6",
+                  "duration": 28,
+                  "version": 2,
+                  "vid": "th-11110105-6kgcj-lyz1dslzrg6h4a",
+                  "formats": [
+                    {
+                      "format": 1600323,
+                      "defn": "V540P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6kgcj-lyz1dslzrg6h4a.default.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcj-lyz1dslzrg6h4a.default.mp4",
+                      "width": 480,
+                      "height": 720
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcj-lyz1dslzrg6h4a.default.mp4",
+                    "width": 480,
+                    "height": 720
+                  },
+                  "mmsData": "{\"vid\":\"th-11110105-6kgcj-lyz1dslzrg6h4a\",\"biz\":107,\"duration\":28072,\"create_time\":1723720831,\"update_time\":1723720838,\"serviceID\":2,\"cover\":\"https://down-tx-th.img.susercontent.com/th-11110105-7r98q-lyz1dvb3v3ncf6\",\"cover_list\":[],\"formats\":[{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcj-lyz1dslzrg6h4a.default.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcj-lyz1dslzrg6h4a.default.mp4\",\"width\":480,\"height\":720,\"bitrate\":283537,\"abitrate\":128240,\"size\":1464144,\"fps\":25.03572,\"duration\":28010,\"update_time\":1723720864,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcj-lyz1dslzrg6h4a.default.mp4\",\"width\":480,\"height\":720,\"bitrate\":283537,\"abitrate\":128240,\"size\":1464144,\"fps\":25.03572,\"duration\":28010,\"update_time\":1723720864,\"codec\":\"H264\"},\"extend_formats\":{},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "name": "ตัวเลือก",
+                  "options": [
+                    "HMC96-B-สีฟ้า10ชิ้น",
+                    "HMC96-GN-เขียว10ชิ้น",
+                    "HMC96-Pe-ม่วง10ชิ้น",
+                    "HMC96-W-สีขาว",
+                    "HMC96-B2-สีน้ำเงิน",
+                    "HMC96-BK--สีดำ10ชิ้น",
+                    "HMC96-C--สีกากี10ชิ้",
+                    "HMC96-GD--สีทอง10ชิ้",
+                    "HMC96-Gn--สีเขียว",
+                    "HMC96-Gy--สีเทา",
+                    "HMC96-Pe2--ม่วงเข้ม",
+                    "HMC96-Pk--สีชมพู",
+                    "HMC96-W--สีขาว",
+                    "H73-1",
+                    "H73-2",
+                    "HMC96-B2*2 (20ชิ้น)",
+                    "HMC96-BK*2 (20ชิ้น)",
+                    "HMC96-B*2 (20ชิ้น)",
+                    "HMC96-C*2 (20ชิ้น)",
+                    "HMC96-GD*2 (20ชิ้น)",
+                    "HMC96-Gn*2 (20ชิ้น)",
+                    "HMC96-Gy*2 (20ชิ้น)",
+                    "HMC96-Pe2*2 (20ชิ้น)",
+                    "HMC96-Pe*2 (20ชิ้น)",
+                    "HMC96-Pk*2 (20ชิ้น)",
+                    "HMC96-W*2 (20ชิ้น)"
+                  ],
+                  "images": [
+                    "th-11134207-7rash-m2g8bkaprx7lb8",
+                    "th-11134207-7rasm-m2g8bz71xnfl0c",
+                    "th-11134207-81ztn-mgzydtvebnyn3b",
+                    "th-11134207-7rasc-m7g199rr5hwade",
+                    "th-11134207-7rask-m4pjoj76nb9wd7",
+                    "th-11134207-7rasm-m4pjoxejuzmc9a",
+                    "th-11134207-7rasg-m4pjp7fj6qlvd2",
+                    "th-11134207-81ztj-mji2h1jt375u11",
+                    "th-11134207-7rasf-m4pjppyu281fdd",
+                    "th-11134207-7rasb-m4pjpuglhi38ba",
+                    "th-11134207-7rasb-m4pjq0b6xbn791",
+                    "th-11134207-7rasi-m4pjq5a5nff880",
+                    "th-11134207-7rasf-m4pjqfhspfisbd",
+                    "th-11134207-7ras9-m4pjr8cmh8hf6c",
+                    "th-11134207-7rasj-m4pjrm6y7zub2e",
+                    "th-11134207-81zth-mee3j8oec2ypb6",
+                    "th-11134207-81zte-mee3k4f51fyfbc",
+                    "th-11134207-81ztl-mee3kdjq56vb6f",
+                    "th-11134207-81ztq-mee3kpgc6k909d",
+                    "th-11134207-81zth-mji2gifv12wyce",
+                    "th-11134207-81ztm-mee3lbwnmnlya4",
+                    "th-11134207-81zto-mee3lnassjyca9",
+                    "th-11134207-81ztf-mee3m4yaxypy4a",
+                    "th-11134207-81zto-mee3mgiv93b4fb",
+                    "th-11134207-81ztq-mee3ms98i70j3d",
+                    "th-11134207-81ztj-mee3n4qxnaww86"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "sg-11134252-7ra0x-mbevv92bdcebec",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "24597841",
+          "link": "https://s.shopee.co.th/2B8EzMM0hw",
+          "linkName": "Naturista เจลล้างหน้าทีทรี สำหรับคนเป็นสิว และผิวแพ้ง่าย Tea Tree Facial Cleanser 300ml",
+          "image": "82d41d3050c4b4ef8e831c678a527402",
+          "linkType": "ITEM",
+          "itemId": "3716295861",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "82d41d3050c4b4ef8e831c678a527402",
+                "bb8f9288e6b13984ab8e83cec7eb34d2",
+                "35d63c7f107dbb3ab63913ab0180bdaf",
+                "d1acc7a26633cc41ad3992e6889bc2c8",
+                "1f24bf973755c90f8c6b09c845696ac3"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "OFFICIAL_SHOP",
+                  "icon": {
+                    "hash": "th-11134258-7r992-lyb3pndzwa09e2",
+                    "width": 25,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "Naturista เจลล้างหน้าทีทรี สำหรับคนเป็นสิว และผิวแพ้ง่าย Tea Tree Facial Cleanser 300ml",
+              "image": "82d41d3050c4b4ef8e831c678a527402",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "OFFICIAL_SHOP",
+                "imageFlag": {
+                  "hash": "th-11134258-7r992-lyb3pndzwa09e2",
+                  "width": 25,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-99%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 1000พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "100000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "3716295861",
+              "shopid": "223832803",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "3716295861",
+                "modelId": "62149783944",
+                "promotionType": 502,
+                "promotionId": "481420728812656",
+                "price": "100000",
+                "strikethroughPrice": "75000000",
+                "discount": 99,
+                "originalPrice": "75000000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "100000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "1171037",
+                "monthlySoldCount": "13140",
+                "historicalSoldCountText": "ขายแล้ว 1000พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1000028",
+                "1001365",
+                "1014045",
+                "1400025028",
+                "1009116",
+                "1133665",
+                "1400095024",
+                "1400175098",
+                "1428612",
+                "844931064601283",
+                "825249635454464",
+                "844931086908638",
+                "822059879271430",
+                "1718087960",
+                "1428713",
+                "700640027",
+                "1908622",
+                "1000110",
+                "822120593886220",
+                "298643630",
+                "700440041",
+                "2073655",
+                "2058593",
+                "298923318",
+                "837903335771681",
+                "843623424279161",
+                "299103340",
+                "998301024",
+                "2318612",
+                "700960097",
+                "2218676",
+                "299048420",
+                "998236066",
+                "298803386",
+                "1400845277",
+                "701025034",
+                "1015641",
+                "298923351",
+                "700810080",
+                "2063618",
+                "2063604",
+                "298893326",
+                "998286006",
+                "2288631",
+                "2288632",
+                "2058612",
+                "2058592",
+                "2063592"
+              ],
+              "catid": 100630,
+              "shopeeVerified": false,
+              "likedCount": 197933,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "Naturista Official",
+                "shopLocation": "จังหวัดกรุงเทพมหานคร"
+              },
+              "status": 1,
+              "ctime": 1580499299,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100630,
+                  100664,
+                  100891
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.861386610051285,
+                "ratingCount": [
+                  357101,
+                  1097,
+                  1273,
+                  6674,
+                  28116,
+                  319941
+                ]
+              },
+              "globalBrand": {
+                "brandId": 4691928
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16000031780904832.mp4",
+                  "thumbUrl": "th-11110105-6v8gs-mp7ouyg3a61afe_cover",
+                  "duration": 28,
+                  "version": 2,
+                  "vid": "th-11110105-6v8gs-mp7ouyg3a61afe",
+                  "formats": [
+                    {
+                      "format": 1600432,
+                      "defn": "V360P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004321785181842.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004321785181842.mp4",
+                      "width": 360,
+                      "height": 640
+                    },
+                    {
+                      "format": 1600003,
+                      "defn": "V480P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16000031780904832.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16000031780904832.mp4",
+                      "width": 480,
+                      "height": 854
+                    },
+                    {
+                      "format": 1600433,
+                      "defn": "V540P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004331785181842.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004331785181842.mp4",
+                      "width": 540,
+                      "height": 960
+                    },
+                    {
+                      "format": 1600434,
+                      "defn": "V720P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004341785181842.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004341785181842.mp4",
+                      "width": 720,
+                      "height": 1280
+                    },
+                    {
+                      "format": 1600435,
+                      "defn": "V720P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004351785181842.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004351785181842.mp4",
+                      "width": 720,
+                      "height": 1280
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.default.mp4",
+                    "width": 480,
+                    "height": 854
+                  },
+                  "mmsData": "{\"vid\":\"th-11110105-6v8gs-mp7ouyg3a61afe\",\"biz\":107,\"duration\":27585,\"create_time\":1780904829,\"update_time\":1780904834,\"serviceID\":2,\"cover\":\"https://down-tx-th.img.susercontent.com/th-11110105-6v8gs-mp7ouyg3a61afe_cover\",\"cover_list\":[],\"formats\":[{\"format\":1600432,\"defn\":\"V360P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004321785181842.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004321785181842.mp4\",\"width\":360,\"height\":640,\"bitrate\":203228,\"abitrate\":32239,\"size\":830445,\"fps\":25,\"duration\":27585,\"update_time\":1785181845,\"codec\":\"H264\"},{\"format\":1600003,\"defn\":\"V480P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16000031780904832.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16000031780904832.mp4\",\"width\":480,\"height\":854,\"bitrate\":593930,\"abitrate\":64164,\"size\":2292695,\"fps\":25,\"duration\":27600,\"update_time\":1780904851,\"codec\":\"H264\"},{\"format\":1600433,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004331785181842.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004331785181842.mp4\",\"width\":540,\"height\":960,\"bitrate\":473000,\"abitrate\":32239,\"size\":1759726,\"fps\":25,\"duration\":27585,\"update_time\":1785181851,\"codec\":\"H264\"},{\"format\":1600434,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004341785181842.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004341785181842.mp4\",\"width\":720,\"height\":1280,\"bitrate\":623682,\"abitrate\":48323,\"size\":2334249,\"fps\":25,\"duration\":27585,\"update_time\":1785181855,\"codec\":\"H264\"},{\"format\":1600435,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004351785181842.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004351785181842.mp4\",\"width\":720,\"height\":1280,\"bitrate\":1387553,\"abitrate\":48323,\"size\":4970552,\"fps\":30.00036,\"duration\":27585,\"update_time\":1785181858,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.default.mp4\",\"width\":480,\"height\":854,\"bitrate\":500837,\"abitrate\":32438,\"size\":1864208,\"fps\":25,\"duration\":27600,\"update_time\":1780904858,\"codec\":\"H264\"},\"extend_formats\":{\"H265\":[{\"format\":1600436,\"defn\":\"V360P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004361785181829.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004361785181829.mp4\",\"width\":360,\"height\":640,\"bitrate\":180587,\"abitrate\":32239,\"size\":755396,\"fps\":25,\"duration\":27585,\"update_time\":1785181841,\"codec\":\"H265\"},{\"format\":1600437,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004371785181842.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004371785181842.mp4\",\"width\":540,\"height\":960,\"bitrate\":244655,\"abitrate\":32239,\"size\":976144,\"fps\":25,\"duration\":27585,\"update_time\":1785181858,\"codec\":\"H265\"},{\"format\":1600438,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004381785181842.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004381785181842.mp4\",\"width\":720,\"height\":1280,\"bitrate\":444444,\"abitrate\":48323,\"size\":1727849,\"fps\":30.00036,\"duration\":27585,\"update_time\":1785181872,\"codec\":\"H265\"},{\"format\":1600439,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004391785181842.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6v8gs-mp7ouyg3a61afe.16004391785181842.mp4\",\"width\":720,\"height\":1280,\"bitrate\":531721,\"abitrate\":48323,\"size\":2028228,\"fps\":30.00036,\"duration\":27585,\"update_time\":1785181871,\"codec\":\"H265\"}]},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "options": [
+                    ""
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": true,
+              "transparentBackgroundImage": "7b70b0479186eb54761f9a6844ddeaac",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25317659",
+          "link": "https://s.shopee.co.th/8zys6GVqAg",
+          "linkName": "ถุงสูญญากาศ เก็บเสื้อผ้าผ้าห่มผ้านวมจัดเก็บของกระชับพื้นที่แพ็คของเดินทางถุงใส่เสื้อผ้าพกพา ราคาต่อช",
+          "image": "th-11134207-7rasc-m0pot616b6pmd7",
+          "linkType": "ITEM",
+          "itemId": "18809644560",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-7rasc-m0pot616b6pmd7",
+                "07353c531705b05d56ca6a71850fae55",
+                "de01fd980fa58ee4a3247df3d79a6397",
+                "2c7ebd88efb68c7ea0ee9a4ee7975c6a",
+                "2c50b5959a1540710509a9255a0402d4",
+                "3cbb54e52058ae781cc8e20c81ad1322",
+                "95fe0db6af5d748dfc8ed22974c84886",
+                "b862b71cf4e9ef1e6c344e019739f4c6",
+                "th-11134207-7rasi-m4zg6viufoqf7d"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED_PLUS",
+                  "icon": {
+                    "hash": "th-11134258-7ra0u-mbhqckcw8cjo4a",
+                    "width": 64,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "ถุงสูญญากาศ เก็บเสื้อผ้าผ้าห่มผ้านวมจัดเก็บของกระชับพื้นที่แพ็คของเดินทางถุงใส่เสื้อผ้าพกพา ราคาต่อช",
+              "image": "th-11134207-7rasc-m0pot616b6pmd7",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED_PLUS",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0u-mbhqckcw8cjo4a",
+                  "width": 64,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-60%"
+              },
+              "voucherAppliedIcon": {
+                "canDisplay": true
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 1000พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "5100000",
+                "displayPriceType": 0
+              },
+              "finalPriceIcon": {
+                "iconType": 1,
+                "icon": {
+                  "hash": "id-11134005-81ztm-mq5zs2sy7swe8e",
+                  "width": 48,
+                  "height": 48
+                }
+              }
+            },
+            "itemData": {
+              "itemid": "18809644560",
+              "shopid": "284979217",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "18809644560",
+                "modelId": "165847529122",
+                "promotionType": 201,
+                "promotionId": "483626265817375",
+                "price": "5100000",
+                "strikethroughPrice": "12900000",
+                "discount": 60,
+                "recommendedShopVoucherPromotionId": "1483744422817792",
+                "recommendedShopVoucherInfo": {
+                  "promotionId": "1483744422817792",
+                  "voucherCode": "LIUJ652FC",
+                  "voucherDiscount": "200000",
+                  "timeInfo": {
+                    "startTime": "1786335360",
+                    "endTime": "1794374640"
+                  },
+                  "minSpend": "5000000",
+                  "signature": "cb5da2716ff7791921689978720076f80a54897730a3552df3b45992ccbc8227",
+                  "signatureSource": 16,
+                  "percentageWithDecimal": "0"
+                },
+                "originalPrice": "12900000",
+                "modelSelectionLogic": 2,
+                "appliedProductPromoPrice": "5300000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "1431946",
+                "monthlySoldCount": "13543",
+                "historicalSoldCountText": "ขายแล้ว 1000พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1014045",
+                "1009116",
+                "1400095024",
+                "1400175098",
+                "822059879271430",
+                "822120593887756",
+                "1718087960",
+                "1428713",
+                "822120593886220",
+                "844931086908638",
+                "700640027",
+                "1908622",
+                "298803386",
+                "298643630",
+                "298888364",
+                "2058593",
+                "1000110",
+                "1000028",
+                "1001365",
+                "1978602",
+                "298623321",
+                "2218676",
+                "2103651",
+                "2143613",
+                "1049107",
+                "2063604",
+                "998286006",
+                "2288631",
+                "2063618",
+                "2288632",
+                "2058592",
+                "2058612",
+                "2063592",
+                "298893326"
+              ],
+              "catid": 100636,
+              "shopeeVerified": true,
+              "likedCount": 42144,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "KING‘SHOP",
+                "shopLocation": "จังหวัดกรุงเทพมหานคร"
+              },
+              "status": 1,
+              "ctime": 1654687291,
+              "flag": 65536,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100636,
+                  100721,
+                  101259
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.898149621677927,
+                "ratingCount": [
+                  69122,
+                  151,
+                  130,
+                  789,
+                  4471,
+                  63581
+                ]
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "ecc913b7895b8bf7ecf3d7abaae447d4",
+                  "thumbUrl": "90e74b58f890d8d0e6ff5f2e5c90a322",
+                  "duration": 36,
+                  "version": 2,
+                  "vid": "sg_4a29b8e8-b9a3-4e30-bb15-79fe1c5e3bca_000160",
+                  "formats": [
+                    {
+                      "format": 1600323,
+                      "defn": "V540P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/sg_4a29b8e8-b9a3-4e30-bb15-79fe1c5e3bca_000160.default.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/sg_4a29b8e8-b9a3-4e30-bb15-79fe1c5e3bca_000160.default.mp4",
+                      "width": 540,
+                      "height": 720
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110105/mms/sg_4a29b8e8-b9a3-4e30-bb15-79fe1c5e3bca_000160.default.mp4",
+                    "width": 540,
+                    "height": 720
+                  },
+                  "mmsData": "{\"vid\":\"sg_4a29b8e8-b9a3-4e30-bb15-79fe1c5e3bca_000160\",\"biz\":107,\"duration\":36080,\"create_time\":1655280980,\"update_time\":1655280996,\"serviceID\":2,\"cover\":\"https://down-aka-th.vod.susercontent.com/c3/98934353/105/AnoyaBUAXGG9mQUhJAIIAEc.jpg\",\"cover_list\":[],\"formats\":[{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/sg_4a29b8e8-b9a3-4e30-bb15-79fe1c5e3bca_000160.default.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/sg_4a29b8e8-b9a3-4e30-bb15-79fe1c5e3bca_000160.default.mp4\",\"width\":540,\"height\":720,\"bitrate\":244973,\"abitrate\":32203,\"size\":1281561,\"fps\":25,\"duration\":36040,\"update_time\":1772895786,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110105/mms/sg_4a29b8e8-b9a3-4e30-bb15-79fe1c5e3bca_000160.default.mp4\",\"width\":540,\"height\":720,\"bitrate\":244973,\"abitrate\":32203,\"size\":1281561,\"fps\":25,\"duration\":36040,\"update_time\":1772895786,\"codec\":\"H264\"},\"extend_formats\":{},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "name": "ขนาด",
+                  "options": [
+                    "40CMx60CMลายใส",
+                    "50CMx70CMลายใส",
+                    "60CMx80CMลายใส",
+                    "80CMx100CMลายใส",
+                    "40x60CMลายสีขาว",
+                    "50x70CMลายสีขาว",
+                    "60x80CMลายสีขาว",
+                    "80x100CMลายสีขาว",
+                    "40X60CMลายโคลเว่อ",
+                    "50X70CMลายโคลเว่อ",
+                    "60X80CMลายโคลเว่อ",
+                    "80X100CMลายโคลเว่อ",
+                    "สูบมือสีขาวเล็ก",
+                    "สูบมือสีขาวใหญ่",
+                    "สูบไฟฟ้าแบบใหม่",
+                    "สูบไฟฟ้าสีชมพู",
+                    "สูบไฟฟ้าสีขาว",
+                    "ลายแพนด้า50X70",
+                    "ลายแพนด้า60X80",
+                    "ลายแพนด้า80X100",
+                    "ลายไดโนเสาร์40x60",
+                    "ลายไดโนเสาร์50X70",
+                    "ลายไดโนเสาร์60x80",
+                    "ลายไดโนเสาร์80X100",
+                    "สูบไฟฟ้า สีน้ำเงิน",
+                    "40X50CM",
+                    "40X60CM",
+                    "50X60CM"
+                  ],
+                  "images": [
+                    "th-11134207-7r98w-lvioo9l9hbcqaf",
+                    "th-11134207-7r98w-lvioo9l9ipx60a",
+                    "th-11134207-7r98q-lvioo9l9k4hm8f",
+                    "th-11134207-7r98y-lvioo9l9lj22f5",
+                    "th-11134207-7r98t-lsdianjwqd7y87",
+                    "th-11134207-7r98s-lsdianjwrrse77",
+                    "th-11134207-7r98y-lsdianjwt6cucb",
+                    "th-11134207-7r98r-lsdianjwukxa8f",
+                    "th-11134207-7rask-m2ko6ug22zrnbd",
+                    "th-11134207-7rasg-m2ko6xhnl6x871",
+                    "th-11134207-7rasd-m2ko6zve3qmr84",
+                    "th-11134207-7rasa-m2ko725irjgs71",
+                    "90fb57811668d1653872a6f8cdea034e",
+                    "685cd236e3523bc2da161f95f6a9ddff",
+                    "th-11134207-7qul7-lfru9yx30umn79",
+                    "th-11134207-7rash-m2quuvbwpuojc2",
+                    "th-11134207-81ztc-mhtxldl2ftac56",
+                    "th-11134207-7rasl-m0ilnfek5aka68",
+                    "th-11134207-7rasj-m0ilnmerw7h41c",
+                    "th-11134207-7rasj-m0ilntqd6h167f",
+                    "th-11134207-7rase-m9fsqicyli6n06",
+                    "th-11134207-7ras9-m9fsql0opf7z5d",
+                    "th-11134207-7rasb-m9fsqo2a91e7cc",
+                    "th-11134207-7rasm-m9fsqqm4in2n5f",
+                    "th-11134207-81ztc-mnnqe68r1h5183",
+                    "th-11134207-81ztc-mpjbetps8k5c20",
+                    "th-11134207-81ztk-mpjbevooo1z55c",
+                    "th-11134207-81zth-mpjbey0rsowee0"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "c230f81605c168917ec7d0c9560bdabe",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25316137",
+          "link": "https://s.shopee.co.th/7pmugbcR7j",
+          "linkName": "ถุงเท้าเด็กนักเรียน พื้นมีกันลื่น ขาวพื้นเทา แพ็ค 12คู่ มีขนาด3-5/4-6/5-7/7-9/ฟรีไซส์ ผ้านิ่มดี ใส่ส",
+          "image": "sg-11134201-824i3-me4jvryzhxqb5e",
+          "linkType": "ITEM",
+          "itemId": "42716947373",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "sg-11134201-824i3-me4jvryzhxqb5e",
+                "sg-11134201-824ho-me4jvs4jnv2ba5",
+                "sg-11134201-824gk-me4jvsavylflcc",
+                "sg-11134201-824iw-me4jvsgz4lc67e",
+                "sg-11134201-824gx-me4jvsm2fnr887",
+                "sg-11134201-824g5-me4jvsrfxdz4f2",
+                "sg-11134201-824hd-me4jvsxuiy9s7a",
+                "sg-11134201-824i2-me4jvt22dy4j96"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED",
+                  "icon": {
+                    "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                    "width": 46,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "ถุงเท้าเด็กนักเรียน พื้นมีกันลื่น ขาวพื้นเทา แพ็ค 12คู่ มีขนาด3-5/4-6/5-7/7-9/ฟรีไซส์ ผ้านิ่มดี ใส่ส",
+              "image": "sg-11134201-824i3-me4jvryzhxqb5e",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                  "width": 46,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-100%"
+              },
+              "voucherAppliedIcon": {
+                "canDisplay": true
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 200พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "0",
+                "displayPriceType": 0
+              },
+              "finalPriceIcon": {
+                "iconType": 1,
+                "icon": {
+                  "hash": "id-11134005-81ztm-mq5zs2sy7swe8e",
+                  "width": 48,
+                  "height": 48
+                }
+              }
+            },
+            "itemData": {
+              "itemid": "42716947373",
+              "shopid": "891556150",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "42716947373",
+                "modelId": "167342267547",
+                "promotionType": 502,
+                "promotionId": "481404517826566",
+                "price": "0",
+                "strikethroughPrice": "29900000",
+                "discount": 100,
+                "recommendedShopVoucherPromotionId": "1433090871947264",
+                "recommendedShopVoucherInfo": {
+                  "promotionId": "1433090871947264",
+                  "voucherCode": "NBSO52HJJ",
+                  "voucherDiscount": "100000",
+                  "timeInfo": {
+                    "startTime": "1780297500",
+                    "endTime": "1788163500"
+                  },
+                  "minSpend": "0",
+                  "signature": "50337b1bc7b9c6097ad7bad36684587bde3f2e7d3c2d6ef34a4a9e9e130f552a",
+                  "signatureSource": 16,
+                  "percentageWithDecimal": "0"
+                },
+                "originalPrice": "29900000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "100000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "213120",
+                "monthlySoldCount": "12387",
+                "historicalSoldCountText": "ขายแล้ว 200พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1428713",
+                "1718087960",
+                "844931064601283",
+                "844931086908638",
+                "822059879271430",
+                "822120593886220",
+                "1908622",
+                "2058593",
+                "837903335771681",
+                "298888364",
+                "1000110",
+                "1000028",
+                "1001365",
+                "2143613",
+                "299103340",
+                "1015641",
+                "298923351",
+                "2103651",
+                "298623321",
+                "998236066",
+                "299098373",
+                "298803386",
+                "1978602",
+                "701025034",
+                "1049107",
+                "2058612",
+                "2058592",
+                "2063592",
+                "2063604",
+                "2063618",
+                "298893326",
+                "998286006",
+                "2288631",
+                "2288632"
+              ],
+              "catid": 100633,
+              "shopeeVerified": true,
+              "likedCount": 20279,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "NBsocks",
+                "shopLocation": "จังหวัดกรุงเทพมหานคร"
+              },
+              "status": 1,
+              "ctime": 1756743217,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100633,
+                  100689,
+                  101032
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.810566229501789,
+                "ratingCount": [
+                  51166,
+                  686,
+                  321,
+                  1297,
+                  3391,
+                  45471
+                ]
+              },
+              "tierVariations": [
+                {
+                  "name": "สี",
+                  "options": [
+                    "กันลื่น 3-5",
+                    "กันลื่น 4-6",
+                    "กันลื่น 5-7",
+                    "กันลื่น 7-9",
+                    "กันลื่น ฟรีไซส์(9-12",
+                    "ขาวพื้นเทา 3-5",
+                    "ขาวพื้นเทา 4-6",
+                    "ขาวพื้นเทา 5-7",
+                    "ขาวพื้นเทา 7-9",
+                    "ขาวพื้นเทา ฟรีไซส์",
+                    "ข้อสั้น ฟรีไซส์"
+                  ],
+                  "images": [
+                    "sg-11134201-824gl-me4jvtkjottvcc",
+                    "sg-11134201-824g4-me4jvtq9sb2b70",
+                    "sg-11134201-824iq-me4jvtwob284cd",
+                    "sg-11134201-824i1-me4jvu3woc8y8d",
+                    "sg-11134201-824ht-me4jvuapd15388",
+                    "sg-11134201-824hr-me4jvuf0t7nm14",
+                    "sg-11134201-824jj-me4jvum67qip8f",
+                    "sg-11134201-824g7-me4jvus23280aa",
+                    "sg-11134201-824is-me4jvuxnqepu20",
+                    "sg-11134201-824gm-me4jvv2t15ona4",
+                    "th-11134207-81ztj-mfseywpk8aodd8"
+                  ],
+                  "type": 0
+                },
+                {
+                  "name": "แพ็คเกจ",
+                  "options": [
+                    "6คู่",
+                    "12คู่"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": true,
+              "transparentBackgroundImage": "sg-11134252-82597-mfwgkixayc5q2d",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25316359",
+          "link": "https://s.shopee.co.th/3qGlvOwPpL",
+          "linkName": "[ซื้อ 4 แถม 2] Downy ดาวน์นี่ น้ำยาปรับผ้านุ่มสูตรเข้มข้น ถุงเติม สูตรน้ำหอมพรีเมี่ยม 1 ลิตร x 6 แพ็",
+          "image": "sg-11134301-82580-mgdfiteybpjg53",
+          "linkType": "ITEM",
+          "itemId": "4961013500",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-81zth-mnjucg93ekud33",
+                "th-11134207-81zti-mmsrz9l5crnq6d",
+                "th-11134207-81ztn-mmsrzmddllab8f",
+                "th-11134207-81ztl-mmsrzqbovkzl6a",
+                "th-11134207-81zto-mmsrzwgefq4m0f",
+                "th-11134207-81ztp-mmss02a66lfp52",
+                "th-11134207-81ztc-mmss052pyo7aac",
+                "th-11134207-81ztm-mmss07ijcr9d4a",
+                "th-11134207-81ztn-mmss0a4t3m6906"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "OFFICIAL_SHOP",
+                  "icon": {
+                    "hash": "th-11134258-7r992-lyb3pndzwa09e2",
+                    "width": 25,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "[ซื้อ 4 แถม 2] Downy ดาวน์นี่ น้ำยาปรับผ้านุ่มสูตรเข้มข้น ถุงเติม สูตรน้ำหอมพรีเมี่ยม 1 ลิตร x 6 แพ็",
+              "image": "sg-11134301-82580-mgdfiteybpjg53",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "OFFICIAL_SHOP",
+                "imageFlag": {
+                  "hash": "th-11134258-7r992-lyb3pndzwa09e2",
+                  "width": 25,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-20%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 300พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "57400000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "4961013500",
+              "shopid": "78382981",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "4961013500",
+                "modelId": "51674058478",
+                "promotionType": 202,
+                "promotionId": "494108846535040",
+                "price": "57400000",
+                "strikethroughPrice": "71400000",
+                "discount": 20,
+                "originalPrice": "71400000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "57400000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "319583",
+                "monthlySoldCount": "10839",
+                "historicalSoldCountText": "ขายแล้ว 300พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1014045",
+                "1009116",
+                "1015574",
+                "1073861",
+                "1400095024",
+                "1400175096",
+                "1433620",
+                "822059879271430",
+                "822120593886220",
+                "825249635454464",
+                "822120593887756",
+                "844931086908638",
+                "814381247166470",
+                "298813316",
+                "1908622",
+                "298888364",
+                "2058593",
+                "298643324",
+                "2103586",
+                "298938367",
+                "298933337",
+                "2158743",
+                "298983407",
+                "2213645",
+                "2243655",
+                "2213586",
+                "700810080",
+                "299103340",
+                "299073362",
+                "2098592",
+                "2108635",
+                "998091087",
+                "998286037",
+                "1400840019",
+                "1400845102",
+                "700960097",
+                "2218676",
+                "1718388151",
+                "1400845277",
+                "998236066",
+                "1001365",
+                "1000028",
+                "1000110",
+                "1718087960",
+                "1428713",
+                "998331193",
+                "700960099",
+                "2063592",
+                "298893326",
+                "2058592",
+                "2063618",
+                "2288631",
+                "2058612",
+                "2063604",
+                "2288632",
+                "998286006"
+              ],
+              "catid": 100636,
+              "shopeeVerified": false,
+              "likedCount": 36154,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "P&G Official Shop",
+                "shopLocation": "จังหวัดสมุทรปราการ"
+              },
+              "status": 1,
+              "ctime": 1604474235,
+              "flag": 268500992,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100636,
+                  100716,
+                  101214,
+                  101813
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.932023149757664,
+                "ratingCount": [
+                  97992,
+                  307,
+                  163,
+                  620,
+                  3763,
+                  93139
+                ]
+              },
+              "globalBrand": {
+                "brandId": 1801024
+              },
+              "tierVariations": [
+                {
+                  "name": "กลิ่น",
+                  "options": [
+                    "เเพชชั่น",
+                    "มิสทีค",
+                    "ช่อดอกไม้แสนสดชื่น",
+                    "ช่อดอกไม้แสนน่ารัก",
+                    "สวนลาเวนเดอร์",
+                    "หอมดอกไม้บานสะพรั่ง",
+                    "Pure Cotton Love",
+                    "สวนดอกไม้",
+                    "ดอกไม้สดและลูกพีช",
+                    "หอมฟองสบู่และดอกไม้",
+                    "อโรม่าหลับสบาย",
+                    "หอมสดชื่นริมทะเล",
+                    "แอปเปิ้ลเฟรช",
+                    "Harmony",
+                    "Mystic",
+                    "Midnight Bloom"
+                  ],
+                  "images": [
+                    "th-11134207-81ztg-mncj32baccg44b",
+                    "th-11134207-81ztp-mncj0bdlcdfpcf",
+                    "sg-11134301-7ra3q-m4u0g5qh0hh0c8",
+                    "th-11134207-81zti-mncixrjqal8l25",
+                    "th-11134207-81zto-mmss8crj47wje9",
+                    "th-11134207-81ztj-mnciz2idpwxx62",
+                    "th-11134207-81zti-mothvkgzf30g9d",
+                    "sg-11134301-7ra3b-m507ja7c7wuy7b",
+                    "th-11134207-81zth-mothwiuch0cg6a",
+                    "th-11134207-81ztc-mncj04qvncw539",
+                    "sg-11134301-7ra3s-m5cj0nudv6mwb3",
+                    "th-11134207-81zto-moti0pc32ntb0e",
+                    "th-11134207-81ztc-mothzews1s018a",
+                    "th-11134207-81ztf-mncizgll0ver0b",
+                    "th-11134207-81ztm-mncj212uzitfd8",
+                    "th-11134207-81ztf-mncj2i3f71tsd4"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "th-11134004-7rasf-m6gumbd0yepjd4",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "24597365",
+          "link": "https://s.shopee.co.th/1LZ7zQvHPs",
+          "linkName": "Toogtons ทุกตอนส์ บ๊อกเซอร์ นุ่มเหมือนมาร์ชเมลโล่ สีพื้น บ็อกเซอร์ผู้ชาย บ็อกเซอร์ผู้หญิง ใส่นอนได้",
+          "image": "th-11134207-81zth-mitt2f4z5n9d86",
+          "linkType": "ITEM",
+          "itemId": "3631432956",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-81zte-mel8onrh0umcef",
+                "th-11134207-7r98w-llbllr0lupt8f1",
+                "th-11134207-7quky-ljz9dtl7l749cc",
+                "th-11134207-7qul5-ljz9dtl7mlop9f",
+                "th-11134207-7ra0g-mbnoyzlbmedvab",
+                "th-11134207-7r98x-lrfdl2s056r26b",
+                "th-11134207-7ra0u-mbnoyzlbkztf6f",
+                "th-11134207-7r98t-lre7b4mf6abh85"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "PREFERRED",
+                  "icon": {
+                    "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                    "width": 46,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "Toogtons ทุกตอนส์ บ๊อกเซอร์ นุ่มเหมือนมาร์ชเมลโล่ สีพื้น บ็อกเซอร์ผู้ชาย บ็อกเซอร์ผู้หญิง ใส่นอนได้",
+              "image": "th-11134207-81zth-mitt2f4z5n9d86",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "PREFERRED",
+                "imageFlag": {
+                  "hash": "th-11134258-7ra0i-mbhqdknr6rmg23",
+                  "width": 46,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-30%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 300พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "7000000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "3631432956",
+              "shopid": "156255694",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "3631432956",
+                "modelId": "187290573511",
+                "promotionType": 201,
+                "promotionId": "484385749419309",
+                "price": "7000000",
+                "strikethroughPrice": "10000000",
+                "discount": 30,
+                "originalPrice": "10000000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "7000000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "350102",
+                "monthlySoldCount": "11803",
+                "historicalSoldCountText": "ขายแล้ว 300พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1014045",
+                "1133665",
+                "1400095024",
+                "1400175098",
+                "1428612",
+                "700190022",
+                "825249635454464",
+                "822059879271430",
+                "844931064601283",
+                "844931086908638",
+                "1718087960",
+                "1428713",
+                "822120593887756",
+                "822120593886220",
+                "700640027",
+                "1908622",
+                "2073655",
+                "298643324",
+                "700765086",
+                "2098592",
+                "2108635",
+                "2103586",
+                "298938367",
+                "2058593",
+                "1001365",
+                "1000110",
+                "1000028",
+                "700810080",
+                "299103340",
+                "700970069",
+                "700970070",
+                "700960097",
+                "2218676",
+                "701000163",
+                "998236066",
+                "298923318",
+                "843623424279161",
+                "1400845277",
+                "1978602",
+                "298803386",
+                "1049107",
+                "998331193",
+                "998286006",
+                "2288632",
+                "2063604",
+                "2063618",
+                "2058592",
+                "2288631",
+                "2063592",
+                "298893326",
+                "2058612"
+              ],
+              "catid": 100011,
+              "shopeeVerified": true,
+              "likedCount": 19246,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "Toogtons ทุกตอนส์ ตอนไหนก็นุ่ม",
+                "shopLocation": "จังหวัดกรุงเทพมหานคร"
+              },
+              "status": 1,
+              "ctime": 1587702429,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100011,
+                  100055,
+                  100247
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.912883696229422,
+                "ratingCount": [
+                  47090,
+                  61,
+                  61,
+                  528,
+                  2632,
+                  43808
+                ]
+              },
+              "globalBrand": {
+                "brandId": 3643886
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "59cc65cbd34a75d7ae77830cc87f2ac2",
+                  "thumbUrl": "78f3f0f954ba2c175dfcf073c74479c2",
+                  "duration": 13,
+                  "version": 2,
+                  "vid": "th-11110105-6ke18-llymxrvzebyfe8",
+                  "formats": [
+                    {
+                      "format": 1600323,
+                      "defn": "V540P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6ke18-llymxrvzebyfe8.default.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6ke18-llymxrvzebyfe8.default.mp4",
+                      "width": 540,
+                      "height": 960
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6ke18-llymxrvzebyfe8.default.mp4",
+                    "width": 540,
+                    "height": 960
+                  },
+                  "mmsData": "{\"vid\":\"th-11110105-6ke18-llymxrvzebyfe8\",\"biz\":107,\"duration\":12792,\"create_time\":1695366417,\"update_time\":1695366419,\"serviceID\":2,\"cover\":\"https://down-tx-th.img.susercontent.com/th-11110105-7r98o-llymxted736w4d\",\"cover_list\":[],\"formats\":[{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6ke18-llymxrvzebyfe8.default.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6ke18-llymxrvzebyfe8.default.mp4\",\"width\":540,\"height\":960,\"bitrate\":417512,\"abitrate\":100537,\"size\":837705,\"fps\":25.07837,\"duration\":12779,\"update_time\":1695366432,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6ke18-llymxrvzebyfe8.default.mp4\",\"width\":540,\"height\":960,\"bitrate\":417512,\"abitrate\":100537,\"size\":837705,\"fps\":25.07837,\"duration\":12779,\"update_time\":1695366432,\"codec\":\"H264\"},\"extend_formats\":{},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "name": "สี",
+                  "options": [
+                    "TTP-010 ดำ",
+                    "TTP-011 เทาดำ",
+                    "TTP-007 เทาเข้ม",
+                    "TTP-013 เทาดิน",
+                    "TTP-012 กรมท่า",
+                    "TTP-014 สีน้ำเงิน",
+                    "TTP-042 สีเทาเบจ",
+                    "TTP-043 สีเทาหม่น"
+                  ],
+                  "images": [
+                    "th-11134207-81ztl-mfw8mwvyzitlf2",
+                    "th-11134207-81ztg-mfw8n0yq8mxba2",
+                    "th-11134207-81ztk-mfw8n5h4amfd85",
+                    "th-11134207-81ztl-mfw8n8pzdp8q3c",
+                    "th-11134207-81ztn-mfw8nc1t7xu192",
+                    "th-11134207-7r98q-lxku8gsyj8a8ef",
+                    "th-11134207-81ztk-mpnkgi6wgq2o05",
+                    "th-11134207-81ztj-mpnkgk39wjk211"
+                  ],
+                  "type": 0
+                },
+                {
+                  "name": "ไซส์",
+                  "options": [
+                    "M",
+                    "L",
+                    "XL",
+                    "XXL",
+                    "3XL"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "th-11134004-7r98x-luhjsfq4jiuma5",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "24597710",
+          "link": "https://s.shopee.co.th/3LKCNNPCUx",
+          "linkName": "หมอนโทโทริ รุ่น คลาวด์(Cloud model) TOTORI",
+          "image": "th-11134207-7rasl-m7dtemqzvjru7c",
+          "linkType": "ITEM",
+          "itemId": "28979758342",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-7rasl-m7dtemqzvjru7c",
+                "th-11134207-7rasl-m7dtfijje2jn3b",
+                "th-11134207-7rasf-m7dtfijjcnz7ee",
+                "th-11134207-7rasm-m7dtfijjcnh699",
+                "th-11134207-7ras8-m7dtjw8qkr8a49",
+                "th-11134207-7rasl-m7dtfijtc8uy57",
+                "th-11134207-7ras9-m7dtgz6wb2nk68",
+                "th-11134207-7rasm-m7dtfijjfgm2ec",
+                "th-11134207-7rasi-m7dtfijje21mb7"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "OFFICIAL_SHOP",
+                  "icon": {
+                    "hash": "th-11134258-7r992-lyb3pndzwa09e2",
+                    "width": 25,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "หมอนโทโทริ รุ่น คลาวด์(Cloud model) TOTORI",
+              "image": "th-11134207-7rasl-m7dtemqzvjru7c",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "OFFICIAL_SHOP",
+                "imageFlag": {
+                  "hash": "th-11134258-7r992-lyb3pndzwa09e2",
+                  "width": 25,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-79%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 100พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "12400000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "28979758342",
+              "shopid": "1091688399",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "28979758342",
+                "modelId": "242902292041",
+                "promotionType": 202,
+                "promotionId": "481828918477460",
+                "price": "12400000",
+                "strikethroughPrice": "60000000",
+                "discount": 79,
+                "originalPrice": "60000000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "12400000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "123415",
+                "monthlySoldCount": "10206",
+                "historicalSoldCountText": "ขายแล้ว 100พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "844931064601283",
+                "844931086908638",
+                "822059879271430",
+                "822120593886220",
+                "1000110",
+                "1908622",
+                "1000028",
+                "1001365",
+                "1428713",
+                "1718087960",
+                "298888364",
+                "2058593",
+                "837903335771681",
+                "2143613",
+                "2103651",
+                "299103340",
+                "1718388151",
+                "701025034",
+                "298623321",
+                "701020024",
+                "2298886",
+                "2058612",
+                "2288632",
+                "2288631",
+                "2063604",
+                "2063618",
+                "298893326",
+                "998286006",
+                "2063592",
+                "2058592"
+              ],
+              "catid": 100636,
+              "shopeeVerified": false,
+              "likedCount": 40622,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "Totori",
+                "shopLocation": "จังหวัดร้อยเอ็ด"
+              },
+              "status": 1,
+              "ctime": 1742050466,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100636,
+                  100710,
+                  101147
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.927255628699452,
+                "ratingCount": [
+                  36159,
+                  52,
+                  64,
+                  329,
+                  1572,
+                  34142
+                ]
+              },
+              "globalBrand": {
+                "brandId": 5456700
+              },
+              "tierVariations": [
+                {
+                  "name": "ระดับความสูง",
+                  "options": [
+                    "1200g (ต่ำ)",
+                    "1700g (กลาง)",
+                    "2500g (สูง)",
+                    "ไส้หมอนสำรอง 500g"
+                  ],
+                  "images": [
+                    "th-11134207-81ztn-mf2nwkmfr1n2dc",
+                    "th-11134207-81zto-mf2nwme4wjrh86",
+                    "th-11134207-81ztd-mf2nwpb7e2o852",
+                    "th-11134207-81ztm-mf2nwrvl0e16b4"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "sg-11134252-824h8-mq1sfqy5f11n7b",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "24597776",
+          "link": "https://s.shopee.co.th/7KqL8o3Ppn",
+          "linkName": "GQ Everyday Sports Shorts กางเกงขาสั้น ผ้าเย็น แห้งไวกว่ารุ่นปกติ 3 เท่า ระบายอากาศดี ใส่สบายจัด กาง",
+          "image": "th-11134207-7rasi-m8ya4ym5ey4vbd",
+          "linkType": "ITEM",
+          "itemId": "29555050918",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-7rasi-m8ya4ym5ey4vbd",
+                "th-11134207-7rase-m9imz8j9uscpe6",
+                "th-11134207-7rash-m9imz8j9uslr4b",
+                "th-11134207-7rash-m9imz8j9xlqnd4",
+                "th-11134207-7rask-m9imz8j9w76779",
+                "th-11134207-81ztd-mi3wyuyhv5s1e4"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "OFFICIAL_SHOP",
+                  "icon": {
+                    "hash": "th-11134258-7r992-lyb3pndzwa09e2",
+                    "width": 25,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "GQ Everyday Sports Shorts กางเกงขาสั้น ผ้าเย็น แห้งไวกว่ารุ่นปกติ 3 เท่า ระบายอากาศดี ใส่สบายจัด กาง",
+              "image": "th-11134207-7rasi-m8ya4ym5ey4vbd",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "OFFICIAL_SHOP",
+                "imageFlag": {
+                  "hash": "th-11134258-7r992-lyb3pndzwa09e2",
+                  "width": 25,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-70%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 200พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "17900000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "29555050918",
+              "shopid": "168932539",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "29555050918",
+                "modelId": "89601634014",
+                "promotionType": 201,
+                "promotionId": "483613506748787",
+                "price": "17900000",
+                "strikethroughPrice": "59000000",
+                "discount": 70,
+                "originalPrice": "59000000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "17900000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "253234",
+                "monthlySoldCount": "10143",
+                "historicalSoldCountText": "ขายแล้ว 200พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1009116",
+                "1014045",
+                "1400095024",
+                "844931064601283",
+                "844931086908638",
+                "1718087960",
+                "1428713",
+                "822059879271430",
+                "822120593886220",
+                "1908622",
+                "298888364",
+                "2058593",
+                "298643324",
+                "2103586",
+                "298938367",
+                "700810080",
+                "843623424279161",
+                "299103340",
+                "2098592",
+                "2108635",
+                "998091087",
+                "700960097",
+                "2218676",
+                "1798588",
+                "1000110",
+                "1001365",
+                "1000028",
+                "998236066",
+                "1400845277",
+                "1718388151",
+                "998331193",
+                "2058612",
+                "2063618",
+                "298893326",
+                "998286006",
+                "2058592",
+                "2288631",
+                "2063592",
+                "2063604",
+                "2288632"
+              ],
+              "catid": 100637,
+              "shopeeVerified": false,
+              "likedCount": 23400,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "GQ Outlet",
+                "shopLocation": "จังหวัดนนทบุรี"
+              },
+              "status": 1,
+              "ctime": 1720682557,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100637,
+                  100727,
+                  101313
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.909875959036063,
+                "ratingCount": [
+                  59184,
+                  107,
+                  97,
+                  730,
+                  3156,
+                  55094
+                ]
+              },
+              "globalBrand": {
+                "brandId": 1222130
+              },
+              "tierVariations": [
+                {
+                  "name": "สี",
+                  "options": [
+                    "ดำ",
+                    "กรมท่า",
+                    "ฟ้าอมเทา",
+                    "เทา"
+                  ],
+                  "images": [
+                    "th-11134207-7r98o-lxkufkpm1mls00",
+                    "th-11134207-7r98y-lxkwoj3t6k0f0f",
+                    "th-11134207-7r98r-lxkwokjf30z4be",
+                    "th-11134207-7rase-m8vkew19ilta52"
+                  ],
+                  "type": 0
+                },
+                {
+                  "name": "ไซซ์",
+                  "options": [
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "sg-11134252-7rdxu-ly22ogz96xgp6b",
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "25317711",
+          "link": "https://s.shopee.co.th/9Uv8hF1Eeb",
+          "linkName": "เคลือบยางดำ [ฟรีฟองน้ำ] ทายางดำ ซิลิโคนออยล์ แท้ ยางดำกันน้ำ กันUV น้ำยาขัดยางดำเงา",
+          "image": "th-11134207-7rask-m6txuhmghb1r68",
+          "linkType": "ITEM",
+          "itemId": "25442078889",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-7rask-m6txuhmghb1r68",
+                "th-11134207-7rasg-m6txuhmgfwm89b",
+                "th-11134207-7rasa-m6txuhmgipr4d9",
+                "th-11134207-7rash-m6txuhmgk46nfb",
+                "th-11134207-7ras9-m6txuhmgfwhbb1",
+                "th-11134207-7rase-m6txuhmglir3a5",
+                "th-11134207-7rase-m6txuhmghb6o1c",
+                "th-11134207-7rasl-m6txuhmgipm758",
+                "th-11134207-7rasb-m6txuhmgk4bkc5"
+              ],
+              "highlightVideos": [],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [],
+              "name": "เคลือบยางดำ [ฟรีฟองน้ำ] ทายางดำ ซิลิโคนออยล์ แท้ ยางดำกันน้ำ กันUV น้ำยาขัดยางดำเงา",
+              "image": "th-11134207-7rask-m6txuhmghb1r68",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "adsText": "Ad"
+              },
+              "discountTag": {
+                "discountText": "-99%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 30พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "100000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "25442078889",
+              "shopid": "20886839",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "25442078889",
+                "modelId": "129260934024",
+                "promotionType": 502,
+                "promotionId": "481420338741753",
+                "price": "100000",
+                "strikethroughPrice": "70000000",
+                "discount": 99,
+                "originalPrice": "70000000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "100000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "39378",
+                "monthlySoldCount": "9175",
+                "historicalSoldCountText": "ขายแล้ว 30พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 9พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "1000110",
+                "1908622",
+                "1400175097",
+                "700640027",
+                "1000028",
+                "1009116",
+                "1001365",
+                "1718087960",
+                "1428713",
+                "844931064601283",
+                "844931086908638",
+                "2073655",
+                "2058593",
+                "822120593886220",
+                "822059879271430",
+                "2158743",
+                "298983407",
+                "1049107",
+                "299103340",
+                "998301024",
+                "700960097",
+                "2218676",
+                "299048420",
+                "2103651",
+                "2143613",
+                "998236066",
+                "1400845277",
+                "1015641",
+                "298923351",
+                "2063592",
+                "2063604",
+                "2063618",
+                "2058592",
+                "2288632",
+                "298893326",
+                "998286006",
+                "2288631",
+                "2058612"
+              ],
+              "catid": 102187,
+              "shopeeVerified": false,
+              "likedCount": 9264,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "ceraxshop",
+                "shopLocation": "จังหวัดกาญจนบุรี"
+              },
+              "status": 1,
+              "ctime": 1740846445,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  102187,
+                  102272,
+                  102578
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.866991827049828,
+                "ratingCount": [
+                  15172,
+                  67,
+                  41,
+                  319,
+                  989,
+                  13756
+                ]
+              },
+              "tierVariations": [
+                {
+                  "options": [
+                    ""
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "isSexual": false
+            }
+          }
+        },
+        {
+          "linkId": "24597310",
+          "link": "https://s.shopee.co.th/8pf8v4KTG0",
+          "linkName": "ลิปดูโอ้ ฉ่ำ จูบไม่หลุด KATHY AMREZ LIP DUO MATTE & SHINE FIX",
+          "image": "th-11134207-7rasj-m4pyus79aqqcca",
+          "linkType": "ITEM",
+          "itemId": "24988816054",
+          "isPined": false,
+          "h5Link": null,
+          "itemCard": {
+            "itemCardDisplayedAsset": {
+              "images": [
+                "th-11134207-7rasj-m4pyus79aqqcca",
+                "th-11134207-7rash-m4o7xuq3iqa21e",
+                "th-11134207-7rasf-m4pyw2760xf7ff",
+                "th-11134207-7rasm-m4pyw2760xck30",
+                "th-11134207-7ras9-m4pyw275ziur1d",
+                "th-11134207-7rasl-m4pyw275zis445",
+                "th-11134207-7rasi-m4pyfxu39y8a71",
+                "th-11134207-7rasb-m4o7y6x1odqi91"
+              ],
+              "highlightVideos": [
+                {
+                  "videoId": "sg-11110113-6kioq-m8x4lz2hudg13c",
+                  "duration": 5000,
+                  "version": 2,
+                  "vid": "sg-11110113-6kioq-m8x4lz2hudg13c"
+                },
+                {
+                  "videoId": "sg-11110113-6kioq-m8x4lz2hudg13c",
+                  "duration": 5000,
+                  "version": 2,
+                  "vid": "sg-11110113-6kioq-m8x4lz2hudg13c"
+                },
+                {
+                  "videoId": "sg-11110113-6kioq-m8x4lz2hudg13c",
+                  "duration": 5000,
+                  "version": 2,
+                  "vid": "sg-11110113-6kioq-m8x4lz2hudg13c"
+                }
+              ],
+              "promotionLabelList": [],
+              "longImages": [],
+              "inTitleImageFlags": [
+                {
+                  "type": 2,
+                  "name": "OFFICIAL_SHOP",
+                  "icon": {
+                    "hash": "th-11134258-7r992-lyb3pndzwa09e2",
+                    "width": 25,
+                    "height": 12
+                  }
+                }
+              ],
+              "name": "ลิปดูโอ้ ฉ่ำ จูบไม่หลุด KATHY AMREZ LIP DUO MATTE & SHINE FIX",
+              "image": "th-11134207-7rasj-m4pyus79aqqcca",
+              "itemCardMask": {
+                "preKycText": "Age Verification Required",
+                "postKycText": "Restricted Item",
+                "enableAgeGateLabel": false
+              },
+              "iconInImage": {
+                "iconType": 2,
+                "adsText": "Ad"
+              },
+              "sellerFlag": {
+                "name": "OFFICIAL_SHOP",
+                "imageFlag": {
+                  "hash": "th-11134258-7r992-lyb3pndzwa09e2",
+                  "width": 25,
+                  "height": 12
+                }
+              },
+              "discountTag": {
+                "discountText": "-81%"
+              },
+              "soldCount": {
+                "text": "ขายแล้ว 100พัน+ ชิ้น"
+              },
+              "displayPrice": {
+                "price": "11500000",
+                "displayPriceType": 0
+              }
+            },
+            "itemData": {
+              "itemid": "24988816054",
+              "shopid": "1028424945",
+              "isAdult": false,
+              "needKyc": false,
+              "itemCardDisplayPrice": {
+                "itemId": "24988816054",
+                "modelId": "252129261036",
+                "promotionType": 502,
+                "promotionId": "481420896580300",
+                "price": "11500000",
+                "strikethroughPrice": "59000000",
+                "discount": 81,
+                "originalPrice": "59000000",
+                "modelSelectionLogic": 3,
+                "appliedProductPromoPrice": "11500000"
+              },
+              "itemCardDisplaySoldCount": {
+                "historicalSoldCount": "183045",
+                "monthlySoldCount": "10523",
+                "historicalSoldCountText": "ขายแล้ว 100พัน+ ชิ้น",
+                "monthlySoldCountText": "ขายได้ 10พัน+ ชิ้น/เดือน"
+              },
+              "isSoldOut": false,
+              "isPreview": false,
+              "labelIds": [
+                "700640027",
+                "844931064601283",
+                "844931086908638",
+                "822059879271430",
+                "822120593886220",
+                "1718087960",
+                "1428713",
+                "1001365",
+                "1000028",
+                "1000110",
+                "1908622",
+                "298643630",
+                "298888364",
+                "2058593",
+                "1400066661",
+                "298643324",
+                "700765086",
+                "2098592",
+                "2108635",
+                "2103586",
+                "298938367",
+                "837903335771681",
+                "299103340",
+                "2318612",
+                "1400840019",
+                "700960097",
+                "1400845102",
+                "2218676",
+                "843623424279161",
+                "1718388151",
+                "1400845277",
+                "701025034",
+                "298928372",
+                "1015641",
+                "1978602",
+                "298803386",
+                "2298886",
+                "2063592",
+                "298928374",
+                "2288631",
+                "298973322",
+                "298893326",
+                "998286006",
+                "2058612",
+                "2288632",
+                "298973326",
+                "700815012",
+                "2063604",
+                "2063618",
+                "998156005",
+                "2058592"
+              ],
+              "catid": 100630,
+              "shopeeVerified": false,
+              "likedCount": 33020,
+              "itemType": 0,
+              "shopData": {
+                "shopName": "Kathy Amrez Thailand.",
+                "shopLocation": "จังหวัดกรุงเทพมหานคร"
+              },
+              "status": 1,
+              "ctime": 1732688204,
+              "flag": 196608,
+              "itemStatus": "normal",
+              "globalCat": {
+                "catid": [
+                  100630,
+                  100662,
+                  100883,
+                  101642
+                ]
+              },
+              "itemRating": {
+                "ratingStar": 4.908902856233591,
+                "ratingCount": [
+                  50300,
+                  123,
+                  98,
+                  638,
+                  2522,
+                  46919
+                ]
+              },
+              "globalBrand": {
+                "brandId": 3050118
+              },
+              "videoInfoList": [
+                {
+                  "videoId": "api/v4/11110105/mms/th-11110105-6kgcg-m7kk0cvovddr9d.16000081742457304.mp4",
+                  "thumbUrl": "th-11110105-6kgcg-m7kk0cvovddr9d_cover",
+                  "duration": 33,
+                  "version": 2,
+                  "vid": "th-11110105-6kgcg-m7kk0cvovddr9d",
+                  "formats": [
+                    {
+                      "format": 1600325,
+                      "defn": "V720P",
+                      "profile": "MP4",
+                      "path": "api/v4/11110105/mms/th-11110105-6kgcg-m7kk0cvovddr9d.16003251742651407.mp4",
+                      "url": "https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcg-m7kk0cvovddr9d.16003251742651407.mp4",
+                      "width": 720,
+                      "height": 1280
+                    }
+                  ],
+                  "defaultFormat": {
+                    "format": 1600323,
+                    "defn": "V540P",
+                    "profile": "MP4",
+                    "url": "https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcg-m7kk0cvovddr9d.default.mp4",
+                    "width": 540,
+                    "height": 960
+                  },
+                  "mmsData": "{\"vid\":\"th-11110105-6kgcg-m7kk0cvovddr9d\",\"biz\":107,\"duration\":32880,\"create_time\":1742457297,\"update_time\":1742457306,\"serviceID\":2,\"cover\":\"https://down-tx-th.img.susercontent.com/th-11110105-6kgcg-m7kk0cvovddr9d_cover\",\"cover_list\":[],\"formats\":[{\"format\":1600325,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcg-m7kk0cvovddr9d.16003251742651407.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcg-m7kk0cvovddr9d.16003251742651407.mp4\",\"width\":720,\"height\":1280,\"bitrate\":921073,\"abitrate\":48271,\"size\":4001930,\"fps\":25,\"duration\":32879,\"update_time\":1742651440,\"codec\":\"H264\"}],\"default_format\":{\"format\":1600323,\"defn\":\"V540P\",\"profile\":\"MP4\",\"path\":\"\",\"url\":\"https://mms.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcg-m7kk0cvovddr9d.default.mp4\",\"width\":540,\"height\":960,\"bitrate\":468132,\"abitrate\":32389,\"size\":2083789,\"fps\":25,\"duration\":32879,\"update_time\":1742457570,\"codec\":\"H264\"},\"extend_formats\":{\"H265\":[{\"format\":1600318,\"defn\":\"V720P\",\"profile\":\"MP4\",\"path\":\"api/v4/11110105/mms/th-11110105-6kgcg-m7kk0cvovddr9d.16003181742651407.mp4\",\"url\":\"https://down-aka-th.vod.susercontent.com/api/v4/11110105/mms/th-11110105-6kgcg-m7kk0cvovddr9d.16003181742651407.mp4\",\"width\":720,\"height\":1280,\"bitrate\":482259,\"abitrate\":48271,\"size\":2203719,\"fps\":25,\"duration\":32879,\"update_time\":1742651458,\"codec\":\"H265\"}]},\"ab_test\":\"\"}"
+                }
+              ],
+              "tierVariations": [
+                {
+                  "name": "เฉดสี",
+                  "options": [
+                    "01 TOKYO",
+                    "02 LONDON",
+                    "03 PARIS",
+                    "05 NEW YORK",
+                    "06 VENICE",
+                    "07 LOS ANGELES",
+                    "09 LASVEGAS",
+                    "11 BOSTON",
+                    "13 CANNES",
+                    "14 GENEVA",
+                    "15 HAVANA",
+                    "18 BROOKLYN"
+                  ],
+                  "images": [
+                    "th-11134207-7rasj-m5xstl0zu5gq5c",
+                    "th-11134207-7ras9-m5xstr0l2o52ff",
+                    "th-11134207-7rask-m5xsttviw0tme6",
+                    "th-11134207-7rasl-m5xsu9h427que7",
+                    "th-11134207-7rasm-m5xsuf83opii10",
+                    "th-11134207-7rasf-m5xsuloc7ga225",
+                    "th-11134207-7ras8-m5xsvm8mp7vu20",
+                    "th-11134207-7rask-m5xsvwpfdtx23d",
+                    "th-11134207-7rasa-m5xsw6xcff3e32",
+                    "th-11134207-7rask-m5xsw9ynzg6ue2",
+                    "th-11134207-7rasm-m5xswe3dxt0q0f",
+                    "th-11134207-7ras9-m5xswx2i659mdc"
+                  ],
+                  "type": 0
+                }
+              ],
+              "canUseBundleDeal": false,
+              "transparentBackgroundImage": "sg-11134252-7rfgz-m3orptj2ke52c6",
+              "isSexual": false
+            }
+          }
+        }
+      ],
+      "pagination": {
+        "offset": "0",
+        "limit": "20",
+        "hasMore": true,
+        "totalCount": "1499"
+      }
+    }
+  }
+}

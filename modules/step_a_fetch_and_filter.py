@@ -8,6 +8,7 @@ from datetime import datetime
 
 from modules._bootstrap import BASE_DIR, load_config
 from bio_engine import BioEngine
+from modules.storefront_fetcher import load_storefront_feed
 
 
 # =====================
@@ -25,7 +26,6 @@ os.makedirs(PRODUCTS_DIR, exist_ok=True)
 # GIT SYSTEM
 # =====================
 def auto_git_push(mode_trigger: str):
-
     CFG = load_config()
     git_cfg = CFG.get("git", {})
 
@@ -35,10 +35,16 @@ def auto_git_push(mode_trigger: str):
     if git_cfg.get("mode") != mode_trigger:
         return
 
-    message = git_cfg.get("commit_message", "AUTO FARM UPDATE")
+    message = git_cfg.get(
+        "commit_message",
+        "AUTO FARM UPDATE"
+    )
 
     try:
-        subprocess.run(["git", "add", "."], check=True)
+        subprocess.run(
+            ["git", "add", "."],
+            check=True
+        )
 
         status = subprocess.run(
             ["git", "status", "--porcelain"],
@@ -50,10 +56,19 @@ def auto_git_push(mode_trigger: str):
             print("⚠️ NO FILE CHANGES")
             return
 
-        subprocess.run(["git", "commit", "-m", message], check=True)
-        subprocess.run(["git", "push"], check=True)
+        subprocess.run(
+            ["git", "commit", "-m", message],
+            check=True
+        )
 
-        print(f"🚀 AUTO GIT PUSH ({mode_trigger}) SUCCESS")
+        subprocess.run(
+            ["git", "push"],
+            check=True
+        )
+
+        print(
+            f"🚀 AUTO GIT PUSH ({mode_trigger}) SUCCESS"
+        )
 
     except subprocess.CalledProcessError:
         print("❌ AUTO GIT ERROR")
@@ -63,26 +78,49 @@ def auto_git_push(mode_trigger: str):
 # HELPERS
 # =====================
 def is_real_affiliate(url: str) -> bool:
-    return isinstance(url, str) and url.startswith("https://shope.ee")
+    return (
+        isinstance(url, str)
+        and url.startswith("https://shope.ee")
+    )
 
 
 def make_affiliate(product_url: str) -> str:
     if not product_url:
         return ""
 
-    encoded = urllib.parse.quote(product_url, safe="")
-    return f"{STEP['affiliate']['universal_link']}?redir={encoded}"
+    encoded = urllib.parse.quote(
+        product_url,
+        safe=""
+    )
+
+    return (
+        f"{STEP['affiliate']['universal_link']}"
+        f"?redir={encoded}"
+    )
 
 
-def download_image(url: str, path: str, timeout: int) -> bool:
+def download_image(
+    url: str,
+    path: str,
+    timeout: int
+) -> bool:
+
     try:
-        r = requests.get(url, timeout=timeout)
+        r = requests.get(
+            url,
+            timeout=timeout
+        )
+
         if r.status_code == 200 and r.content:
             with open(path, "wb") as f:
                 f.write(r.content)
+
             return True
+
     except Exception as e:
-        print(f"⚠️ IMAGE FAIL {url} ({e})")
+        print(
+            f"⚠️ IMAGE FAIL {url} ({e})"
+        )
 
     return False
 
@@ -92,19 +130,30 @@ def download_image(url: str, path: str, timeout: int) -> bool:
 # =====================
 def load_feed() -> pd.DataFrame:
 
-    feed_file = os.path.join(BASE_DIR, STEP["feed"]["file"])
+    print(
+        "📡 Loading products from Storefront..."
+    )
 
-    if not os.path.exists(feed_file):
-        raise FileNotFoundError(feed_file)
+    df = load_storefront_feed()
 
-    df = pd.read_csv(feed_file, low_memory=False)
+    for col in [
+        "price",
+        "discount_percentage",
+        "item_sold",
+        "shop_rating"
+    ]:
 
-    print(f"📦 FEED LOADED : {len(df)} rows")
-
-    for col in ["price", "discount_percentage", "item_sold", "shop_rating"]:
         if col not in df.columns:
             df[col] = 0
-        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+
+        df[col] = pd.to_numeric(
+            df[col],
+            errors="coerce"
+        ).fillna(0)
+
+    print(
+        f"📦 STOREFRONT FEED : {len(df)} products"
+    )
 
     return df
 
@@ -112,28 +161,65 @@ def load_feed() -> pd.DataFrame:
 # =====================
 # SCORE ENGINE
 # =====================
-def score_products(df: pd.DataFrame) -> pd.DataFrame:
+def score_products(
+    df: pd.DataFrame
+) -> pd.DataFrame:
 
     sc = STEP["score"]
     w = sc["weights"]
     n = sc["normalize"]
 
-    df["_price_score"] = 1 - (df["price"] / n["price_max"]).clip(0, 1)
-    df["_discount_score"] = (df["discount_percentage"] / n["discount_max"]).clip(0, 1)
-    df["_sold_score"] = (df["item_sold"] / n["sold_max"]).clip(0, 1)
-    df["_rating_score"] = (df["shop_rating"] / 5).clip(0, 1)
+    # ---------------------
+    # PRICE SCORE
+    # ---------------------
+    df["_price_score"] = (
+        1
+        - (
+            df["price"]
+            / n["price_max"]
+        ).clip(0, 1)
+    )
 
+    # ---------------------
+    # DISCOUNT SCORE
+    # ---------------------
+    df["_discount_score"] = (
+        df["discount_percentage"]
+        / n["discount_max"]
+    ).clip(0, 1)
+
+    # ---------------------
+    # SOLD SCORE
+    # ---------------------
+    df["_sold_score"] = (
+        df["item_sold"]
+        / n["sold_max"]
+    ).clip(0, 1)
+
+    # ---------------------
+    # RATING SCORE
+    # ---------------------
+    df["_rating_score"] = (
+        df["shop_rating"]
+        / 5
+    ).clip(0, 1)
+
+    # ---------------------
+    # TOTAL SCORE
+    # ---------------------
     df["score"] = (
-        df["_price_score"] * w["price"] +
-        df["_discount_score"] * w["discount"] +
-        df["_sold_score"] * w["sold"] +
-        df["_rating_score"] * w["rating"]
+        df["_price_score"] * w["price"]
+        + df["_discount_score"] * w["discount"]
+        + df["_sold_score"] * w["sold"]
+        + df["_rating_score"] * w["rating"]
     )
 
     return df
 
 
-def auto_relax_if_needed(df: pd.DataFrame) -> pd.DataFrame:
+def auto_relax_if_needed(
+    df: pd.DataFrame
+) -> pd.DataFrame:
 
     sc = STEP["score"]
 
@@ -145,13 +231,15 @@ def auto_relax_if_needed(df: pd.DataFrame) -> pd.DataFrame:
 
     factor = sc["auto_relax"]["relax_factor"]
 
-    print(f"🧠 AUTO RELAX ACTIVATED (x{factor})")
+    print(
+        f"🧠 AUTO RELAX ACTIVATED (x{factor})"
+    )
 
     df["score"] = (
-        df["_price_score"] * factor +
-        df["_discount_score"] * factor +
-        df["_sold_score"] * factor +
-        df["_rating_score"] * factor
+        df["_price_score"] * factor
+        + df["_discount_score"] * factor
+        + df["_sold_score"] * factor
+        + df["_rating_score"] * factor
     )
 
     return df
@@ -162,62 +250,163 @@ def auto_relax_if_needed(df: pd.DataFrame) -> pd.DataFrame:
 # =====================
 def prepare_product(row) -> bool:
 
-    itemid = str(row.get("itemid", "")).strip()
+    itemid = str(
+        row.get("itemid", "")
+    ).strip()
+
     if not itemid:
         return False
 
-    product_dir = os.path.join(PRODUCTS_DIR, itemid)
-    images_dir = os.path.join(product_dir, "images")
+    product_dir = os.path.join(
+        PRODUCTS_DIR,
+        itemid
+    )
 
+    images_dir = os.path.join(
+        product_dir,
+        "images"
+    )
+
+    # ---------------------
+    # SKIP EXISTING PRODUCT
+    # ---------------------
     if os.path.exists(product_dir):
+        print(
+            f"⏭️ SKIP EXISTING : {itemid}"
+        )
         return False
 
-    os.makedirs(images_dir, exist_ok=True)
+    os.makedirs(
+        images_dir,
+        exist_ok=True
+    )
 
-    affiliate = row.get("affiliate_link", "")
+    # ---------------------
+    # AFFILIATE
+    # ---------------------
+    affiliate = row.get(
+        "affiliate_link",
+        ""
+    )
 
-    if STEP["affiliate"]["enabled"] and not is_real_affiliate(affiliate):
-        affiliate = make_affiliate(row.get("product_link", ""))
+    if (
+        STEP["affiliate"]["enabled"]
+        and not is_real_affiliate(affiliate)
+    ):
+        affiliate = make_affiliate(
+            row.get("product_link", "")
+        )
 
-    with open(os.path.join(product_dir, "affiliate_link.txt"), "w", encoding="utf-8") as f:
-        f.write(affiliate or "")
+    with open(
+        os.path.join(
+            product_dir,
+            "affiliate_link.txt"
+        ),
+        "w",
+        encoding="utf-8"
+    ) as f:
 
+        f.write(
+            affiliate or ""
+        )
+
+    # ---------------------
+    # DOWNLOAD IMAGES
+    # ---------------------
     downloaded = 0
     first_image = ""
 
     urls = [
-        v for k, v in row.items()
-        if str(k).startswith("image_link") and isinstance(v, str)
-    ][:STEP["images"]["per_product"]]
+        v
+        for k, v in row.items()
+        if (
+            str(k).startswith("image_link")
+            and isinstance(v, str)
+            and v.strip()
+        )
+    ][
+        :STEP["images"]["per_product"]
+    ]
 
-    for i, url in enumerate(urls, 1):
+    for i, url in enumerate(
+        urls,
+        1
+    ):
 
-        path = os.path.join(images_dir, f"{i}.jpg")
+        path = os.path.join(
+            images_dir,
+            f"{i}.jpg"
+        )
 
-        if download_image(url, path, STEP["images"]["timeout"]):
+        if download_image(
+            url,
+            path,
+            STEP["images"]["timeout"]
+        ):
+
             downloaded += 1
-            if i == 1:
+
+            if not first_image:
                 first_image = url
 
     if downloaded == 0:
+
+        print(
+            f"⚠️ NO IMAGES : {itemid}"
+        )
+
         return False
 
-    title = row.get("title", f"สินค้า {itemid}")
+    # ---------------------
+    # PRODUCT META
+    # ---------------------
+    title = row.get(
+        "title",
+        f"สินค้า {itemid}"
+    )
 
     meta = {
         "itemid": itemid,
-        "score": row.get("score", 0),
-        "price": row.get("price", 0),
-        "sold": row.get("item_sold", 0),
-        "rating": row.get("shop_rating", 0),
+        "score": row.get(
+            "score",
+            0
+        ),
+        "price": row.get(
+            "price",
+            0
+        ),
+        "sold": row.get(
+            "item_sold",
+            0
+        ),
+        "rating": row.get(
+            "shop_rating",
+            0
+        ),
         "affiliate": affiliate,
         "images": downloaded,
         "created_at": datetime.now().isoformat()
     }
 
-    with open(os.path.join(product_dir, "meta.json"), "w", encoding="utf-8") as f:
-        json.dump(meta, f, ensure_ascii=False, indent=2)
+    with open(
+        os.path.join(
+            product_dir,
+            "meta.json"
+        ),
+        "w",
+        encoding="utf-8"
+    ) as f:
 
+        json.dump(
+            meta,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
+
+    # ---------------------
+    # BIO ENGINE
+    # ---------------------
     product_data = {
         "id": itemid,
         "name": title,
@@ -225,9 +414,14 @@ def prepare_product(row) -> bool:
         "affiliate_link": affiliate
     }
 
-    BioEngine.build(product_data)
+    BioEngine.build(
+        product_data
+    )
 
-    print(f"📦 READY {itemid} | score={row.get('score'):.3f}")
+    print(
+        f"📦 READY {itemid} "
+        f"| score={row.get('score', 0):.3f}"
+    )
 
     return True
 
@@ -238,29 +432,96 @@ def prepare_product(row) -> bool:
 def run():
 
     if not STEP["enabled"]:
+        print(
+            "⚠️ STEP A DISABLED"
+        )
         return
 
-    print("🚀 STEP A : SCORE-BASED PRODUCT PIPELINE")
+    print(
+        "🚀 STEP A : "
+        "SCORE-BASED PRODUCT PIPELINE"
+    )
 
+    # ---------------------
+    # LOAD
+    # ---------------------
     df = load_feed()
+
+    if df.empty:
+        print(
+            "⚠️ NO PRODUCTS FOUND"
+        )
+        return
+
+    # ---------------------
+    # SCORE
+    # ---------------------
     df = score_products(df)
+
     df = auto_relax_if_needed(df)
 
-    df = df[df["score"] >= STEP["score"]["min_score"]]
-    df = df.sort_values("score", ascending=False)
+    # ---------------------
+    # FILTER SCORE
+    # ---------------------
+    df = df[
+        df["score"]
+        >= STEP["score"]["min_score"]
+    ]
 
+    # ---------------------
+    # SORT
+    # ---------------------
+    df = df.sort_values(
+        "score",
+        ascending=False
+    )
+
+    # ---------------------
+    # WINNERS
+    # ---------------------
     if STEP["winners"]["enabled"]:
-        df = df.head(STEP["winners"]["max_seed"])
 
-    df = df.head(STEP["images"]["max_products"])
+        df = df.head(
+            STEP["winners"]["max_seed"]
+        )
 
+    # ---------------------
+    # MAX PRODUCTS
+    # ---------------------
+    df = df.head(
+        STEP["images"]["max_products"]
+    )
+
+    print(
+        f"🏆 SELECTED : {len(df)} products"
+    )
+
+    # ---------------------
+    # PREPARE
+    # ---------------------
     created = 0
 
     for _, row in df.iterrows():
+
         if prepare_product(row):
             created += 1
 
-    print(f"✅ STEP A DONE : {created}")
+    # ---------------------
+    # DONE
+    # ---------------------
+    print(
+        f"✅ STEP A DONE : {created}"
+    )
 
+    # ---------------------
+    # GIT
+    # ---------------------
     if created > 0:
         auto_git_push("step_a")
+
+
+# =====================
+# RUN DIRECTLY
+# =====================
+if __name__ == "__main__":
+    run()

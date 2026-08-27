@@ -4,13 +4,13 @@ import random
 import time
 import json
 import subprocess
-import hashlib
 from datetime import datetime, timedelta
 
 from modules.step_c.platforms import tiktok, shopee, reels
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 STATE_FILE = os.path.join(BASE_DIR, "farm_state.json")
+HISTORY_FILE = os.path.join(BASE_DIR, "post_history.json")
 
 
 # =========================
@@ -36,6 +36,73 @@ def update_state(**kwargs):
 
 
 # =========================
+# SMART ROTATION
+# =========================
+
+def load_history():
+    if not os.path.exists(HISTORY_FILE):
+        return []
+    with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def save_history(history):
+    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(history, f, indent=4)
+
+def select_video_smart(videos):
+    history = load_history()
+    available = [v for v in videos if v not in history]
+
+    if not available:
+        print("♻ ใช้ครบแล้ว → Reset history")
+        history = []
+        available = videos
+
+    if not available:
+        return None, history
+
+    return random.choice(available), history
+
+
+# =========================
+# AI CAPTION SYSTEM
+# =========================
+
+def generate_caption(video_path):
+
+    filename = os.path.basename(video_path)
+    product_name = os.path.basename(os.path.dirname(video_path))
+
+    # สุ่มราคา
+    fake_price = random.randint(199, 999)
+
+    urgency_lines = [
+        "รีบก่อนหมดล็อตนี้นะครับ",
+        "ของมีจำนวนจำกัด!",
+        "ราคานี้ไม่นานแน่นอน!",
+        "หมดแล้วหมดเลย!",
+        "โปรนี้เฉพาะช่วงนี้เท่านั้น!"
+    ]
+
+    hashtags_pool = [
+        "#โปรวันนี้", "#ของดีบอกต่อ", "#ดีลเด็ด",
+        "#สายช้อป", "#ลดแรง", "#ของมันต้องมี",
+        "#รีวิวของดี", "#ถูกและดี"
+    ]
+
+    selected_hashtags = random.sample(hashtags_pool, random.randint(3, 5))
+
+    caption = (
+        f"🔥 {product_name} ลดเหลือ {fake_price} บาท!\n\n"
+        f"{random.choice(urgency_lines)}\n"
+        "กดลิงก์หน้าโปรไฟล์เลย 👆\n\n"
+        + " ".join(selected_hashtags)
+    )
+
+    return caption
+
+
+# =========================
 # CONFIG
 # =========================
 
@@ -52,66 +119,27 @@ def get_all_videos(output_path):
     videos = []
     for root, _, files in os.walk(output_path):
         for f in files:
-            if f.endswith(".mp4") and "base.mp4" not in f:
+            if f == "tiktok.mp4":
                 videos.append(os.path.join(root, f))
     return videos
 
-def file_hash(path):
-    h = hashlib.md5()
-    with open(path, "rb") as f:
-        while chunk := f.read(8192):
-            h.update(chunk)
-    return h.hexdigest()
-
 
 # =========================
-# ADB UTILS
+# ADB
 # =========================
-
-def adb_push(device, local_path):
-    remote_path = "/sdcard/Download/" + os.path.basename(local_path)
-
-    cmd = ["adb", "-s", device, "push", local_path, remote_path]
-    result = subprocess.run(cmd, capture_output=True)
-
-    return result.returncode == 0, remote_path
 
 def adb_delete(device, remote_path):
-    cmd = ["adb", "-s", device, "shell", "rm", remote_path]
-    subprocess.run(cmd)
+    subprocess.run(["adb", "-s", device, "shell", "rm", remote_path])
 
 
 # =========================
-# TIME WINDOW
-# =========================
-
-def get_next_window(step):
-    now = datetime.now()
-    future_windows = []
-
-    for window in step.get("time_windows", []):
-        start_time = datetime.strptime(window["start"], "%H:%M").time()
-        start_datetime = datetime.combine(now.date(), start_time)
-
-        if start_datetime > now:
-            future_windows.append(start_datetime)
-
-    if not future_windows:
-        first = step["time_windows"][0]
-        start_time = datetime.strptime(first["start"], "%H:%M").time()
-        return datetime.combine(now.date() + timedelta(days=1), start_time)
-
-    return min(future_windows)
-
-
-# =========================
-# MAIN LOOP v2.5
+# MAIN LOOP
 # =========================
 
 def run_step_c():
 
-    CHECK_INTERVAL = 5  # เช็คทุก 5 วินาที
-    TOLERANCE_MINUTES = 10  # เลทได้ 10 นาที
+    CHECK_INTERVAL = 5
+    TOLERANCE_MINUTES = 10
 
     while True:
 
@@ -127,14 +155,12 @@ def run_step_c():
         state = load_state()
         today_str = datetime.now().strftime("%Y-%m-%d")
 
-        # =============================
-        # RESET DAILY PLAN
-        # =============================
         if state.get("current_date") != today_str:
 
-            min_post = daily.get("min_post_per_day", 3)
-            max_post = daily.get("max_post_per_day", 7)
-            random_today_plan = random.randint(min_post, max_post)
+            random_today_plan = random.randint(
+                daily.get("min_post_per_day", 3),
+                daily.get("max_post_per_day", 7)
+            )
 
             state.update({
                 "current_date": today_str,
@@ -145,20 +171,13 @@ def run_step_c():
             })
             save_state(state)
 
-        # =============================
-        # QUOTA CHECK
-        # =============================
         if state.get("today_posts", 0) >= state.get("today_plan", 0):
             update_state(state="DONE", message="Daily quota reached")
             time.sleep(10)
             continue
 
-        # =============================
-        # CHECK TIME WINDOW
-        # =============================
         now = datetime.now()
         should_post = False
-        next_window_time = None
 
         for window in step.get("time_windows", []):
             start_time = datetime.strptime(window["start"], "%H:%M").time()
@@ -169,33 +188,10 @@ def run_step_c():
                 should_post = True
                 break
 
-            if now < start_dt:
-                next_window_time = start_dt
-                break
-
         if not should_post:
-            if not next_window_time:
-                # หมด window วันนี้ → ไปพรุ่งนี้
-                first = step["time_windows"][0]
-                start_time = datetime.strptime(first["start"], "%H:%M").time()
-                next_window_time = datetime.combine(
-                    now.date() + timedelta(days=1),
-                    start_time
-                )
-
-            update_state(
-                state="WAITING",
-                message=f"Waiting until {next_window_time.strftime('%H:%M:%S')}",
-                next_post_time=next_window_time.strftime("%H:%M:%S"),
-                next_post_timestamp=next_window_time.timestamp()
-            )
-
             time.sleep(CHECK_INTERVAL)
             continue
 
-        # =============================
-        # POSTING BLOCK (FIXED)
-        # =============================
         update_state(state="POSTING", message="Posting now...")
 
         output_path = cfg["paths"]["output"]
@@ -206,16 +202,20 @@ def run_step_c():
             time.sleep(10)
             continue
 
+        video, history = select_video_smart(videos)
+
+        if not video:
+            update_state(message="No available videos")
+            time.sleep(10)
+            continue
+
+        caption = generate_caption(video)
+
         for device in step["devices"]:
             for platform_name, platform_cfg in step["platforms"].items():
 
                 if not platform_cfg.get("enabled", False):
                     continue
-
-                video = random.choice(videos)
-                caption = "🔥 โปรแรงวันนี้!"
-
-                print(f"DEBUG: Posting {platform_name} → {video}")
 
                 success = False
 
@@ -226,45 +226,31 @@ def run_step_c():
                         success = shopee.post(device, video, caption, cfg, "")
                     elif platform_name == "reels":
                         success = reels.post(device, video, caption, cfg, "")
-                except Exception as e:
-                    print("POST ERROR:", e)
+                except:
                     success = False
 
                 state = load_state()
 
                 if success:
-                    state["success"] = state.get("success", 0) + 1
-                    state["today_posts"] = state.get("today_posts", 0) + 1
+                    state["success"] += 1
+                    state["today_posts"] += 1
+
+                    if video not in history:
+                        history.append(video)
+                        save_history(history)
+
+                    remote_path = "/sdcard/DCIM/Camera/" + os.path.basename(video)
+                    adb_delete(device, remote_path)
+
                 else:
-                    state["failed"] = state.get("failed", 0) + 1
+                    state["failed"] += 1
 
                 save_state(state)
 
-        # =============================
-        # CALCULATE NEXT ROUND
-        # =============================
-        min_wait = daily.get("min_wait", 3600)
-        max_wait = daily.get("max_wait", 7200)
-
-        delay = random.randint(min_wait, max_wait)
-        next_time = datetime.now() + timedelta(seconds=delay)
-
-        update_state(
-            state="WAITING",
-            message="Waiting next round",
-            next_post_time=next_time.strftime("%H:%M:%S"),
-            next_post_timestamp=next_time.timestamp()
+        delay = random.randint(
+            daily.get("min_wait", 3600),
+            daily.get("max_wait", 7200)
         )
 
-        # แทน sleep ยาว → loop check
-        end_wait = datetime.now() + timedelta(seconds=delay)
-
-        while datetime.now() < end_wait:
-
-            # ถ้ากด STOP → ออกทันที
-            cfg = load_config()
-            if not cfg["step_c"].get("enabled", False):
-                update_state(state="STOPPED", message="Stopped manually")
-                break
-
-            time.sleep(CHECK_INTERVAL)
+        update_state(state="WAITING", message="Waiting next round")
+        time.sleep(delay)

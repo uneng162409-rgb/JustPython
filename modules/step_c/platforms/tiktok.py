@@ -114,7 +114,7 @@ def push_video(device, video_path):
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"farm_{timestamp}.mp4"
-    remote_path = f"/sdcard/Movies/{filename}"
+    remote_path = f"/sdcard/DCIM/Camera/{filename}"
 
     result = adb(device, "push", video_path, remote_path)
 
@@ -197,6 +197,9 @@ def post_video(device, video_path, caption):
         adb(device, "shell", "input", "keyevent", "4")
         wait(4, 5)
 
+        # Accept popup (if any)
+        adb(device, "shell", "input", "tap", "60", "2000")
+        wait(2, 3)
         # Accept popup (if any)
         adb(device, "shell", "input", "tap", "60", "2000")
         wait(2, 3)
