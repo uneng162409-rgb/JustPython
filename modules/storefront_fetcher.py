@@ -1,6 +1,6 @@
 """
 ==========================================================
-Storefront Fetcher Production V2
+STOREFRONT FETCHER - SAFE PRODUCTION V2
 ==========================================================
 
 Purpose:
@@ -8,16 +8,19 @@ Purpose:
 
 Features:
     - Fetch products page by page
-    - max_pages control for testing
-    - max_pages = 0 -> fetch all pages
-    - max_pages > 0 -> fetch specified number of pages
-    - Parse product information
+    - limit = products per page
+    - max_pages = hard safety limit
+    - max_pages = 1 -> fetch 20 products
+    - max_pages = 5 -> fetch up to 100 products
+    - max_pages = 10 -> fetch up to 200 products
+    - NEVER fetch all products by accident
+    - Clear logging
+    - Retry support
+    - Multiple product images
     - Parse price / discount / sold / rating
-    - Parse multiple product images
     - Return pandas.DataFrame
+    - Compatible with STEP A
 
-Compatible:
-    STEP A
 ==========================================================
 """
 
@@ -41,28 +44,123 @@ from modules._bootstrap import load_config
 
 CFG = load_config()
 
-# IMPORTANT:
-# storefront อยู่ระดับเดียวกับ step_a ใน config.yaml
-STORE = CFG.get("storefront", {})
 
-if not STORE:
+# ----------------------------------------------------------
+# SUPPORT BOTH CONFIG STRUCTURES
+# ----------------------------------------------------------
+#
+# Preferred:
+#
+# step_a:
+#   storefront:
+#       ...
+#
+# Fallback:
+#
+# storefront:
+#       ...
+#
+# This prevents old config files from breaking immediately.
+# ----------------------------------------------------------
+
+STEP_A_CFG = CFG.get("step_a", {})
+
+STORE = STEP_A_CFG.get("storefront")
+
+if STORE is None:
+    STORE = CFG.get("storefront", {})
+
+
+# ----------------------------------------------------------
+# BASIC VALIDATION
+# ----------------------------------------------------------
+
+if not isinstance(STORE, dict):
     raise RuntimeError(
-        "❌ STOREFRONT CONFIG NOT FOUND\n"
-        "กรุณาตรวจสอบ config.yaml ว่ามี:\n\n"
-        "storefront:\n"
-        "  enabled: true\n"
-        "  url_suffix: \"...\"\n"
-        "  affiliate_id: \"...\"\n"
-        "  user_id: \"...\"\n"
-        "  custom_userid: \"...\"\n"
-        "  language: \"th\"\n"
-        "  cid: \"th\"\n"
-        "  limit: 20\n"
-        "  timeout: 20\n"
-        "  retry: 3\n"
-        "  delay: 1.0\n"
+        "❌ STOREFRONT CONFIG INVALID"
     )
 
+
+if not STORE.get("enabled", True):
+    print(
+        "⚠️ STOREFRONT DISABLED"
+    )
+
+
+# ==========================================================
+# SAFE LIMIT CONFIG
+# ==========================================================
+
+# Products per page
+LIMIT = int(
+    STORE.get("limit", 20)
+)
+
+
+# ----------------------------------------------------------
+# HARD SAFETY LIMIT
+# ----------------------------------------------------------
+#
+# IMPORTANT:
+#
+# max_pages = 1
+#     -> 20 products
+#
+# max_pages = 5
+#     -> up to 100 products
+#
+# max_pages = 10
+#     -> up to 200 products
+#
+# We intentionally DO NOT use 0 as default.
+# ----------------------------------------------------------
+
+MAX_PAGES = int(
+    STORE.get("max_pages", 1)
+)
+
+
+# Safety validation
+if LIMIT <= 0:
+    LIMIT = 20
+
+
+if MAX_PAGES <= 0:
+    print(
+        "⚠️ max_pages <= 0 detected."
+    )
+    print(
+        "⚠️ SAFE MODE: forcing max_pages = 1"
+    )
+
+    MAX_PAGES = 1
+
+
+# Additional absolute safety cap.
+#
+# Even if somebody accidentally writes
+# max_pages: 999999
+# we don't want the fetcher to run forever.
+
+ABSOLUTE_MAX_PAGES = 100
+
+if MAX_PAGES > ABSOLUTE_MAX_PAGES:
+
+    print(
+        f"⚠️ max_pages={MAX_PAGES} is too high."
+    )
+
+    print(
+        f"⚠️ SAFE MODE: limiting to "
+        f"{ABSOLUTE_MAX_PAGES} pages."
+    )
+
+    MAX_PAGES = ABSOLUTE_MAX_PAGES
+
+
+# ==========================================================
+# API
+# ==========================================================
 
 API_URL = (
     "https://collshp.com/api/v3/gql/graphql"
@@ -74,11 +172,16 @@ API_URL = (
 # LOGGER
 # ==========================================================
 
-logger = logging.getLogger("Storefront")
+logger = logging.getLogger(
+    "Storefront"
+)
+
 
 if not logger.handlers:
 
-    logger.setLevel(logging.INFO)
+    logger.setLevel(
+        logging.INFO
+    )
 
     handler = logging.StreamHandler()
 
@@ -87,9 +190,13 @@ if not logger.handlers:
         "%H:%M:%S"
     )
 
-    handler.setFormatter(formatter)
+    handler.setFormatter(
+        formatter
+    )
 
-    logger.addHandler(handler)
+    logger.addHandler(
+        handler
+    )
 
 
 # ==========================================================
@@ -99,13 +206,22 @@ if not logger.handlers:
 session = requests.Session()
 
 
-retry_count = STORE.get("retry", 3)
+# ==========================================================
+# RETRY
+# ==========================================================
+
+RETRY_COUNT = int(
+    STORE.get("retry", 3)
+)
+
 
 retry = Retry(
-    total=retry_count,
-    connect=retry_count,
-    read=retry_count,
+    total=RETRY_COUNT,
+    connect=RETRY_COUNT,
+    read=RETRY_COUNT,
+
     backoff_factor=1,
+
     status_forcelist=[
         429,
         500,
@@ -113,7 +229,10 @@ retry = Retry(
         503,
         504
     ],
-    allowed_methods=["POST"]
+
+    allowed_methods=[
+        "POST"
+    ]
 )
 
 
@@ -137,7 +256,11 @@ session.mount(
 # HEADERS
 # ==========================================================
 
-url_suffix = STORE.get("url_suffix", "")
+URL_SUFFIX = STORE.get(
+    "url_suffix",
+    ""
+)
+
 
 session.headers.update({
 
@@ -152,7 +275,7 @@ session.headers.update({
 
     "referer":
         f"https://collshp.com/"
-        f"{url_suffix}"
+        f"{URL_SUFFIX}"
         f"?view=storefront",
 
     "user-agent":
@@ -164,7 +287,10 @@ session.headers.update({
         "language=th",
 
     "x-custom-userid":
-        STORE.get("custom_userid", "")
+        STORE.get(
+            "custom_userid",
+            ""
+        )
 })
 
 
@@ -239,10 +365,14 @@ query StorefrontProductListQuery(
 # ==========================================================
 
 def make_uuid():
-    return str(uuid.uuid4())
+
+    return str(
+        uuid.uuid4()
+    )
 
 
 def make_device():
+
     return uuid.uuid4().hex.upper()
 
 
@@ -250,7 +380,9 @@ def make_device():
 # BUILD PAYLOAD
 # ==========================================================
 
-def build_payload(offset=0):
+def build_payload(
+    offset=0
+):
 
     return {
 
@@ -263,23 +395,38 @@ def build_payload(offset=0):
         "variables": {
 
             "urlSuffix":
-                STORE.get("url_suffix", ""),
+                STORE.get(
+                    "url_suffix",
+                    ""
+                ),
 
             "affiliateMeta": {
 
                 "affiliateId":
-                    STORE.get("affiliate_id", ""),
+                    STORE.get(
+                        "affiliate_id",
+                        ""
+                    ),
 
                 "userId":
-                    STORE.get("user_id", "")
+                    STORE.get(
+                        "user_id",
+                        ""
+                    )
 
             },
 
             "cid":
-                STORE.get("cid", "th"),
+                STORE.get(
+                    "cid",
+                    "th"
+                ),
 
             "language":
-                STORE.get("language", "th"),
+                STORE.get(
+                    "language",
+                    "th"
+                ),
 
             "deviceId":
                 make_device(),
@@ -293,7 +440,7 @@ def build_payload(offset=0):
                     str(offset),
 
                 "limit":
-                    str(STORE.get("limit", 20))
+                    str(LIMIT)
 
             },
 
@@ -307,18 +454,30 @@ def build_payload(offset=0):
 # FETCH SINGLE PAGE
 # ==========================================================
 
-def fetch_page(offset=0):
+def fetch_page(
+    offset=0
+):
 
-    payload = build_payload(offset)
+    payload = build_payload(
+        offset
+    )
 
     logger.info(
         f"Loading offset={offset}"
     )
 
     response = session.post(
+
         API_URL,
+
         json=payload,
-        timeout=STORE.get("timeout", 20)
+
+        timeout=int(
+            STORE.get(
+                "timeout",
+                20
+            )
+        )
     )
 
     response.raise_for_status()
@@ -339,33 +498,34 @@ def fetch_page(offset=0):
 
 
 # ==========================================================
-# FETCH ALL PAGES
+# FETCH PRODUCTS
 # ==========================================================
 
 def fetch_all():
 
     """
-    Fetch storefront products page by page.
+    Safely fetch storefront products.
 
-    max_pages:
+    max_pages controls the maximum number
+    of pages that can be downloaded.
 
-        0
-            Fetch all pages.
+    Examples:
 
-        >0
-            Fetch only the specified number
-            of pages.
+        limit=20
+        max_pages=1
+            -> 20 products
 
-    Example:
+        limit=20
+        max_pages=5
+            -> up to 100 products
 
-        max_pages: 1
-            -> fetch first 20 products
+        limit=20
+        max_pages=10
+            -> up to 200 products
 
-        max_pages: 5
-            -> fetch first 100 products
-
-        max_pages: 0
-            -> fetch everything
+    IMPORTANT:
+        This function NEVER automatically
+        fetches all 1,700+ products.
     """
 
     offset = 0
@@ -374,112 +534,183 @@ def fetch_all():
 
     page_count = 0
 
-    max_pages = STORE.get(
-        "max_pages",
-        0
+    total_count = None
+
+    logger.info(
+        "=================================================="
     )
 
-    limit = STORE.get(
-        "limit",
-        20
+    logger.info(
+        "STOREFRONT FETCH START"
     )
 
-    while True:
+    logger.info(
+        f"Products per page : {LIMIT}"
+    )
+
+    logger.info(
+        f"Maximum pages     : {MAX_PAGES}"
+    )
+
+    logger.info(
+        f"Maximum products  : {LIMIT * MAX_PAGES}"
+    )
+
+    logger.info(
+        "=================================================="
+    )
+
+
+    while page_count < MAX_PAGES:
 
         page_count += 1
+
+        # --------------------------------------------------
+        # FETCH
+        # --------------------------------------------------
 
         data = fetch_page(
             offset
         )
 
+
+        # --------------------------------------------------
+        # PARSE RESPONSE
+        # --------------------------------------------------
+
         result = (
             data
             .get("data", {})
-            .get("storefrontProductList", {})
+            .get(
+                "storefrontProductList",
+                {}
+            )
         )
 
+
         items = (
-            result.get("itemList")
+            result.get(
+                "itemList"
+            )
             or []
         )
 
+
         pagination = (
-            result.get("pagination")
+            result.get(
+                "pagination"
+            )
             or {}
         )
 
-        all_items.extend(
-            items
+
+        # --------------------------------------------------
+        # TOTAL
+        # --------------------------------------------------
+
+        total_count = pagination.get(
+            "totalCount"
         )
 
-        total = pagination.get(
-            "totalCount",
-            0
-        )
 
         has_more = pagination.get(
             "hasMore",
             False
         )
 
-        logger.info(
-            f"Fetched {len(items)} items "
-            f"(total so far: "
-            f"{len(all_items)} / {total})"
+
+        # --------------------------------------------------
+        # ADD ITEMS
+        # --------------------------------------------------
+
+        all_items.extend(
+            items
         )
 
-        # ==================================================
-        # TEST LIMIT
-        # ==================================================
 
-        if (
-            max_pages > 0
-            and page_count >= max_pages
-        ):
+        # --------------------------------------------------
+        # LOG
+        # --------------------------------------------------
+
+        logger.info(
+            f"PAGE {page_count}/{MAX_PAGES} | "
+            f"Fetched {len(items)} items | "
+            f"Total fetched: {len(all_items)}"
+            f"/{total_count}"
+        )
+
+
+        # --------------------------------------------------
+        # STOP: PAGE LIMIT
+        # --------------------------------------------------
+
+        if page_count >= MAX_PAGES:
 
             logger.info(
-                f"TEST LIMIT REACHED : "
-                f"{max_pages} page(s)"
+                "=================================================="
+            )
+
+            logger.info(
+                f"MAX PAGES REACHED : {MAX_PAGES}"
+            )
+
+            logger.info(
+                f"SAFE FETCH STOPPED : "
+                f"{len(all_items)} products"
+            )
+
+            logger.info(
+                "=================================================="
             )
 
             break
 
-        # ==================================================
-        # NO MORE DATA
-        # ==================================================
+
+        # --------------------------------------------------
+        # STOP: NO MORE DATA
+        # --------------------------------------------------
 
         if not has_more:
 
             logger.info(
-                "NO MORE PAGES"
+                "NO MORE PRODUCTS AVAILABLE"
             )
 
             break
 
-        # ==================================================
-        # NEXT PAGE
-        # ==================================================
 
-        offset += limit
+        # --------------------------------------------------
+        # NEXT OFFSET
+        # --------------------------------------------------
 
-        # ==================================================
-        # DELAY
-        # ==================================================
+        offset += LIMIT
 
-        delay = STORE.get(
-            "delay",
-            1.0
+
+        # --------------------------------------------------
+        # POLITE DELAY
+        # --------------------------------------------------
+
+        delay = float(
+            STORE.get(
+                "delay",
+                1.0
+            )
         )
 
         if delay > 0:
 
-            time.sleep(
+            actual_delay = (
                 delay
                 + random.uniform(
                     0,
                     0.5
                 )
             )
+
+            time.sleep(
+                actual_delay
+            )
+
 
     return all_items
 
@@ -490,24 +721,26 @@ def fetch_all():
 
 PRICE_DIVISOR = 100000
 
+
 IMAGE_BASE_URL = (
     "https://down-th.img.susercontent.com/file/"
 )
 
 
-# ==========================================================
-# MAX IMAGES
-# ==========================================================
-
 MAX_IMAGES = 10
 
 
-def parse_item_card(raw_item: dict) -> dict:
+def parse_item_card(
+    raw_item: dict
+) -> dict:
 
     item_card = (
-        raw_item.get("itemCard")
+        raw_item.get(
+            "itemCard"
+        )
         or {}
     )
+
 
     asset = (
         item_card.get(
@@ -517,6 +750,7 @@ def parse_item_card(raw_item: dict) -> dict:
         or {}
     )
 
+
     data = (
         item_card.get(
             "itemData",
@@ -524,6 +758,7 @@ def parse_item_card(raw_item: dict) -> dict:
         )
         or {}
     )
+
 
     price_info = (
         data.get(
@@ -533,6 +768,7 @@ def parse_item_card(raw_item: dict) -> dict:
         or {}
     )
 
+
     sold_info = (
         data.get(
             "itemCardDisplaySoldCount",
@@ -540,6 +776,7 @@ def parse_item_card(raw_item: dict) -> dict:
         )
         or {}
     )
+
 
     rating_info = (
         data.get(
@@ -549,13 +786,17 @@ def parse_item_card(raw_item: dict) -> dict:
         or {}
     )
 
+
     # ======================================================
     # IMAGES
     # ======================================================
 
     image_hashes = (
-        asset.get("images")
-        or (
+        asset.get(
+            "images"
+        )
+        or
+        (
             [
                 asset["image"]
             ]
@@ -564,9 +805,11 @@ def parse_item_card(raw_item: dict) -> dict:
         )
     )
 
+
     image_hashes = image_hashes[
         :MAX_IMAGES
     ]
+
 
     # ======================================================
     # PRICE
@@ -574,13 +817,15 @@ def parse_item_card(raw_item: dict) -> dict:
 
     try:
 
-        price = (
-            float(
-                price_info.get(
-                    "price",
-                    0
-                )
+        raw_price = (
+            price_info.get(
+                "price",
+                0
             )
+        )
+
+        price = (
+            float(raw_price)
             / PRICE_DIVISOR
         )
 
@@ -591,6 +836,7 @@ def parse_item_card(raw_item: dict) -> dict:
 
         price = 0
 
+
     # ======================================================
     # PRODUCT ROW
     # ======================================================
@@ -598,15 +844,25 @@ def parse_item_card(raw_item: dict) -> dict:
     row = {
 
         "itemid":
-            data.get("itemid")
-            or raw_item.get("itemId"),
+            data.get(
+                "itemid"
+            )
+            or raw_item.get(
+                "itemId"
+            ),
 
         "title":
-            asset.get("name")
-            or raw_item.get("linkName"),
+            asset.get(
+                "name"
+            )
+            or raw_item.get(
+                "linkName"
+            ),
 
         "product_link":
-            raw_item.get("link"),
+            raw_item.get(
+                "link"
+            ),
 
         "price":
             price,
@@ -630,6 +886,7 @@ def parse_item_card(raw_item: dict) -> dict:
             )
     }
 
+
     # ======================================================
     # IMAGE URLS
     # ======================================================
@@ -649,6 +906,7 @@ def parse_item_card(raw_item: dict) -> dict:
             f"{image_hash}"
         )
 
+
     return row
 
 
@@ -658,29 +916,57 @@ def parse_item_card(raw_item: dict) -> dict:
 
 def load_storefront_feed() -> pd.DataFrame:
 
-    if not STORE.get("enabled", True):
+    raw_items = fetch_all()
+
+
+    if not raw_items:
 
         logger.warning(
-            "⚠️ STOREFRONT DISABLED"
+            "⚠️ NO STOREFRONT PRODUCTS FOUND"
         )
 
         return pd.DataFrame()
 
-    raw_items = fetch_all()
 
-    rows = [
-        parse_item_card(item)
-        for item in raw_items
-    ]
+    rows = []
+
+    for item in raw_items:
+
+        try:
+
+            row = parse_item_card(
+                item
+            )
+
+            rows.append(
+                row
+            )
+
+        except Exception as e:
+
+            logger.error(
+                f"❌ PARSE ITEM FAILED : {e}"
+            )
+
 
     df = pd.DataFrame(
         rows
+    )
+
+
+    logger.info(
+        "=================================================="
     )
 
     logger.info(
         f"STOREFRONT FEED LOADED : "
         f"{len(df)} rows"
     )
+
+    logger.info(
+        "=================================================="
+    )
+
 
     return df
 
@@ -691,6 +977,7 @@ def load_storefront_feed() -> pd.DataFrame:
 
 if __name__ == "__main__":
 
+    print()
     print("=" * 60)
 
     print(
@@ -698,29 +985,92 @@ if __name__ == "__main__":
     )
 
     print(
-        "🧪 Fetching according to "
-        "max_pages config"
+        "🧪 SAFE PAGINATION TEST"
     )
 
     print("=" * 60)
 
-    df = load_storefront_feed()
-
     print()
 
     print(
-        f"📦 PRODUCTS : {len(df)}"
+        f"📌 limit      = {LIMIT}"
+    )
+
+    print(
+        f"📌 max_pages  = {MAX_PAGES}"
+    )
+
+    print(
+        f"📌 max_items  = {LIMIT * MAX_PAGES}"
     )
 
     print()
 
-    if not df.empty:
+    try:
+
+        df = load_storefront_feed()
+
+
+        print()
+
         print(
-            df.head()
+            f"📦 PRODUCTS : {len(df)}"
         )
 
-    print()
 
-    print(
-        "🏁 DEBUG TEST COMPLETE"
-    )
+        if not df.empty:
+
+            print()
+
+            print(
+                df.head()
+            )
+
+
+            print()
+
+            print(
+                "📋 COLUMNS:"
+            )
+
+            print(
+                list(df.columns)
+            )
+
+
+        else:
+
+            print(
+                "⚠️ DATAFRAME EMPTY"
+            )
+
+
+        print()
+
+        print(
+            "🏁 DEBUG TEST COMPLETE"
+        )
+
+
+    except KeyboardInterrupt:
+
+        print()
+
+        print(
+            "🛑 FETCH INTERRUPTED BY USER"
+        )
+
+        print(
+            "🛑 Program stopped safely."
+        )
+
+
+    except Exception as e:
+
+        print()
+
+        print(
+            f"❌ STOREFRONT ERROR : {e}"
+        )
+
+        raise
